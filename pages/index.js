@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import styles from '../styles/Home.module.css';
 import styled from 'styled-components';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -15,15 +14,26 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className={styles.main}>
+			<Main>
 				<Container>
 					<h1>This is my new Resolutions app</h1>
 					<p>This is a test of styled components and next.js</p>
 				</Container>
-			</main>
+			</Main>
 		</>
 	);
 }
+
+const Main = styled.main`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 0 0.5rem;
+	margin: 0 3rem;
+	background-color: hsl(0, 0%, 10%);
+`;
 
 const Container = styled.div`
 	background-color: red;
@@ -33,6 +43,6 @@ const Container = styled.div`
 
 	p {
 		font-size: 1.5rem;
-		color: green;
+		color: hsl(0, 0%, 60%);
 	}
 `;
