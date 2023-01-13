@@ -1,11 +1,35 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import styled from 'styled-components';
+// import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
 const inter = Inter({ subsets: ['latin'] });
 
+function handleSubmit(e, message) {
+	e.preventDefault();
+	console.log("Let's get started!");
+	return message;
+}
+
 export default function Home() {
+	const [message, setMessage] = useState('');
+	const [error, setError] = useState(false);
+
+	const onSubmit = async (e) => {
+		e.preventDefault();
+
+		if (!e.target[0].checked) {
+			setError(true);
+			setMessage('You must accept the privacy policy to continue.');
+			return;
+		}
+
+		const submission = await handleSubmit(e, "Let's get started!");
+		setMessage(submission);
+	};
+
 	return (
 		<>
 			<Head>
@@ -18,6 +42,13 @@ export default function Home() {
 				<Container>
 					<h1>This is my new Resolutions app</h1>
 					<p>This is a test of styled components and next.js</p>
+					<p>Start your New Year right!</p>
+					<form onSubmit={onSubmit}>
+						<label htmlFor="name">Accect Privacy Policy</label>
+						<input type="checkbox" />
+						<button>Start Now</button>
+					</form>
+					{message}
 				</Container>
 			</Main>
 		</>
@@ -26,23 +57,45 @@ export default function Home() {
 
 const Main = styled.main`
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
-	padding: 0 0.5rem;
-	margin: 0 3rem;
+	text-align: center;
 	background-color: hsl(0, 0%, 10%);
 `;
 
 const Container = styled.div`
-	background-color: red;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+	background-color: green;
 	color: white;
-	padding: 1rem;
+	padding: 2rem 3.5rem;
 	border-radius: 0.5rem;
+
+	h1 {
+		font-size: 2.2rem;
+	}
 
 	p {
 		font-size: 1.5rem;
 		color: hsl(0, 0%, 60%);
+	}
+
+	button {
+		background-color: hsl(0, 0%, 20%);
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+
+		&:hover {
+			background-color: hsl(0, 0%, 30%);
+
+			transition: background-color 0.2s ease-in-out;
+
+			cursor: pointer;
+		}
 	}
 `;
