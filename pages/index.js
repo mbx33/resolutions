@@ -1,21 +1,22 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
 import styled from 'styled-components';
-// import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
+import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
-const inter = Inter({ subsets: ['latin'] });
+// Components
+import IntroForm from '../components/introduction/IntroForm';
+import Introduction from '../components/introduction/Introduction';
+import Navbar from '../components/navigation/Navbar';
 
-function handleSubmit(e, message) {
-	e.preventDefault();
-	console.log("Let's get started!");
-	return message;
+function timeOut(ms) {
+	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 export default function Home() {
+	const supabase = useSupabaseClient();
 	const [message, setMessage] = useState('');
 	const [error, setError] = useState(false);
+	const [showNext, setShowNext] = useState(false);
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
@@ -23,11 +24,14 @@ export default function Home() {
 		if (!e.target[0].checked) {
 			setError(true);
 			setMessage('You must accept the privacy policy to continue.');
+			timeOut(3000).then(() => setMessage(''));
 			return;
 		}
 
-		const submission = await handleSubmit(e, "Let's get started!");
-		setMessage(submission);
+		setError(false);
+		setMessage('Thank you for accepting the privacy policy.');
+		timeOut(3000).then(() => setMessage(''));
+		setShowNext(true);
 	};
 
 	return (
@@ -39,16 +43,15 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Main>
+				<NavContainer>
+					<Navbar />
+				</NavContainer>
 				<Container>
-					<h1>This is my new Resolutions app</h1>
-					<p>This is a test of styled components and next.js</p>
-					<p>Start your New Year right!</p>
-					<form onSubmit={onSubmit}>
-						<label htmlFor="name">Accect Privacy Policy</label>
-						<input type="checkbox" />
-						<button>Start Now</button>
-					</form>
-					{message}
+					{showNext ? <Introduction /> : <IntroForm onSubmit={onSubmit} />}
+
+					<div className="message">
+						<p className={error ? 'error' : 'success'}>{message}</p>
+					</div>
 				</Container>
 			</Main>
 		</>
@@ -56,12 +59,16 @@ export default function Home() {
 }
 
 const Main = styled.main`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-	text-align: center;
+	min-height: 300vh;
 	background-color: hsl(0, 0%, 10%);
+`;
+
+const NavContainer = styled.div`
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
 `;
 
 const Container = styled.div`
@@ -74,28 +81,16 @@ const Container = styled.div`
 	color: white;
 	padding: 2rem 3.5rem;
 	border-radius: 0.5rem;
+	width: 80%;
 
-	h1 {
-		font-size: 2.2rem;
+	.error {
+		font-size: 1.2rem;
+		color: hsl(0, 0%, 0%);
 	}
-
-	p {
-		font-size: 1.5rem;
-		color: hsl(0, 0%, 60%);
-	}
-
-	button {
-		background-color: hsl(0, 0%, 20%);
-		color: white;
-		padding: 0.5rem 1rem;
-		border-radius: 0.5rem;
-
-		&:hover {
-			background-color: hsl(0, 0%, 30%);
-
-			transition: background-color 0.2s ease-in-out;
-
-			cursor: pointer;
-		}
+	.success {
+		font-size: 1.2rem;
+		color: hsl(100, 100%, 0%);
 	}
 `;
+
+// F)_Q2m-=q#=#QRs
