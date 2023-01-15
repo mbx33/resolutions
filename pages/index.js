@@ -14,6 +14,7 @@ function timeOut(ms) {
 
 export default function Home() {
 	const supabase = useSupabaseClient();
+	const user = useUser();
 	const [message, setMessage] = useState('');
 	const [error, setError] = useState(false);
 	const [showNext, setShowNext] = useState(false);
@@ -33,6 +34,8 @@ export default function Home() {
 		timeOut(3000).then(() => setMessage(''));
 		setShowNext(true);
 	};
+
+	console.log(user);
 
 	return (
 		<>
