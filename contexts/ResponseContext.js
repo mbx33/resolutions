@@ -8,6 +8,10 @@ export function useResponse() {
 }
 
 export function ResponseProvider({ children }) {
+	if (ResponseContext === undefined) {
+		throw new Error('useResponse() must be used inside a ResponseProvider');
+	}
+
 	const [userResponses, setUserResponses] = useState({
 		list: '',
 		family: '',
@@ -15,9 +19,9 @@ export function ResponseProvider({ children }) {
 		friends: '',
 		intellectual: '',
 		financial: '',
-		work_study: '',
-		vacation_hobby: '',
-		health_sport: '',
+		workStudy: '',
+		vacationHobby: '',
+		healthSport: '',
 		emotional: '',
 		achievements: '',
 		smartest: '',
@@ -27,14 +31,29 @@ export function ResponseProvider({ children }) {
 		others: '',
 		completed: '',
 		proud: '',
-		influenced_you: '',
-		you_influenced: '',
+		influencedYou: '',
+		youInfluenced: '',
 		unable: '',
 		discovered: '',
 		grateful: '',
+		bestMoments: '',
+		biggestAch: '',
+		how: '',
+		who: '',
+		challenges: '',
+		overcame: '',
+		learned: '',
+		forgiveness: '',
+		release: '',
+		wordOne: '',
+		wordTwo: '',
+		wordThree: '',
+		movieTitle: '',
+		goodbye: '',
 	});
 
 	const handleChange = (e) => {
+		e.preventDefault();
 		const { name, value } = e.target;
 		setUserResponses({ ...userResponses, [name]: value });
 		console.log(userResponses);

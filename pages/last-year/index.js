@@ -72,9 +72,24 @@ const LastYearForms = () => {
 					currentPart={currentPart}
 				/>
 			)}
-
-			{/* <Step3 nextStep={changeNextStep} prevStep={changePrevStep} />
-			<Step4 nextStep={changeNextStep} prevStep={changePrevStep} /> */}
+			{step === 3 && (
+				<Step3
+					nextStep={changeNextStep}
+					prevStep={changePrevStep}
+					nextForm={nextForm}
+					prevForm={prevForm}
+					currentPart={currentPart}
+				/>
+			)}
+			{step === 4 && (
+				<Step4
+					nextStep={changeNextStep}
+					prevStep={changePrevStep}
+					nextForm={nextForm}
+					prevForm={prevForm}
+					currentPart={currentPart}
+				/>
+			)}
 		</FormContainer>
 	);
 };

@@ -55,25 +55,25 @@ const Part2 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 				<label htmlFor="work_study">Work, Study, Profession</label>
 				<input
 					onChange={handleChange}
-					value={userResponses.work_study}
+					value={userResponses.workStudy}
 					type="text"
-					name="work_study"
+					name="workStudy"
 					id="work_study"
 				/>
 				<label htmlFor="vacation_hobby">Holiday, Hobbies, Creativity</label>
 				<input
 					onChange={handleChange}
-					value={userResponses.vacation_hobby}
+					value={userResponses.vacationHobby}
 					type="text"
-					name="vacation_hobby"
+					name="vacationHobby"
 					id="vacation_hobby"
 				/>
 				<label htmlFor="health_sport">Health, Sport</label>
 				<input
 					onChange={handleChange}
-					value={userResponses.health_sport}
+					value={userResponses.healthSport}
 					type="text"
-					name="health_sport"
+					name="healthSport"
 					id="health_sport"
 				/>
 				<label htmlFor="emotional">Emotional, Spiritual</label>

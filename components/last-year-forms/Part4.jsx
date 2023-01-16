@@ -21,9 +21,9 @@ const Part4 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 				</label>
 				<input
 					onChange={handleChange}
-					value={userResponses.influenced_you}
+					value={userResponses.influencedYou}
 					type="text"
-					name="influenced_you"
+					name="influencedYou"
 					id="influenced_you"
 				/>
 				<label htmlFor="you_influenced">
@@ -31,9 +31,9 @@ const Part4 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 				</label>
 				<input
 					onChange={handleChange}
-					value={userResponses.you_influenced}
+					value={userResponses.youInfluenced}
 					type="text"
-					name="you_influenced"
+					name="youInfluenced"
 					id="you_influenced"
 				/>
 				<label htmlFor="unable">What were you unable to complete?</label>

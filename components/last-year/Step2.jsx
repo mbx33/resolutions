@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useResponse } from '../../contexts/ResponseContext';
 
 // Components
@@ -6,27 +5,6 @@ import Part3 from '../last-year-forms/Part3';
 import Part4 from '../last-year-forms/Part4';
 
 const Step2 = ({ nextForm, prevForm, nextStep, prevStep, currentPart }) => {
-	// const [userResponses, setUserResponses] = useState({
-	// 	smartest: '',
-	// 	biggest: '',
-	// 	risk: '',
-	// 	surprise: '',
-	// 	others: '',
-	// 	completed: '',
-	// 	proud: '',
-	// 	influenced_you: '',
-	// 	you_influenced: '',
-	// 	unable: '',
-	// 	discovered: '',
-	// 	grateful: '',
-	// });
-
-	// const handleChange = (e) => {
-	// 	const { name, value } = e.target;
-	// 	setUserResponses({ ...userResponses, [name]: value });
-	// 	console.log(userResponses);
-	// };
-
 	const { userResponses, handleChange } = useResponse();
 
 	return (

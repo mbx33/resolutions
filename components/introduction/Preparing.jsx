@@ -1,6 +1,13 @@
 import React from 'react';
+import Router from 'next/router';
 
 const Preparing = () => {
+	const router = Router;
+
+	const handleClick = () => {
+		router.push('/last-year');
+	};
+
 	return (
 		<div>
 			<h1>Getting Prepared</h1>
@@ -14,7 +21,7 @@ const Preparing = () => {
 			<p>Get yourself a drink (coffee, tea)</p>
 			<p>Let go of expectations</p>
 			<p>Begin when you’re ready.</p>
-			<button>Ready to Start</button>
+			<button onClick={handleClick}>Ready to Start</button>
 		</div>
 	);
 };

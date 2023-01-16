@@ -27,7 +27,9 @@ export default function Home() {
 
 		if (!e.target[0].checked) {
 			setError(true);
-			setMessage('You must accept the privacy policy to continue.');
+			setMessage(
+				'You must accept the privacy policy & create an account to continue.'
+			);
 			timeOut(3000).then(() => setMessage(''));
 			return;
 		}
