@@ -8,6 +8,9 @@ import IntroForm from '../components/introduction/IntroForm';
 import Introduction from '../components/introduction/Introduction';
 import Navbar from '../components/navigation/Navbar';
 
+// Styles
+import { FormContainer } from '../styles/styled_components/form';
+
 function timeOut(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -46,54 +49,20 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Main>
-				<NavContainer>
-					<Navbar />
-				</NavContainer>
-				<Container>
+				<FormContainer>
 					{showNext ? <Introduction /> : <IntroForm onSubmit={onSubmit} />}
 
 					<div className="message">
 						<p className={error ? 'error' : 'success'}>{message}</p>
 					</div>
-				</Container>
+				</FormContainer>
 			</Main>
 		</>
 	);
 }
 
 const Main = styled.main`
-	min-height: 300vh;
 	background-color: hsl(0, 0%, 10%);
 `;
 
-const NavContainer = styled.div`
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 100;
-`;
-
-const Container = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 3rem;
-	background-color: green;
-	color: white;
-	padding: 2rem 3.5rem;
-	border-radius: 0.5rem;
-	width: 80%;
-
-	.error {
-		font-size: 1.2rem;
-		color: hsl(0, 0%, 0%);
-	}
-	.success {
-		font-size: 1.2rem;
-		color: hsl(100, 100%, 0%);
-	}
-`;
-
-// F)_Q2m-=q#=#QRs
+//replicon/ F)_Q2m-=q#=#QRs

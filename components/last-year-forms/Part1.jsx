@@ -1,6 +1,9 @@
 import React from 'react';
 
-const Part1 = ({ handleChange, nextStep, userResponses }) => {
+// Styles
+import { Form } from '../../styles/styled_components/form';
+
+const Part1 = ({ handleChange, nextForm, userResponses }) => {
 	return (
 		<div>
 			<h1>List of your last year</h1>
@@ -8,7 +11,7 @@ const Part1 = ({ handleChange, nextStep, userResponses }) => {
 				Look at your past calander, week to week. If you see an important event,
 				meeting with freinds, or family, or important job, write it here.
 			</p>
-			<form>
+			<Form>
 				<label htmlFor="list">Enter your answers here</label>
 				<textarea
 					onChange={handleChange}
@@ -19,8 +22,12 @@ const Part1 = ({ handleChange, nextStep, userResponses }) => {
 					name="list"
 					id="list"
 				/>
-			</form>
-			<button onClick={nextStep}>Continue</button>
+				<div className="button-group">
+					{/* <button onClick={nextForm}>Start Over</button> */}
+
+					<button onClick={nextForm}>Continue</button>
+				</div>
+			</Form>
 		</div>
 	);
 };

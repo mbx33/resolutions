@@ -1,8 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
 
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+
+// Styles
+import { NavContainer } from '../../styles/styled_components/navigation';
 
 const Navbar = () => {
 	const supabase = useSupabaseClient();
@@ -13,7 +15,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div>
+		<NavContainer>
 			<div className="logo">
 				<h1>Logo</h1>
 			</div>
@@ -33,7 +35,7 @@ const Navbar = () => {
 					)}
 				</ul>
 			</div>
-		</div>
+		</NavContainer>
 	);
 };
 

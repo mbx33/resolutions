@@ -2,6 +2,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 
+// Styles
+import { FormContainer, Form } from '../../styles/styled_components/form';
+
 const Signup = ({ supabase }) => {
 	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
@@ -10,6 +13,11 @@ const Signup = ({ supabase }) => {
 	const [alert, setAlert] = useState('');
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');
+	const [showPassword, setShowPassword] = useState(false);
+
+	 const togglePassword = () => {
+			setShowPassword(!showPassword);
+		};
 
 	const resetForm = () => {
 		setEmail('');
@@ -17,7 +25,7 @@ const Signup = ({ supabase }) => {
 		setPassword('');
 		setPasswordConfirm('');
 		setLoading(false);
-		setError('');		
+		setError('');
 	};
 
 	const handleSubmit = async (e) => {
@@ -62,55 +70,58 @@ const Signup = ({ supabase }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<h1>Signup</h1>
-				{alert && <p>{alert}</p>}
-				{error && <p>{error}</p>}
-				<h2>Please create an account to book a tour</h2>
-				<form onSubmit={handleSubmit}>
-					<div>
-						<label htmlFor="email">Email</label>
-						<input
-							type="email"
-							id="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-						/>
-					</div>
-					<div>
-						<label htmlFor="username">Username</label>
-						<input
-							type="text"
-							id="username"
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
-						/>
-					</div>
-					<div>
-						<label htmlFor="password">Password</label>
-						<input
-							type="password"
-							id="password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-						/>
-					</div>
-					<div>
-						<label htmlFor="passwordConfirm">Confirm Password</label>
-						<input
-							type="password"
-							id="passwordConfirm"
-							value={passwordConfirm}
-							onChange={(e) => setPasswordConfirm(e.target.value)}
-						/>
-					</div>
-					<button type="submit" disabled={loading}>
-						{loading ? 'Loading...' : 'Signup'}
-					</button>
-				</form>
-				<p>
-					Already have an account? <Link href="/login">Login</Link>
-				</p>
-				{error && <p>{error}</p>}
+				<FormContainer>
+					<h1>Signup</h1>
+					{alert && <p>{alert}</p>}
+					{error && <p>{error}</p>}
+					<h2>Please create an account to create your planner</h2>
+
+					<Form onSubmit={handleSubmit}>
+						<div>
+							<label htmlFor="email">Email</label>
+							<input
+								type="email"
+								id="email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+							/>
+						</div>
+						<div>
+							<label htmlFor="username">Username</label>
+							<input
+								type="text"
+								id="username"
+								value={username}
+								onChange={(e) => setUsername(e.target.value)}
+							/>
+						</div>
+						<div>
+							<label htmlFor="password">Password</label>
+							<input
+								type="password"
+								id="password"
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+							/>
+						</div>
+						<div>
+							<label htmlFor="passwordConfirm">Confirm Password</label>
+							<input
+								type="password"
+								id="passwordConfirm"
+								value={passwordConfirm}
+								onChange={(e) => setPasswordConfirm(e.target.value)}
+							/>
+						</div>
+						<button type="submit" disabled={loading}>
+							{loading ? 'Loading...' : 'Signup'}
+						</button>
+					</Form>
+					<p>
+						Already have an account? <Link href="/login">Login</Link>
+					</p>
+					{error && <p>{error}</p>}
+				</FormContainer>
 			</main>
 		</>
 	);

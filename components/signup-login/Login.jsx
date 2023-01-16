@@ -3,6 +3,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
+// Styles
+import { FormContainer, Form } from '../../styles/styled_components/form';
+
 const Login = ({ supabase, session }) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -38,37 +41,39 @@ const Login = ({ supabase, session }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<h1>Login</h1>
-				{message && <p>{message}</p>}
-				{error && <p>{error}</p>}
-				<form onSubmit={handleSubmit}>
-					<div>
-						<label htmlFor="email">Email</label>
-						<input
-							type="email"
-							id="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-						/>
-					</div>
-					<div>
-						<label htmlFor="password">Password</label>
-						<input
-							type="password"
-							id="password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-						/>
-					</div>
-					<button type="submit" disabled={loading}>
-						{loading ? 'Loading...' : 'Login'}
-					</button>
-				</form>
-				<p style={{ margin: '1.3rem 0' }}>
-					No Account? <Link href="/signup">Signup</Link>
-				</p>
+				<FormContainer>
+					<h1>Login</h1>
+					{message && <p>{message}</p>}
+					{error && <p>{error}</p>}
+					<Form onSubmit={handleSubmit}>
+						<div>
+							<label htmlFor="email">Email</label>
+							<input
+								type="email"
+								id="email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+							/>
+						</div>
+						<div>
+							<label htmlFor="password">Password</label>
+							<input
+								type="password"
+								id="password"
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+							/>
+						</div>
+						<button type="submit" disabled={loading}>
+							{loading ? 'Loading...' : 'Login'}
+						</button>
+					</Form>
+					<p style={{ margin: '1.3rem 0' }}>
+						No Account? <Link href="/signup">Signup</Link>
+					</p>
 
-				{error && <p>{error}</p>}
+					{error && <p>{error}</p>}
+				</FormContainer>
 			</main>
 		</>
 	);
