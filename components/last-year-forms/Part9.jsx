@@ -3,10 +3,7 @@ import React from 'react';
 // Styles
 import { Form } from '../../styles/styled_components/form';
 
-// movieTitle: '',
-// goodbye: '',
-
-const Part9 = ({ handleChange, userResponses, nextStep, prevForm }) => {
+const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveAll }) => {
 	return (
 		<div>
 			<Form>
@@ -27,7 +24,7 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 						value={userResponses.wordTwo}
 					/>
 					<input
-						type="submit"
+						type="text"
 						id="wordThree"
 						name="wordThree"
 						onChange={handleChange}
@@ -61,6 +58,8 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 				</fieldset>
 				<div className="button-group">
 					<button onClick={prevForm}>Back</button>
+
+					<button onClick={saveAll}>Save</button>
 
 					<button onClick={nextStep}>Continue</button>
 				</div>
