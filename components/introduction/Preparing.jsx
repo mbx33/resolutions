@@ -1,12 +1,8 @@
 import React from 'react';
 import Router from 'next/router';
 
-const Preparing = () => {
+const Preparing = ({ user }) => {
 	const router = Router;
-
-	const handleClick = () => {
-		router.push('/last-year');
-	};
 
 	return (
 		<div>
@@ -21,7 +17,9 @@ const Preparing = () => {
 			<p>Get yourself a drink (coffee, tea)</p>
 			<p>Let go of expectations</p>
 			<p>Begin when you’re ready.</p>
-			<button onClick={handleClick}>Ready to Start</button>
+			{!user && <button onClick={() => router.push('/signup')}>Register</button>}
+			{!user && <button onClick={() => router.push('/login')}>Login</button>}
+			{user && <button onClick={() => router.push('last-year')}>Continue</button>}
 		</div>
 	);
 };

@@ -52,7 +52,11 @@ export default function Home() {
 			</Head>
 			<Main>
 				<FormContainer>
-					{showNext ? <Introduction /> : <IntroForm onSubmit={onSubmit} />}
+					{showNext ? (
+						<Introduction user={user} />
+					) : (
+						<IntroForm onSubmit={onSubmit} />
+					)}
 
 					<div className="message">
 						<p className={error ? 'error' : 'success'}>{message}</p>
@@ -66,5 +70,3 @@ export default function Home() {
 const Main = styled.main`
 	background-color: hsl(0, 0%, 10%);
 `;
-
-//replicon/ F)_Q2m-=q#=#QRs

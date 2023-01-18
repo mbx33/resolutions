@@ -15,6 +15,7 @@ export function ResponseProvider({ children }) {
 	const supabase = useSupabaseClient();
 	const user = useUser();
 
+	// State for last year responses
 	const [userResponses, setUserResponses] = useState({
 		// ly_branch_one
 		list: '',
@@ -59,11 +60,76 @@ export function ResponseProvider({ children }) {
 		goodbye: '',
 	});
 
+	// State for new year responses
+	const [newYearResponses, setNewYearResponses] = useState({
+		// ny_branch_one
+		dreams: '',
+		family: '',
+		material: '',
+		friends: '',
+		intellectual: '',
+		financial: '',
+		workStudy: '',
+		vacationHobby: '',
+		healthSport: '',
+		emotional: '',
+		achievements: '',
+
+		// ny_branch_two
+		love: '',
+		letGo: '',
+		achieve: '',
+		support: '',
+		try: '',
+		sayNo: '',
+		comfort: '',
+		morning: '',
+		indulge: '',
+		visit: '',
+		relationships: '',
+		gifts: '',
+
+		// ny_branch_three
+		procrastinate: '',
+		energy: '',
+		bravest: '',
+		sayYes: '',
+		advise: '',
+		special: '',
+		nyWord: '',
+		secretWish: '',
+		signature: '',
+		date: '',
+	});
+
+	// handle change for last year responses
 	const handleChange = (e) => {
 		e.preventDefault();
 		const { name, value } = e.target;
 		setUserResponses({ ...userResponses, [name]: value });
 	};
+
+	// handle change for new year responses
+	const handleNyChange = (e) => {
+		e.preventDefault();
+		const { name, value } = e.target;
+		setNewYearResponses({ ...newYearResponses, [name]: value });
+	};
+
+	function uploadLastYear(e) {
+		e.preventDefault();
+		uploadBranchOne();
+		uploadBranchTwo();
+		uploadBranchThree();
+		uploadBranchFour();
+	}
+
+	function uploadNewYear(e) {
+		e.preventDefault();
+		uploadNyBranchOne();
+		uploadNyBranchTwo();
+		uploadNyBranchThree();
+	}
 
 	function uploadAll(e) {
 		e.preventDefault();
@@ -71,6 +137,9 @@ export function ResponseProvider({ children }) {
 		uploadBranchTwo();
 		uploadBranchThree();
 		uploadBranchFour();
+		uploadNyBranchOne();
+		uploadNyBranchTwo();
+		uploadNyBranchThree();
 	}
 
 	//upload user responses to database
@@ -151,10 +220,78 @@ export function ResponseProvider({ children }) {
 		console.log(error);
 	}
 
+	//upload user New Year responses to database
+	async function uploadNyBranchOne() {
+		const { data: response, error } = await supabase.from('ny_branch_one').insert([
+			{
+				id: user.id,
+				dreams: newYearResponses.dreams,
+				family: newYearResponses.family,
+				material: newYearResponses.material,
+				friends: newYearResponses.friends,
+				intellectual: newYearResponses.intellectual,
+				financial: newYearResponses.financial,
+				work_study: newYearResponses.workStudy,
+				vacation_hobby: newYearResponses.vacationHobby,
+				health_sport: newYearResponses.healthSport,
+				emotional: newYearResponses.emotional,
+				achievements: newYearResponses.achievements,
+			},
+		]);
+		console.log(response);
+		console.log(error);
+	}
+
+	async function uploadNyBranchTwo() {
+		const { data: response, error } = await supabase.from('ny_branch_two').insert([
+			{
+				id: user.id,
+				love: newYearResponses.love,
+				let_go: newYearResponses.letGo,
+				achieve: newYearResponses.achieve,
+				support: newYearResponses.support,
+				try: newYearResponses.try,
+				say_no: newYearResponses.sayNo,
+				comfort: newYearResponses.comfort,
+				morning: newYearResponses.morning,
+				indulge: newYearResponses.indulge,
+				visit: newYearResponses.visit,
+				relationships: newYearResponses.relationships,
+				gifts: newYearResponses.gifts,
+			},
+		]);
+		console.log(response);
+		console.log(error);
+	}
+
+	async function uploadNyBranchThree() {
+		const { data: response, error } = await supabase.from('ny_branch_three').insert([
+			{
+				id: user.id,
+				procrastinate: newYearResponses.procrastinate,
+				energy: newYearResponses.energy,
+				bravest: newYearResponses.bravest,
+				say_yes: newYearResponses.sayYes,
+				advise: newYearResponses.advise,
+				special: newYearResponses.special,
+				ny_word: newYearResponses.nyWord,
+				secret_wish: newYearResponses.secretWish,
+				signature: newYearResponses.signature,
+				date: newYearResponses.date,
+			},
+		]);
+		console.log(response);
+		console.log(error);
+	}
+
 	const value = {
 		userResponses,
+		newYearResponses,
+		handleNyChange,
 		handleChange,
 		uploadAll,
+		uploadLastYear,
+		uploadNewYear,
 	};
 
 	return <ResponseContext.Provider value={value}>{children}</ResponseContext.Provider>;

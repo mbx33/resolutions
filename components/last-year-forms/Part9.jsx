@@ -3,7 +3,7 @@ import React from 'react';
 // Styles
 import { Form } from '../../styles/styled_components/form';
 
-const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveAll }) => {
+const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }) => {
 	return (
 		<div>
 			<Form>
@@ -59,7 +59,7 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveAll }) => 
 				<div className="button-group">
 					<button onClick={prevForm}>Back</button>
 
-					<button onClick={saveAll}>Save</button>
+					<button onClick={saveLastYear}>Save</button>
 
 					<button onClick={nextStep}>Continue</button>
 				</div>

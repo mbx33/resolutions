@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import Preparing from './Preparing';
 
-const Introduction = () => {
+const Introduction = ({ user }) => {
 	const [showNext, setShowNext] = useState(false);
 
 	const handleClick = () => {
@@ -14,7 +14,7 @@ const Introduction = () => {
 	};
 
 	if (showNext) {
-		return <Preparing onClick={handleClick} />;
+		return <Preparing user={user} onClick={handleClick} />;
 	}
 
 	return (
