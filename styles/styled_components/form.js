@@ -35,6 +35,20 @@ export const Form = styled.form`
 	background-color: #f5ff;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
+	fieldset {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		width: 100%;
+		height: 100%;
+		padding: 1rem;
+		border-radius: 10px;
+		background-color: #f5ff;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	}
+
 	label {
 		font-size: 1.2rem;
 		color: #000;

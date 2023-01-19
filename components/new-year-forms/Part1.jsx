@@ -12,15 +12,15 @@ const Part1 = ({ handleChange, newYearResponses, nextForm }) => {
 				not be afraid to dream
 			</p>
 			<Form>
-				<label htmlFor="list">Enter your answers here</label>
+				<label htmlFor="dreams">Enter your answers here</label>
 				<textarea
 					onChange={handleChange}
 					value={newYearResponses.dreams}
 					rows="20"
 					cols="100"
 					type="text"
-					name="list"
-					id="list"
+					name="dreams"
+					id="dreams"
 				/>
 				<div className="button-group">
 					{/* <button onClick={nextForm}>Start Over</button> */}
