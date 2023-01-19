@@ -6,10 +6,10 @@ import { Form } from '../../styles/styled_components/form';
 const Part2 = ({ handleChange, newYearResponses, nextStep, prevForm }) => {
 	return (
 		<main>
-			<h1>This is the new Year stuff</h1>
+			<h1>This is what my next year will be</h1>
 			<p>
-				Write your most important things that transpired from last year. What
-				moments stood out the most and meant something to you?
+				What will be the most important for you in the listed areas in the new
+				Year? What events will be the most significant? Describe them briefly
 			</p>
 			<Form>
 				<label htmlFor="family">Family & Personal Life</label>

@@ -5,10 +5,11 @@ import { Form } from '../../styles/styled_components/form';
 const Part1 = ({ handleChange, newYearResponses, nextForm }) => {
 	return (
 		<div>
-			<h1>Your dreams for the upcoming Year!!</h1>
+			<h1>Dream Big!</h1>
 			<p>
-				Look at your past calander, week to week. If you see an important event,
-				meeting with freinds, or family, or important job, write it here.
+				How does the coming year look? What would be your ideal development? Why
+				is this year going to be great? Write and let go of expectations and do
+				not be afraid to dream
 			</p>
 			<Form>
 				<label htmlFor="list">Enter your answers here</label>

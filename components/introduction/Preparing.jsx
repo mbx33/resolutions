@@ -19,7 +19,7 @@ const Preparing = ({ user }) => {
 			<p>Begin when you’re ready.</p>
 			{!user && <button onClick={() => router.push('/signup')}>Register</button>}
 			{!user && <button onClick={() => router.push('/login')}>Login</button>}
-			{user && <button onClick={() => router.push('last-year')}>Continue</button>}
+			{user && <button onClick={() => router.push('last-year')}>Begin</button>}
 		</div>
 	);
 };

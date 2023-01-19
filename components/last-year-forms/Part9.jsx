@@ -1,9 +1,12 @@
 import React from 'react';
+import Router from 'next/router';
 
 // Styles
 import { Form } from '../../styles/styled_components/form';
 
 const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }) => {
+	const router = Router;
+
 	return (
 		<div>
 			<Form>
@@ -60,14 +63,19 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }
 					<button onClick={prevForm}>Back</button>
 
 					<button onClick={saveLastYear}>Save</button>
-
-					<button onClick={nextStep}>Continue</button>
 				</div>
 			</Form>
 			<div className="summary">
 				<h2>You summed up the last Year.</h2>
 				<p>You just finished the first part.</p>
 				<p>Take a deep breath Take a break</p>
+				<button
+					onClick={() => {
+						router.push('/new-year');
+					}}
+				>
+					Continue to Next Year
+				</button>
 			</div>
 		</div>
 	);

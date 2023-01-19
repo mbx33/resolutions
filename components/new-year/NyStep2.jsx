@@ -12,16 +12,17 @@ const NyStep2 = ({ currentPart, nextStep, prevStep, nextForm, prevForm }) => {
 		<div>
 			{currentPart === 3 && (
 				<Part3
-					newYearResponses={newYearResponses}
 					handleChange={handleNyChange}
+					newYearResponses={newYearResponses}
+					prevStep={prevStep}
 					nextForm={nextForm}
 				/>
 			)}
 			{currentPart === 4 && (
 				<Part4
-					prevForm={prevForm}
-					newYearResponses={newYearResponses}
 					handleChange={handleNyChange}
+					newYearResponses={newYearResponses}
+					prevForm={prevForm}
 					nextStep={nextStep}
 				/>
 			)}

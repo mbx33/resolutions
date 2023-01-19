@@ -32,6 +32,8 @@ const NyStep3 = ({ currentPart, prevStep, prevForm, nextForm }) => {
 					prevForm={prevForm}
 					newYearResponses={newYearResponses}
 					handleChange={handleNyChange}
+					uploadNewYear={uploadNewYear}
+					uploadAll={uploadAll}
 				/>
 			)}
 		</div>
