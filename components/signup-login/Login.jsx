@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
+import { Button } from '../../styles/styled_components/utils';
 
 const Login = ({ supabase, session, timeOut }) => {
 	const [email, setEmail] = useState('');
@@ -31,7 +32,7 @@ const Login = ({ supabase, session, timeOut }) => {
 			setLoading(false);
 			setMessage('Logged in');
 			//redirect to home page
-			router.push('/');
+			router.push('/dashboard');
 		}
 	};
 
@@ -66,9 +67,9 @@ const Login = ({ supabase, session, timeOut }) => {
 								onChange={(e) => setPassword(e.target.value)}
 							/>
 						</div>
-						<button type="submit" disabled={loading}>
+						<Button type="submit" disabled={loading}>
 							{loading ? 'Loading...' : 'Login'}
-						</button>
+						</Button>
 					</Form>
 					<p style={{ margin: '1.3rem 0' }}>
 						No Account? <Link href="/signup">Signup</Link>

@@ -284,7 +284,46 @@ export function ResponseProvider({ children }) {
 		console.log(error);
 	}
 
+	//if user is logged in, fetch all responses from the database
+	useEffect(() => {
+		async function fetchAllResponses() {
+			const { data: response, error } = await supabase
+				.from('ly_branch_one')
+				.select('*')
+				.eq('id', user.id);
+			const { data: responseTwo, errorTwo } = await supabase
+				.from('ly_branch_two')
+				.select('*')
+				.eq('id', user.id);
+			const { data: responseThree, errorThree } = await supabase
+				.from('ly_branch_three')
+				.select('*')
+				.eq('id', user.id);
+			const { data: responseFour, errorFour } = await supabase
+				.from('ly_branch_four')
+				.select('*')
+				.eq('id', user.id);
+			const { data: responseNyOne, errorNyOne } = await supabase
+				.from('ny_branch_one')
+				.select('*')
+				.eq('id', user.id);
+			const { data: responseNyTwo, errorNyTwo } = await supabase
+				.from('ny_branch_two')
+				.select('*')
+				.eq('id', user.id);
+			const { data: responseNyThree, errorNyThree } = await supabase
+				.from('ny_branch_three')
+				.select('*')
+				.eq('id', user.id);
+		}
+
+		if (user) {
+			fetchAllResponses();
+		}
+	}, [user, supabase]);
+
 	const value = {
+		user,
 		userResponses,
 		newYearResponses,
 		handleNyChange,

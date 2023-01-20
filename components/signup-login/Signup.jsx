@@ -4,6 +4,7 @@ import Head from 'next/head';
 
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
+import { Button } from '../../styles/styled_components/utils';
 
 const Signup = ({ supabase, timeOut }) => {
 	const [email, setEmail] = useState('');
@@ -116,9 +117,9 @@ const Signup = ({ supabase, timeOut }) => {
 								onChange={(e) => setPasswordConfirm(e.target.value)}
 							/>
 						</div>
-						<button type="submit" disabled={loading}>
+						<Button type="submit" disabled={loading}>
 							{loading ? 'Loading...' : 'Signup'}
-						</button>
+						</Button>
 					</Form>
 					<p>
 						Already have an account? <Link href="/login">Login</Link>

@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+// * Styles for main container ////////////////
+export const Main = styled.main`
+	background-color: hsl(0, 0%, 10%);
+`;
+/////////////////////////////////////////////////////////////////////////
+
 // * Styles for the general button ////////////////
 export const Button = styled.button`
 	background-color: ${(props) => (props.primary ? 'hsl(300, 100%, 37%)' : 'white')};

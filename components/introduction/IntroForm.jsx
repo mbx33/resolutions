@@ -1,13 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion as m } from 'framer-motion';
 
 import { Button } from '../../styles/styled_components/utils';
 
 const IntroForm = ({ onSubmit }) => {
 	return (
 		<Container>
-			<h1>This is my new Resolutions app</h1>
-			<p>Start your New Year right!</p>
+			<m.h1
+				initial={{ x: -200, opacity: 0 }}
+				animate={{ x: 0, opacity: 1 }}
+				transition={{ duration: 0.5, ease: 'easeInOut' }}
+			>
+				This is my new Resolutions app
+			</m.h1>
+			<m.p
+				initial={{ y: -200, opacity: 0 }}
+				animate={{ y: 0, opacity: 1 }}
+				transition={{ duration: 0.5, ease: 'easeInOut' }}
+			>
+				Start your New Year right!
+			</m.p>
 
 			<form onSubmit={onSubmit}>
 				<label htmlFor="name">Accect Privacy Policy</label>

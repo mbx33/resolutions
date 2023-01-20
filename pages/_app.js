@@ -4,6 +4,8 @@ import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { ResponseProvider } from '../contexts/ResponseContext';
 
+// import { AnimatePresence } from 'framer-motion';
+
 import Navbar from '../components/navigation/Navbar';
 
 export default function App({ Component, pageProps }) {

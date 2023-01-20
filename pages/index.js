@@ -9,6 +9,7 @@ import Introduction from '../components/introduction/Introduction';
 
 // Styles
 import { FormContainer } from '../styles/styled_components/form';
+import { Main } from '../styles/styled_components/utils';
 
 function timeOut(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
@@ -39,7 +40,8 @@ export default function Home() {
 		setShowNext(true);
 	};
 
-	console.log(user);
+	// comment back in if you want to see the user object
+	// console.log(user);
 
 	return (
 		<>
@@ -65,7 +67,3 @@ export default function Home() {
 		</>
 	);
 }
-
-const Main = styled.main`
-	background-color: hsl(0, 0%, 10%);
-`;

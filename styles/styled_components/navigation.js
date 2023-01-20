@@ -21,7 +21,7 @@ export const NavContainer = styled.nav`
 		font-size: 1.8rem;
 	}
 
-	.nav ul li a {
+	.nav ul li {
 		text-decoration: none;
 		color: black;
 
@@ -43,7 +43,7 @@ export const NavContainer = styled.nav`
 
 	button {
 		color: hsl(300, 100%, 37%);
-		background-color: hsl(300, 100%, 87%);
+		background-color: hsl(300, 100%, 17%);
 		border: none;
 		padding: 0.5rem 0.5rem;
 		border-radius: 0.5rem;
@@ -52,8 +52,8 @@ export const NavContainer = styled.nav`
 		cursor: pointer;
 
 		&:hover {
-			background-color: hsl(300, 100%, 17%);
-			color: hsl(300, 100%, 87%);
+			background-color: hsl(300, 100%, 87%);
+			color: hsl(300, 100%, 37%);
 		}
 	}
 `;

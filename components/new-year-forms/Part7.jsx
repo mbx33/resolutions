@@ -1,9 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 
 import { Form } from '../../styles/styled_components/form';
 import { Button } from '../../styles/styled_components/utils';
 
-const Part7 = ({ handleChange, newYearResponses, prevForm, uploadAll }) => {
+const Part7 = ({ handleChange, newYearResponses, prevForm, uploadNewYear }) => {
 	return (
 		<main>
 			<h1>I believe that nothing is impossible this year!</h1>
@@ -35,8 +35,7 @@ const Part7 = ({ handleChange, newYearResponses, prevForm, uploadAll }) => {
 
 				<div className="button-group">
 					<Button onClick={prevForm}>Back</Button>
-					<Button onClick={uploadAll}>Save</Button>
-					<p>* Save all of your responses</p>
+					<Button onClick={uploadNewYear}>Save</Button>
 				</div>
 			</Form>
 		</main>
