@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Form } from '../../styles/styled_components/form';
+import { Button } from '../../styles/styled_components/utils';
 
 const Part7 = ({ handleChange, newYearResponses, prevForm, uploadAll }) => {
 	return (
@@ -33,8 +34,8 @@ const Part7 = ({ handleChange, newYearResponses, prevForm, uploadAll }) => {
 				</fieldset>
 
 				<div className="button-group">
-					<button onClick={prevForm}>Back</button>
-					<button onClick={uploadAll}>Save</button>
+					<Button onClick={prevForm}>Back</Button>
+					<Button onClick={uploadAll}>Save</Button>
 					<p>* Save all of your responses</p>
 				</div>
 			</Form>

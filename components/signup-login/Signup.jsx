@@ -5,7 +5,7 @@ import Head from 'next/head';
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
 
-const Signup = ({ supabase }) => {
+const Signup = ({ supabase, timeOut }) => {
 	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
@@ -15,9 +15,9 @@ const Signup = ({ supabase }) => {
 	const [error, setError] = useState('');
 	const [showPassword, setShowPassword] = useState(false);
 
-	 const togglePassword = () => {
-			setShowPassword(!showPassword);
-		};
+	const togglePassword = () => {
+		setShowPassword(!showPassword);
+	};
 
 	const resetForm = () => {
 		setEmail('');
@@ -33,13 +33,15 @@ const Signup = ({ supabase }) => {
 		setLoading(true);
 		setError('');
 		if (password !== passwordConfirm) {
-			setError('Passwords do not match');
 			setLoading(false);
+			setError('Passwords do not match');
+			timeOut(3000).then(() => setError(''));
 			return;
 		}
 		if (!email || !username || !password || !passwordConfirm) {
-			setError('Please fill out all fields');
 			setLoading(false);
+			setError('Please fill out all fields');
+			timeOut(3000).then(() => setError(''));
 			return;
 		}
 		const { user, error } = await supabase.auth.signUp({
@@ -56,6 +58,7 @@ const Signup = ({ supabase }) => {
 			console.log(error);
 			setLoading(false);
 			setError(error.message);
+			timeOut(3000).then(() => setError(''));
 		} else {
 			resetForm();
 			setAlert('Check your email for the confirmation link');

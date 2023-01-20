@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Button } from '../../styles/styled_components/utils';
+
 const IntroForm = ({ onSubmit }) => {
 	return (
 		<Container>
 			<h1>This is my new Resolutions app</h1>
 			<p>Start your New Year right!</p>
+
 			<form onSubmit={onSubmit}>
 				<label htmlFor="name">Accect Privacy Policy</label>
 				<input type="checkbox" />
-				<button>Start Now</button>
+				<Button>Continue</Button>
 			</form>
 		</Container>
 	);
@@ -25,7 +28,7 @@ const Container = styled.div`
 	gap: 3rem;
 	color: white;
 	padding: 2rem 3.5rem;
-	border-radius: 0.5rem;
+	border-radius: 0 0 10px 10px;
 
 	h1 {
 		font-size: 2.2rem;
@@ -33,21 +36,6 @@ const Container = styled.div`
 
 	p {
 		font-size: 1.5rem;
-	}
-
-	button {
-		background-color: hsl(0, 0%, 20%);
-		color: white;
-		padding: 0.5rem 1rem;
-		border-radius: 0.5rem;
-
-		&:hover {
-			background-color: hsl(0, 0%, 30%);
-
-			transition: background-color 0.2s ease-in-out;
-
-			cursor: pointer;
-		}
 	}
 
 	.message {

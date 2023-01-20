@@ -22,7 +22,3 @@ export default function App({ Component, pageProps }) {
 		</SessionContextProvider>
 	);
 }
-
-// export default function App({ Component, pageProps }) {
-// 	return <Component {...pageProps} />;
-// }

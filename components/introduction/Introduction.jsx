@@ -1,12 +1,13 @@
 import { useState } from 'react';
 
-import styled from 'styled-components';
-
 // components
+
+// Styles
+import { Button } from '../../styles/styled_components/utils';
 
 import Preparing from './Preparing';
 
-const Introduction = ({ user }) => {
+const Introduction = ({ user, timeOut }) => {
 	const [showNext, setShowNext] = useState(false);
 
 	const handleClick = () => {
@@ -40,7 +41,9 @@ const Introduction = ({ user }) => {
 				<li>calendar for the previous year</li>
 				<li>Be sincere and open</li>
 			</ul>
-			<button onClick={handleClick}>Continue</button>
+			<Button primary={false} onClick={handleClick}>
+				Continue
+			</Button>
 		</div>
 	);
 };

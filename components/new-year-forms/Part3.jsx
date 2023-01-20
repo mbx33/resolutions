@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Form } from '../../styles/styled_components/form';
+import { Button } from '../../styles/styled_components/utils';
 
 const Part3 = ({ handleChange, newYearResponses, nextForm, prevStep }) => {
 	return (
@@ -61,8 +62,8 @@ const Part3 = ({ handleChange, newYearResponses, nextForm, prevStep }) => {
 					id="sayNo"
 				/>
 				<div className="button-group">
-					<button onClick={prevStep}>Back</button>
-					<button onClick={nextForm}>Continue</button>
+					<Button onClick={prevStep}>Back</Button>
+					<Button onClick={nextForm}>Continue</Button>
 				</div>
 			</Form>
 		</main>

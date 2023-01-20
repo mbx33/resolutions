@@ -1,6 +1,8 @@
 import React from 'react';
 import Router from 'next/router';
 
+import { Button } from '../../styles/styled_components/utils';
+
 const Preparing = ({ user }) => {
 	const router = Router;
 
@@ -17,9 +19,13 @@ const Preparing = ({ user }) => {
 			<p>Get yourself a drink (coffee, tea)</p>
 			<p>Let go of expectations</p>
 			<p>Begin when you’re ready.</p>
-			{!user && <button onClick={() => router.push('/signup')}>Register</button>}
-			{!user && <button onClick={() => router.push('/login')}>Login</button>}
-			{user && <button onClick={() => router.push('last-year')}>Begin</button>}
+			{!user && <Button onClick={() => router.push('/signup')}>Register</Button>}
+			{!user && <Button onClick={() => router.push('/login')}>Login</Button>}
+			{user && (
+				<Button primary={true} onClick={() => router.push('last-year')}>
+					Begin
+				</Button>
+			)}
 		</div>
 	);
 };

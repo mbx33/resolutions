@@ -3,6 +3,7 @@ import Router from 'next/router';
 
 // Styles
 import { Form } from '../../styles/styled_components/form';
+import { Button } from '../../styles/styled_components/utils';
 
 const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }) => {
 	const router = Router;
@@ -60,22 +61,22 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }
 					/>
 				</fieldset>
 				<div className="button-group">
-					<button onClick={prevForm}>Back</button>
+					<Button onClick={prevForm}>Back</Button>
 
-					<button onClick={saveLastYear}>Save</button>
+					<Button onClick={saveLastYear}>Save</Button>
 				</div>
 			</Form>
 			<div className="summary">
 				<h2>You summed up the last Year.</h2>
 				<p>You just finished the first part.</p>
 				<p>Take a deep breath Take a break</p>
-				<button
+				<Button
 					onClick={() => {
 						router.push('/new-year');
 					}}
 				>
 					Continue to Next Year
-				</button>
+				</Button>
 			</div>
 		</div>
 	);

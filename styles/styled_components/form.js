@@ -8,7 +8,7 @@ export const FormContainer = styled.div`
 	width: 100%;
 	height: 100%;
 	background-color: #f5ff;
-	border-radius: 10px;
+	border-radius: 0 0 10px 10px;
 	padding: 20px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
@@ -80,7 +80,7 @@ export const Form = styled.form`
 		width: 100%;
 	}
 
-	button {
+	/* button {
 		width: 25%;
 		border-radius: 5px;
 		border: 1px solid #000;
@@ -99,5 +99,5 @@ export const Form = styled.form`
 		&:active {
 			background-color: hsl(300, 100%, 37%);
 		}
-	}
+	} */
 `;

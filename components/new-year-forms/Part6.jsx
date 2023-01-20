@@ -1,9 +1,7 @@
 import React from 'react';
 
 import { Form } from '../../styles/styled_components/form';
-
-// 				signature: newYearResponses.signature,
-// 				date: newYearResponses.date,
+import { Button } from '../../styles/styled_components/utils';
 
 const Part6 = ({ handleChange, newYearResponses, prevForm, nextForm }) => {
 	return (
@@ -48,8 +46,8 @@ const Part6 = ({ handleChange, newYearResponses, prevForm, nextForm }) => {
 				<h5>You have finished planning your Year!</h5>
 
 				<div className="button-group">
-					<button onClick={prevForm}>Back</button>
-					<button onClick={nextForm}>Continue</button>
+					<Button onClick={prevForm}>Back</Button>
+					<Button onClick={nextForm}>Continue</Button>
 				</div>
 			</Form>
 		</main>

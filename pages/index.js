@@ -6,7 +6,6 @@ import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-r
 // Components
 import IntroForm from '../components/introduction/IntroForm';
 import Introduction from '../components/introduction/Introduction';
-import Navbar from '../components/navigation/Navbar';
 
 // Styles
 import { FormContainer } from '../styles/styled_components/form';

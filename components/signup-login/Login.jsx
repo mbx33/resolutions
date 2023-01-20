@@ -6,7 +6,7 @@ import { useState } from 'react';
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
 
-const Login = ({ supabase, session }) => {
+const Login = ({ supabase, session, timeOut }) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -24,7 +24,9 @@ const Login = ({ supabase, session }) => {
 
 		if (error) {
 			console.log(error);
+			setLoading(false);
 			setError(error.message);
+			timeOut(3000).then(() => setError(''));
 		} else {
 			setLoading(false);
 			setMessage('Logged in');
