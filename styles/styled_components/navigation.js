@@ -40,4 +40,20 @@ export const NavContainer = styled.nav`
 		font-size: 2.4rem;
 		font-weight: 700;
 	}
+
+	button {
+		color: hsl(300, 100%, 37%);
+		background-color: hsl(300, 100%, 87%);
+		border: none;
+		padding: 0.5rem 0.5rem;
+		border-radius: 0.5rem;
+		font-size: 1.2rem;
+		font-weight: 700;
+		cursor: pointer;
+
+		&:hover {
+			background-color: hsl(300, 100%, 17%);
+			color: hsl(300, 100%, 87%);
+		}
+	}
 `;

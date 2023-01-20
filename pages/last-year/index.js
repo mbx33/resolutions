@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
 // Components
 import Step1 from '../../components/last-year/Step1';
@@ -14,6 +15,8 @@ import { FormContainer } from '../../styles/styled_components/form';
 const LastYearForms = () => {
 	const [step, setStep] = useState(1);
 	const [currentPart, setCurrentPart] = useState(1);
+	const user = useUser();
+	const session = useSession();
 
 	const changeNextStep = (e) => {
 		e.preventDefault();
@@ -52,6 +55,14 @@ const LastYearForms = () => {
 		}
 		setCurrentPart((prevPart) => prevPart - 1);
 	};
+
+	if (!user || !session) {
+		return (
+			<div>
+				<h1>Not logged in</h1>
+			</div>
+		);
+	}
 
 	return (
 		<FormContainer>

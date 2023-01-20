@@ -5,6 +5,7 @@ import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
 // Styles
 import { NavContainer } from '../../styles/styled_components/navigation';
+import { Button } from '../../styles/styled_components/utils';
 
 const Navbar = () => {
 	const supabase = useSupabaseClient();
