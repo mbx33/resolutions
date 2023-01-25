@@ -7,7 +7,7 @@ export const NavContainer = styled.nav`
 	justify-content: space-between;
 	align-items: center;
 	padding: 1rem 2rem;
-	background-color: hsl(300, 100%, 37%);
+	background-color: var(--color-200);
 
 	.nav ul {
 		display: flex;
@@ -21,16 +21,40 @@ export const NavContainer = styled.nav`
 		font-size: 1.8rem;
 	}
 
-	.nav ul li {
+	.nav a {
 		text-decoration: none;
-		color: black;
+	}
+
+	.nav ul li::before {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--color-400);
+		transform-origin: center;
+		transform: scaleX(0);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	.nav ul li {
+		position: relative;
+		text-decoration: none;
+		color: var(--color-dark);
 
 		&:hover {
-			color: hsl(300, 100%, 87%);
+			color: var(--color-400);
+
+			&::before {
+				transform: scaleX(1);
+				transition: transform 0.3s ease-in-out;
+			}
 		}
 
 		&:active {
-			color: hsl(300, 100%, 87%);
+			color: var(--color-400);
 			transition: all 0.2s ease-in-out;
 			transform: scale(0.9);
 		}
@@ -42,8 +66,8 @@ export const NavContainer = styled.nav`
 	}
 
 	button {
-		color: hsl(300, 100%, 37%);
-		background-color: hsl(300, 100%, 17%);
+		color: var(--color-dark);
+		background-color: var(--color-400);
 		border: none;
 		padding: 0.5rem 0.5rem;
 		border-radius: 0.5rem;
@@ -52,8 +76,8 @@ export const NavContainer = styled.nav`
 		cursor: pointer;
 
 		&:hover {
-			background-color: hsl(300, 100%, 87%);
-			color: hsl(300, 100%, 37%);
+			background-color: var(--color-900);
+			color: var(--color-400);
 		}
 	}
 `;

@@ -7,7 +7,7 @@ import { Button } from '../../styles/styled_components/utils';
 
 import Preparing from './Preparing';
 
-const Introduction = ({ user, timeOut }) => {
+const Introduction = ({ user }) => {
 	const [showNext, setShowNext] = useState(false);
 
 	const handleClick = () => {

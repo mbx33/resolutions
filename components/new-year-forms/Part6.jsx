@@ -46,8 +46,12 @@ const Part6 = ({ handleChange, newYearResponses, prevForm, nextForm }) => {
 				<h5>You have finished planning your Year!</h5>
 
 				<div className="button-group">
-					<Button onClick={prevForm}>Back</Button>
-					<Button onClick={nextForm}>Continue</Button>
+					<Button primary onClick={prevForm}>
+						Back
+					</Button>
+					<Button primary onClick={nextForm}>
+						Continue
+					</Button>
 				</div>
 			</Form>
 		</main>

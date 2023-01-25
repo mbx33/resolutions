@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import styled from 'styled-components';
 import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
 // Components

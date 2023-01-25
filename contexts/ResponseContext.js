@@ -1,5 +1,5 @@
 // create a new context to hold the responses from the user inputs
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useCallback } from 'react';
 import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
 const ResponseContext = React.createContext();
@@ -126,17 +126,6 @@ export function ResponseProvider({ children }) {
 
 	function uploadNewYear(e) {
 		e.preventDefault();
-		uploadNyBranchOne();
-		uploadNyBranchTwo();
-		uploadNyBranchThree();
-	}
-
-	function uploadAll(e) {
-		e.preventDefault();
-		uploadBranchOne();
-		uploadBranchTwo();
-		uploadBranchThree();
-		uploadBranchFour();
 		uploadNyBranchOne();
 		uploadNyBranchTwo();
 		uploadNyBranchThree();
@@ -285,7 +274,7 @@ export function ResponseProvider({ children }) {
 	}
 
 	//if user is logged in, fetch all responses from the database
-	useEffect(() => {
+	const getAllResponses = useCallback(async () => {
 		async function fetchAllResponses() {
 			const { data: response, error } = await supabase
 				.from('ly_branch_one')
@@ -315,12 +304,34 @@ export function ResponseProvider({ children }) {
 				.from('ny_branch_three')
 				.select('*')
 				.eq('id', user.id);
-		}
 
+			setUserResponses((prevState) => ({
+				...prevState,
+				...response[0],
+				...responseTwo[0],
+				...responseThree[0],
+				...responseFour[0],
+			}));
+
+			setNewYearResponses((prevState) => ({
+				...prevState,
+				...responseNyOne[0],
+				...responseNyTwo[0],
+				...responseNyThree[0],
+			}));
+
+			console.log('Fetched all responses');
+		}
 		if (user) {
 			fetchAllResponses();
 		}
 	}, [user, supabase]);
+
+	useEffect(() => {
+		if (user) {
+			getAllResponses();
+		}
+	}, [user, getAllResponses]);
 
 	const value = {
 		user,
@@ -328,9 +339,9 @@ export function ResponseProvider({ children }) {
 		newYearResponses,
 		handleNyChange,
 		handleChange,
-		uploadAll,
 		uploadLastYear,
 		uploadNewYear,
+		getAllResponses,
 	};
 
 	return <ResponseContext.Provider value={value}>{children}</ResponseContext.Provider>;

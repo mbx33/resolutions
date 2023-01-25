@@ -23,9 +23,13 @@ const Part7 = ({ handleChange, userResponses, prevStep, nextForm }) => {
 				/>
 
 				<div className="button-group">
-					<Button onClick={prevStep}>Back</Button>
+					<Button primary onClick={prevStep}>
+						Back
+					</Button>
 
-					<Button onClick={nextForm}>Continue</Button>
+					<Button primary onClick={nextForm}>
+						Continue
+					</Button>
 				</div>
 			</Form>
 			<p>

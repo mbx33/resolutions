@@ -34,8 +34,12 @@ const Part7 = ({ handleChange, newYearResponses, prevForm, uploadNewYear }) => {
 				</fieldset>
 
 				<div className="button-group">
-					<Button onClick={prevForm}>Back</Button>
-					<Button onClick={uploadNewYear}>Save</Button>
+					<Button primary onClick={prevForm}>
+						Back
+					</Button>
+					<Button primary onClick={uploadNewYear}>
+						Save
+					</Button>
 				</div>
 			</Form>
 		</main>

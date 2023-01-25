@@ -61,9 +61,13 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }
 					/>
 				</fieldset>
 				<div className="button-group">
-					<Button onClick={prevForm}>Back</Button>
+					<Button primary onClick={prevForm}>
+						Back
+					</Button>
 
-					<Button onClick={saveLastYear}>Save</Button>
+					<Button primary onClick={saveLastYear}>
+						Save
+					</Button>
 				</div>
 			</Form>
 			<div className="summary">
@@ -71,6 +75,7 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }
 				<p>You just finished the first part.</p>
 				<p>Take a deep breath Take a break</p>
 				<Button
+					primary
 					onClick={() => {
 						router.push('/new-year');
 					}}

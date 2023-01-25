@@ -7,7 +7,7 @@ export const FormContainer = styled.div`
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	background-color: #f5ff;
+	background-color: var(--color-600);
 	border-radius: 0 0 10px 10px;
 	padding: 20px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -32,7 +32,7 @@ export const Form = styled.form`
 	height: 100%;
 	padding: 1rem;
 	border-radius: 10px;
-	background-color: #f5ff;
+	background-color: var(--color-200);
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
 	fieldset {
@@ -45,7 +45,7 @@ export const Form = styled.form`
 		height: 100%;
 		padding: 1rem;
 		border-radius: 10px;
-		background-color: #f5ff;
+		background-color: var(--color-200);
 		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 	}
 

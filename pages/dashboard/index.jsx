@@ -1,6 +1,9 @@
 import React from 'react';
 import { useResponse } from '../../contexts/ResponseContext';
 
+// Styles
+import { Main } from '../../styles/styled_components/utils';
+
 const DashboardPage = () => {
 	const { user } = useResponse();
 
@@ -11,9 +14,9 @@ const DashboardPage = () => {
 	// console.log(user);
 
 	return (
-		<div>
+		<Main>
 			<div>Thanks for being here {username}!</div>
-		</div>
+		</Main>
 	);
 };
 

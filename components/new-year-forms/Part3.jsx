@@ -62,8 +62,12 @@ const Part3 = ({ handleChange, newYearResponses, nextForm, prevStep }) => {
 					id="sayNo"
 				/>
 				<div className="button-group">
-					<Button onClick={prevStep}>Back</Button>
-					<Button onClick={nextForm}>Continue</Button>
+					<Button primary onClick={prevStep}>
+						Back
+					</Button>
+					<Button primary onClick={nextForm}>
+						Continue
+					</Button>
 				</div>
 			</Form>
 		</main>

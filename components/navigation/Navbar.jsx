@@ -30,22 +30,35 @@ const Navbar = () => {
 			{user && <p style={{ fontSize: '1rem' }}>Welcome {username}</p>}
 			<div className="nav">
 				<ul>
-					<Link href="/">
-						<li>Home</li>
-					</Link>
 					{session ? (
 						<>
+							<Link href="/last-year">
+								<li>Last</li>
+							</Link>
+							<Link href="/new-year">
+								<li>New </li>
+							</Link>
 							<Link href="/dashboard">
 								<li>Dashboard</li>
 							</Link>
-							<li onClick={handleLogout} style={{ cursor: 'pointer' }}>
+							{/* <li onClick={handleLogout} style={{ cursor: 'pointer' }}>
 								<button>Logout</button>
-							</li>
+							</li> */}
 						</>
 					) : (
-						<Link href="/login">
-							<li>Login</li>
-						</Link>
+						<>
+							<Link href="/">
+								<li>Home</li>
+							</Link>
+							<Link href="/login">
+								<li>Login</li>
+							</Link>
+						</>
+					)}
+					{user && (
+						<div className="btn-group">
+							<button onClick={handleLogout}>Logout</button>
+						</div>
 					)}
 				</ul>
 			</div>
