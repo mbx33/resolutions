@@ -16,6 +16,9 @@ const DashboardPage = () => {
 	return (
 		<Main>
 			<div>Thanks for being here {username}!</div>
+
+			<p>Check out your plans for 2023</p>
+			{/* A link will go here to show the data from the database */}
 		</Main>
 	);
 };

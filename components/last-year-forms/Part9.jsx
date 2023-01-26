@@ -1,5 +1,6 @@
 import React from 'react';
 import Router from 'next/router';
+import { BsArrowUpSquare, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
 // Styles
 import { Form } from '../../styles/styled_components/form';
@@ -61,12 +62,12 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }
 					/>
 				</fieldset>
 				<div className="button-group">
-					<Button primary onClick={prevForm}>
-						Back
+					<Button back primary onClick={prevForm}>
+						back
 					</Button>
 
-					<Button primary onClick={saveLastYear}>
-						Save
+					<Button submit primary onClick={saveLastYear}>
+						save
 					</Button>
 				</div>
 			</Form>
@@ -75,6 +76,7 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }
 				<p>You just finished the first part.</p>
 				<p>Take a deep breath Take a break</p>
 				<Button
+					next
 					primary
 					onClick={() => {
 						router.push('/new-year');

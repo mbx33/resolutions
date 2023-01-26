@@ -65,10 +65,10 @@ const Part6 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 					id="learned"
 				/>
 				<div className="button-group">
-					<Button primary onClick={prevForm}>
+					<Button primary back onClick={prevForm}>
 						Back
 					</Button>
-					<Button primary onClick={nextStep}>
+					<Button primary next onClick={nextStep}>
 						Continue
 					</Button>
 				</div>

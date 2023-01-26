@@ -26,7 +26,7 @@ const Part1 = ({ handleChange, newYearResponses, nextForm }) => {
 				<div className="button-group">
 					{/* <button onClick={nextForm}>Start Over</button> */}
 
-					<Button primary onClick={nextForm}>
+					<Button next primary onClick={nextForm}>
 						Continue
 					</Button>
 				</div>

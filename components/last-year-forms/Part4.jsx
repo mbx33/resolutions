@@ -64,10 +64,10 @@ const Part4 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 					id="grateful"
 				/>
 				<div className="button-group">
-					<Button primary onClick={prevForm}>
+					<Button back primary onClick={prevForm}>
 						Back
 					</Button>
-					<Button primary onClick={nextStep}>
+					<Button next primary onClick={nextStep}>
 						Continue
 					</Button>
 				</div>
