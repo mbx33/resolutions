@@ -75,56 +75,56 @@ const Signup = ({ supabase, timeOut }) => {
 			</Head>
 			<main>
 				<FormContainer>
-					<h1>Signup</h1>
-					{alert && <p>{alert}</p>}
-					{error && <p>{error}</p>}
 					<h2>Please create an account to create your planner</h2>
 
 					<Form onSubmit={handleSubmit}>
-						<div>
-							<label htmlFor="email">Email</label>
-							<input
-								type="email"
-								id="email"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-							/>
+						<div className="form-container">
+							<div className="form-group">
+								<label htmlFor="email">Email</label>
+								<input
+									type="email"
+									id="email"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+								/>
+							</div>
+							<div className="form-group">
+								<label htmlFor="username">Username</label>
+								<input
+									type="text"
+									id="username"
+									value={username}
+									onChange={(e) => setUsername(e.target.value)}
+								/>
+							</div>
+							<div className="form-group">
+								<label htmlFor="password">Password</label>
+								<input
+									type="password"
+									id="password"
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
+								/>
+							</div>
+							<div className="form-group">
+								<label htmlFor="passwordConfirm">Confirm Password</label>
+								<input
+									type="password"
+									id="passwordConfirm"
+									value={passwordConfirm}
+									onChange={(e) => setPasswordConfirm(e.target.value)}
+								/>
+							</div>
+							<button className="account-btn" disabled={loading}>
+								{loading ? 'Loading...' : 'Signup'}
+							</button>
+							{alert && <p>{alert}</p>}
+							{error && <p>{error}</p>}
 						</div>
-						<div>
-							<label htmlFor="username">Username</label>
-							<input
-								type="text"
-								id="username"
-								value={username}
-								onChange={(e) => setUsername(e.target.value)}
-							/>
-						</div>
-						<div>
-							<label htmlFor="password">Password</label>
-							<input
-								type="password"
-								id="password"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
-							/>
-						</div>
-						<div>
-							<label htmlFor="passwordConfirm">Confirm Password</label>
-							<input
-								type="password"
-								id="passwordConfirm"
-								value={passwordConfirm}
-								onChange={(e) => setPasswordConfirm(e.target.value)}
-							/>
-						</div>
-						<Button type="submit" disabled={loading}>
-							{loading ? 'Loading...' : 'Signup'}
-						</Button>
 					</Form>
 					<p>
 						Already have an account? <Link href="/login">Login</Link>
 					</p>
-					{error && <p>{error}</p>}
 				</FormContainer>
 			</main>
 		</>

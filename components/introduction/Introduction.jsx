@@ -41,7 +41,7 @@ const Introduction = ({ user }) => {
 				<li>calendar for the previous year</li>
 				<li>Be sincere and open</li>
 			</ul>
-			<Button primary={false} onClick={handleClick}>
+			<Button next onClick={handleClick}>
 				Continue
 			</Button>
 		</div>

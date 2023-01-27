@@ -43,20 +43,20 @@ export const Button = ({ children, ...props }) => {
 // * Styles for the general button ////////////////
 export const ButtonContainer = styled.button`
 	background-color: ${(props) =>
-		props.primary ? 'var(--color-900)' : 'var(--color-400)'};
+		props.primary ? 'var(--color-600)' : 'var(--color-900)'};
 	color: ${(props) => (props.primary ? 'var(--color-light)' : 'var(--color-light)')};
-	font-size: 1em;
-	margin: 1em;
-	padding: 0.45em 1em;
+	font-size: 1.3rem;
 	border: ${(props) => (props.primary ? '2px solid var(--color-dark)' : 'none')};
 	border-radius: 3px;
+	border: none;
+	padding: 0.2rem 1rem;
 	text-transform: uppercase;
+	margin-top: 1rem;
 
 	&:hover {
 		background-color: ${(props) =>
-			props.primary ? 'var(--color-400)' : 'var(--color-900)'};
-		color: ${(props) => (props.primary ? 'var(--color-dark)' : 'var(--color-light)')};
-		border: ${(props) => (props.primary ? '2px solid var(--color-900)' : 'none')};
+			props.primary ? 'var(--color-900)' : 'var(--color-400)'};
+		color: ${(props) => (props.primary ? 'var(--color-light)' : 'var(--color-dark)')};
 		transition: all 0.2s ease-in-out;
 	}
 
@@ -81,7 +81,7 @@ export const ButtonContainer = styled.button`
 	}
 
 	span {
-		font-size: 1.5em;
+		font-size: 1.3em;
 		display: inline-block;
 	}
 `;

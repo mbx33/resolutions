@@ -14,23 +14,25 @@ const Part8 = ({ handleChange, userResponses, prevForm, nextForm }) => {
 				let it go.
 			</p>
 			<Form>
-				<textarea
-					onChange={handleChange}
-					value={userResponses.release}
-					rows="20"
-					cols="100"
-					type="text"
-					name="release"
-					id="release"
-				/>
-				<div className="button-group">
-					<Button back primary onClick={prevForm}>
-						Back
-					</Button>
+				<div className="form-container">
+					<textarea
+						onChange={handleChange}
+						value={userResponses.release}
+						rows="10"
+						cols="60"
+						type="text"
+						name="release"
+						id="release"
+					/>
+					<div className="button-group">
+						<Button back primary onClick={prevForm}>
+							Back
+						</Button>
 
-					<Button next primary onClick={nextForm}>
-						Continue
-					</Button>
+						<Button next primary onClick={nextForm}>
+							Continue
+						</Button>
+					</div>
 				</div>
 			</Form>
 		</div>

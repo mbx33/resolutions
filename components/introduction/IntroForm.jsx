@@ -25,7 +25,7 @@ const IntroForm = ({ onSubmit }) => {
 			<form onSubmit={onSubmit}>
 				<label htmlFor="name">Accect Privacy Policy</label>
 				<input type="checkbox" />
-				<Button>Continue</Button>
+				<button>Continue</button>
 			</form>
 		</Container>
 	);

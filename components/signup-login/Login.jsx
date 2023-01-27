@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
-import { Button } from '../../styles/styled_components/utils';
+// import { Button } from '../../styles/styled_components/utils';
 
 const Login = ({ supabase, session, timeOut }) => {
 	const [email, setEmail] = useState('');
@@ -45,31 +45,33 @@ const Login = ({ supabase, session, timeOut }) => {
 			</Head>
 			<main>
 				<FormContainer>
-					<h1>Login</h1>
+					<h2>login to your account</h2>
 					{message && <p>{message}</p>}
 					{error && <p>{error}</p>}
 					<Form onSubmit={handleSubmit}>
-						<div>
-							<label htmlFor="email">Email</label>
-							<input
-								type="email"
-								id="email"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-							/>
+						<div className="form-container">
+							<div className="form-group">
+								<label htmlFor="email">Email</label>
+								<input
+									type="email"
+									id="email"
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+								/>
+							</div>
+							<div className="form-group">
+								<label htmlFor="password">Password</label>
+								<input
+									type="password"
+									id="password"
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
+								/>
+							</div>
+							<button className="account-btn" disabled={loading}>
+								{loading ? 'Loading...' : 'Login'}
+							</button>
 						</div>
-						<div>
-							<label htmlFor="password">Password</label>
-							<input
-								type="password"
-								id="password"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
-							/>
-						</div>
-						<Button type="submit" disabled={loading}>
-							{loading ? 'Loading...' : 'Login'}
-						</Button>
 					</Form>
 					<p style={{ margin: '1.3rem 0' }}>
 						No Account? <Link href="/signup">Signup</Link>

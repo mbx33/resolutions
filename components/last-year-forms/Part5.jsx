@@ -12,23 +12,25 @@ const Part5 = ({ handleChange, userResponses, prevStep, nextForm }) => {
 				were you doing? What smells, sounds or tastes do you remember?
 			</p>
 			<Form>
-				<textarea
-					onChange={handleChange}
-					value={userResponses.bestMoments}
-					rows="20"
-					cols="100"
-					type="text"
-					name="bestMoments"
-					id="list"
-				/>
-				<div className="button-group">
-					<Button back primary onClick={prevStep}>
-						Back
-					</Button>
+				<div className="form-container">
+					<textarea
+						onChange={handleChange}
+						value={userResponses.bestMoments}
+						rows="10"
+						cols="60"
+						type="text"
+						name="bestMoments"
+						id="list"
+					/>
+					<div className="button-group">
+						<Button back primary onClick={prevStep}>
+							Back
+						</Button>
 
-					<Button next primary onClick={nextForm}>
-						Continue
-					</Button>
+						<Button next primary onClick={nextForm}>
+							Continue
+						</Button>
+					</div>
 				</div>
 			</Form>
 		</div>

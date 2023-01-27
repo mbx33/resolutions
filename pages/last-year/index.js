@@ -50,7 +50,6 @@ const LastYearForms = () => {
 
 	const prevForm = (e) => {
 		e.preventDefault();
-		console.log(step, currentPart, 'clicking prev form');
 		if (currentPart === 1) {
 			return;
 		}

@@ -19,10 +19,18 @@ const Preparing = ({ user }) => {
 			<p>Get yourself a drink (coffee, tea)</p>
 			<p>Let go of expectations</p>
 			<p>Begin when you’re ready.</p>
-			{!user && <Button onClick={() => router.push('/signup')}>Register</Button>}
-			{!user && <Button onClick={() => router.push('/login')}>Login</Button>}
+			{!user && (
+				<Button submit onClick={() => router.push('/signup')}>
+					Register
+				</Button>
+			)}
+			{!user && (
+				<Button next onClick={() => router.push('/login')}>
+					Login
+				</Button>
+			)}
 			{user && (
-				<Button primary={true} onClick={() => router.push('last-year')}>
+				<Button next onClick={() => router.push('last-year')}>
 					Begin
 				</Button>
 			)}

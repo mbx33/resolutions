@@ -5,8 +5,6 @@ export const FormContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	height: 100%;
 	background-color: var(--color-600);
 	border-radius: 0 0 10px 10px;
 	padding: 20px;
@@ -28,9 +26,9 @@ export const Form = styled.form`
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-	width: 100%;
-	height: 100%;
-	padding: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding: 1rem 2rem;
 	border-radius: 10px;
 	background-color: var(--color-200);
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -41,12 +39,22 @@ export const Form = styled.form`
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
-		width: 100%;
-		height: 100%;
 		padding: 1rem;
 		border-radius: 10px;
-		background-color: var(--color-200);
 		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+		legend {
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: var(--color-900);
+		}
+
+		input {
+			border-radius: 5px;
+			border: 1px solid var(--color-800);
+			padding: 0.2rem 0.5rem;
+			width: 100%;
+		}
 	}
 
 	label {
@@ -55,49 +63,63 @@ export const Form = styled.form`
 	}
 
 	textarea {
-		width: 100%;
-		height: 20rem;
 		border-radius: 5px;
 		border: 1px solid #000;
 		padding: 0.8rem;
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 
 	input {
-		width: 100%;
-		height: 2rem;
 		border-radius: 5px;
 		border: 1px solid #000;
-		padding: 1.2rem;
-		font-size: 1.5rem;
+		font-size: 1.2rem;
+		padding: 0.2rem 0.5rem;
 		color: #000;
 	}
 
 	.button-group {
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		width: 100%;
 	}
 
-	/* button {
-		width: 25%;
+	.form-container {
+		display: grid;
+		width: 100%;
+		gap: 1.5rem;
+		grid-template-columns: 1fr;
+		padding: 1.3rem 2rem;
+	}
+
+	.form-group {
+		display: grid;
+		gap: 0.5rem;
+
+		.future {
+			width: 60%;
+			margin: 0 auto;
+		}
+	}
+
+	.account-btn {
 		border-radius: 5px;
-		border: 1px solid #000;
 		padding: 0.5rem;
-		font-size: 1rem;
-		color: #000;
-		background-color: hsl(300, 100%, 77%);
+		font-size: 1.1rem;
+		color: var(--color-light);
+		background-color: var(--color-600);
+		border: none;
+		margin-top: 1rem;
 
 		cursor: pointer;
 		transition: background-color 0.2s ease-in-out;
 
 		&:hover {
-			background-color: hsl(300, 100%, 37%);
+			background-color: var(--color-900);
 		}
 
 		&:active {
-			background-color: hsl(300, 100%, 37%);
+			background-color: var(--color-900);
 		}
-	} */
+	}
 `;

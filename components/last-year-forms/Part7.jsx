@@ -12,24 +12,26 @@ const Part7 = ({ handleChange, userResponses, prevStep, nextForm }) => {
 				yourself for something? Write it down. Be kind to yourself and forgive *
 			</p>
 			<Form>
-				<textarea
-					onChange={handleChange}
-					value={userResponses.forgiveness}
-					rows="20"
-					cols="100"
-					type="text"
-					name="forgiveness"
-					id="forgiveness"
-				/>
+				<div className="form-container">
+					<textarea
+						onChange={handleChange}
+						value={userResponses.forgiveness}
+						rows="10"
+						cols="60"
+						type="text"
+						name="forgiveness"
+						id="forgiveness"
+					/>
 
-				<div className="button-group">
-					<Button primary back onClick={prevStep}>
-						Back
-					</Button>
+					<div className="button-group">
+						<Button primary back onClick={prevStep}>
+							Back
+						</Button>
 
-					<Button primary next onClick={nextForm}>
-						Continue
-					</Button>
+						<Button primary next onClick={nextForm}>
+							Continue
+						</Button>
+					</div>
 				</div>
 			</Form>
 			<p>

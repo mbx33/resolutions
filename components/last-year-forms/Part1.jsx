@@ -13,22 +13,26 @@ const Part1 = ({ handleChange, nextForm, userResponses }) => {
 				meeting with freinds, or family, or important job, write it here.
 			</p>
 			<Form>
-				<label htmlFor="list">Enter your answers here</label>
-				<textarea
-					onChange={handleChange}
-					value={userResponses.list}
-					rows="20"
-					cols="100"
-					type="text"
-					name="list"
-					id="list"
-				/>
-				<div className="button-group">
-					{/* <button onClick={nextForm}>Start Over</button> */}
+				<div className="form-contianer">
+					<div className="form-group">
+						<label htmlFor="list">Enter your answers here</label>
+						<textarea
+							onChange={handleChange}
+							value={userResponses.list}
+							rows="10"
+							cols="70"
+							type="text"
+							name="list"
+							id="list"
+						/>
+					</div>
+					<div className="button-group">
+						{/* <button onClick={nextForm}>Start Over</button> */}
 
-					<Button next primary onClick={nextForm}>
-						Continue
-					</Button>
+						<Button next primary onClick={nextForm}>
+							Continue
+						</Button>
+					</div>
 				</div>
 			</Form>
 		</div>
