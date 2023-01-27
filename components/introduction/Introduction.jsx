@@ -3,7 +3,7 @@ import { useState } from 'react';
 // components
 
 // Styles
-import { Button } from '../../styles/styled_components/utils';
+import { Button, CenterContainer } from '../../styles/styled_components/utils';
 
 import Preparing from './Preparing';
 
@@ -19,7 +19,7 @@ const Introduction = ({ user }) => {
 	}
 
 	return (
-		<div>
+		<CenterContainer>
 			<h1>Year Planner</h1>
 			<p className="title">What is this?</p>
 			<p>
@@ -44,7 +44,7 @@ const Introduction = ({ user }) => {
 			<Button next onClick={handleClick}>
 				Continue
 			</Button>
-		</div>
+		</CenterContainer>
 	);
 };
 

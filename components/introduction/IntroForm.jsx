@@ -23,9 +23,11 @@ const IntroForm = ({ onSubmit }) => {
 			</m.p>
 
 			<form onSubmit={onSubmit}>
-				<label htmlFor="name">Accect Privacy Policy</label>
-				<input type="checkbox" />
-				<button>Continue</button>
+				<label style={{ fontSize: '1.2rem' }} htmlFor="name">
+					Accect Privacy Policy
+				</label>
+				<input type="checkbox" style={{ margin: '0 1rem 0 .3rem' }} />
+				<Button next>Continue</Button>
 			</form>
 		</Container>
 	);
@@ -49,6 +51,19 @@ const Container = styled.div`
 
 	p {
 		font-size: 1.5rem;
+	}
+
+	input[type='checkbox'] {
+		width: 1.2rem;
+		height: 1.2rem;
+		padding: 1rem;
+		border: 2px solid #000;
+		background-color: #fff;
+	}
+
+	input[type='checkbox']:checked {
+		background-color: var(--color-900);
+		box-shadow: 0 0 5px var(--color-400);
 	}
 
 	.message {

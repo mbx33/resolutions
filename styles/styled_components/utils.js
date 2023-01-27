@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { BsArrowUpSquare, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 
 // * Styles for main container ////////////////
 export const Main = styled.main`
@@ -7,6 +8,16 @@ export const Main = styled.main`
 `;
 /////////////////////////////////////////////////////////////////////////
 
+// * Styles for a container that centers all of it's text and children
+export const CenterContainer = styled.main`
+	font-size: 1.2rem;
+	display: grid;
+	place-items: center;
+	gap: 1.9rem;
+`;
+/////////////////////////////////////////////////////////////////////////
+
+// * Styles for an error container ////////////////
 export const ErrorContainer = styled.main`
 	height: 80vh;
 	background-color: var(--color-dark);
@@ -43,6 +54,14 @@ export const Button = ({ children, ...props }) => {
 						{children}
 						<span>
 							<BsArrowUpSquare />
+						</span>
+					</>
+				)}
+				{props.create && (
+					<>
+						{children}
+						<span>
+							<AiOutlineUserAdd />
 						</span>
 					</>
 				)}
