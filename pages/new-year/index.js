@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
@@ -10,6 +11,7 @@ import NyStep3 from '../../components/new-year/NyStep3';
 
 // Styles
 import { FormContainer } from '../../styles/styled_components/form';
+import { ErrorContainer } from '../../styles/styled_components/utils';
 
 // Will have a total of 9 steps eventually,
 
@@ -56,9 +58,10 @@ const NewYearForms = () => {
 
 	if (!user || !session) {
 		return (
-			<div>
+			<ErrorContainer>
 				<h1>Not logged in</h1>
-			</div>
+				<Link href="/login">Go to Login</Link>
+			</ErrorContainer>
 		);
 	}
 

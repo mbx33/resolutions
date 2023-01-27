@@ -7,6 +7,17 @@ export const Main = styled.main`
 `;
 /////////////////////////////////////////////////////////////////////////
 
+export const ErrorContainer = styled.main`
+	height: 80vh;
+	background-color: var(--color-dark);
+	color: var(--color-light);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+`;
+/////////////////////////////////////////////////////////////////////////
+
 export const Button = ({ children, ...props }) => {
 	return (
 		<ButtonContainer {...props}>
