@@ -65,6 +65,15 @@ export const NavContainer = styled.nav`
 		font-weight: 700;
 	}
 
+	.logo a {
+		text-decoration: none;
+		color: var(--color-dark);
+	}
+
+	.logo a:hover {
+		color: var(--color-400);
+	}
+
 	button {
 		color: var(--color-dark);
 		background-color: var(--color-400);

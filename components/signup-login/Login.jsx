@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
-// import { Button } from '../../styles/styled_components/utils';
 
 const Login = ({ supabase, session, timeOut }) => {
 	const [email, setEmail] = useState('');
@@ -14,11 +13,11 @@ const Login = ({ supabase, session, timeOut }) => {
 	const [error, setError] = useState(null);
 	const [message, setMessage] = useState(null);
 
-	const router = useRouter();
+	// const router = useRouter();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const { user, error } = await supabase.auth.signInWithPassword({
+		const { u, error } = await supabase.auth.signInWithPassword({
 			email,
 			password,
 		});
@@ -28,11 +27,6 @@ const Login = ({ supabase, session, timeOut }) => {
 			setLoading(false);
 			setError(error.message);
 			timeOut(3000).then(() => setError(''));
-		} else {
-			setLoading(false);
-			setMessage('Logged in');
-			//redirect to home page
-			router.push('/dashboard');
 		}
 	};
 

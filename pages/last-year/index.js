@@ -23,7 +23,6 @@ const LastYearForms = () => {
 
 	const changeNextStep = (e) => {
 		e.preventDefault();
-		console.log(step, currentPart, 'clicking next step');
 		if (step === 4) {
 			return;
 		}
@@ -33,7 +32,6 @@ const LastYearForms = () => {
 
 	const changePrevStep = (e) => {
 		e.preventDefault();
-		console.log(step, currentPart, 'clicking prev step');
 		if (step === 1) {
 			return;
 		}
@@ -43,7 +41,6 @@ const LastYearForms = () => {
 
 	const nextForm = (e) => {
 		e.preventDefault();
-		console.log(step, currentPart, 'clicking next form');
 		if (currentPart === 4) {
 			return;
 		}

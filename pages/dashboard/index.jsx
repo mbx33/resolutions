@@ -1,13 +1,16 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { useResponse } from '../../contexts/ResponseContext';
 import Link from 'next/link';
 
 // Styles
-import { Main } from '../../styles/styled_components/utils';
+import { Main } from '../../styles/styled_components/dashboard';
 import { ErrorContainer } from '../../styles/styled_components/utils';
 
 const DashboardPage = () => {
-	const { user } = useResponse();
+	const { user, userResponses, newYearResponses } = useResponse();
+
+	const responses = [userResponses, newYearResponses];
+	const [oldYear, newYear] = responses;
 
 	if (!user)
 		return (
@@ -17,16 +20,27 @@ const DashboardPage = () => {
 			</ErrorContainer>
 		);
 
+	function handleEdit(key) {
+		console.log(key);
+	}
+
 	const username = user.user_metadata.username;
 
-	// console.log(user);
+	console.log(oldYear);
 
 	return (
 		<Main>
-			<div>Thanks for being here {username}!</div>
-
-			<p>Check out your plans for 2023</p>
-			{/* A link will go here to show the data from the database */}
+			<h1>Last Year Review</h1>
+			{/* // loop through the old year object and display the answers */}
+			{oldYear &&
+				Object.keys(oldYear).map((key) => {
+					return (
+						<div key={key}>
+							<h3>{key}</h3>
+							<p>{oldYear[key]}</p>
+						</div>
+					);
+				})}
 		</Main>
 	);
 };

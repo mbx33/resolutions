@@ -25,7 +25,9 @@ const Navbar = () => {
 	return (
 		<NavContainer>
 			<div className="logo">
-				<h1>Logo</h1>
+				<Link href="/">
+					<h1>Logo</h1>
+				</Link>
 			</div>
 			{user && <p style={{ fontSize: '1rem' }}>Welcome {username}</p>}
 			<div className="nav">

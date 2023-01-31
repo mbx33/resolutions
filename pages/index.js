@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Router from 'next/router';
 import Head from 'next/head';
 import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
@@ -10,6 +11,7 @@ import Introduction from '../components/introduction/Introduction';
 import { FormContainer } from '../styles/styled_components/form';
 import { Main } from '../styles/styled_components/utils';
 
+// function to delay the message
 function timeOut(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -17,6 +19,8 @@ function timeOut(ms) {
 export default function Home() {
 	const supabase = useSupabaseClient();
 	const user = useUser();
+	const session = useSession();
+	const router = Router;
 	const [message, setMessage] = useState('');
 	const [error, setError] = useState(false);
 	const [showNext, setShowNext] = useState(false);
@@ -34,13 +38,21 @@ export default function Home() {
 		}
 
 		setError(false);
-		setMessage('Thank you for accepting the privacy policy.');
-		timeOut(3000).then(() => setMessage(''));
 		setShowNext(true);
 	};
 
 	// comment back in if you want to see the user object
 	// console.log(user);
+
+	// if (!session) {
+	// 	return (
+	// 		<HomePage />
+	// 	)}
+
+	if (session && user) {
+		// redirect to dashboard page
+		router.push('/dashboard');
+	}
 
 	return (
 		<>
