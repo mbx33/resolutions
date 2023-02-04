@@ -27,6 +27,7 @@ body {
 *:focus {
 	outline: none;
 	box-shadow: 0 0 0 0.3rem var(--color-600);
+	border-radius: 0.3rem;
 }
 
 /*

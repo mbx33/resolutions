@@ -308,16 +308,35 @@ export function ResponseProvider({ children }) {
 			setUserResponses((prevState) => ({
 				...prevState,
 				...response[0],
+				workStudy: response[0].work_study,
+				vacationHobby: response[0].vacation_hobby,
+				healthSport: response[0].health_sport,
 				...responseTwo[0],
+				influencedYou: responseTwo[0].influenced_you,
+				youInfluenced: responseTwo[0].you_influenced,
 				...responseThree[0],
+				bestMoments: responseThree[0].best_moments,
+				biggestAch: responseThree[0].biggest_ach,
 				...responseFour[0],
+				wordOne: responseFour[0].word_one,
+				wordTwo: responseFour[0].word_two,
+				wordThree: responseFour[0].word_three,
+				movieTitle: responseFour[0].movie_title,
 			}));
 
 			setNewYearResponses((prevState) => ({
 				...prevState,
 				...responseNyOne[0],
+				workStudy: responseNyOne[0].work_study,
+				vacationHobby: responseNyOne[0].vacation_hobby,
+				healthSport: responseNyOne[0].health_sport,
 				...responseNyTwo[0],
+				letGo: responseNyTwo[0].let_go,
+				sayNo: responseNyTwo[0].say_no,
 				...responseNyThree[0],
+				sayYes: responseNyThree[0].say_yes,
+				nyWord: responseNyThree[0].ny_word,
+				secretWish: responseNyThree[0].secret_wish,
 			}));
 
 			console.log('Fetched all responses');
