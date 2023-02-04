@@ -5,6 +5,7 @@ import Link from 'next/link';
 // Styles
 import { Main } from '../../styles/styled_components/dashboard';
 import { ErrorContainer, Button } from '../../styles/styled_components/utils';
+import { Wrapper } from '../../styles/styled_components/textDisplay';
 
 const DashboardPage = () => {
 	const { user, userResponses, newYearResponses } = useResponse();
@@ -36,25 +37,29 @@ const DashboardPage = () => {
 			{oldYear &&
 				Object.keys(oldYear).map((key) => {
 					if (key === 'id' || key === 'created_at') return null;
+
 					return (
-						<div key={key}>
+						<Wrapper key={key}>
 							<h3>{key}</h3>
 							<p>{oldYear[key]}</p>
-						</div>
+						</Wrapper>
 					);
 				})}
 			<h2>New Year Goals</h2>
-			{/* {newYear &&
+			<Button submit onClick={() => setIsEditing(!isEditing)}>
+				Edit Responses
+			</Button>
+			{newYear &&
 				Object.keys(newYear).map((key) => {
 					if (key === 'id' || key === 'created_at') return null;
 
 					return (
-						<div key={key}>
+						<Wrapper key={key}>
 							<h3>{key}</h3>
 							<p>{newYear[key]}</p>
-						</div>
+						</Wrapper>
 					);
-				})} */}
+				})}
 		</Main>
 	);
 };
