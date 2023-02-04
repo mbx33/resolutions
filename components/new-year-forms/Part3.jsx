@@ -23,15 +23,15 @@ const Part3 = ({ handleChange, newYearResponses, nextForm, prevStep }) => {
 						/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="letGo">
+						<label htmlFor="let_go">
 							The 3 things I am ready to let go and move on
 						</label>
 						<input
 							onChange={handleChange}
-							value={newYearResponses.letGo}
+							value={newYearResponses.let_go}
 							type="text"
-							name="letGo"
-							id="letGo"
+							name="let_go"
+							id="let_go"
 						/>
 					</div>
 					<div className="form-group">
@@ -69,15 +69,15 @@ const Part3 = ({ handleChange, newYearResponses, nextForm, prevStep }) => {
 						/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="sayNo">
+						<label htmlFor="say_no">
 							These 3 things I am ready to say no{' '}
 						</label>
 						<input
 							onChange={handleChange}
-							value={newYearResponses.sayNo}
+							value={newYearResponses.say_no}
 							type="text"
-							name="sayNo"
-							id="sayNo"
+							name="say_no"
+							id="say_no"
 						/>
 					</div>
 					<div className="button-group">

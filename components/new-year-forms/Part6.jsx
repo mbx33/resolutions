@@ -21,10 +21,10 @@ const Part6 = ({ handleChange, newYearResponses, prevForm, nextForm }) => {
 
 							<input
 								onChange={handleChange}
-								value={newYearResponses.nyWord}
+								value={newYearResponses.ny_word}
 								type="text"
-								name="nyWord"
-								id="nyWord"
+								name="ny_word"
+								id="ny_word"
 							/>
 						</fieldset>
 					</div>
@@ -38,12 +38,12 @@ const Part6 = ({ handleChange, newYearResponses, prevForm, nextForm }) => {
 							</p>
 							<textarea
 								onChange={handleChange}
-								value={newYearResponses.secretWish}
+								value={newYearResponses.secret_wish}
 								rows="10"
 								cols="70"
 								type="text"
-								name="secretWish"
-								id="secretWish"
+								name="secret_wish"
+								id="secret_wish"
 							/>
 						</fieldset>
 					</div>

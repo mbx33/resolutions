@@ -17,34 +17,34 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }
 						<legend>Last Year in 3 words:</legend>
 						<input
 							type="text"
-							id="wordOne"
-							name="wordOne"
+							id="word_one"
+							name="word_one"
 							onChange={handleChange}
-							value={userResponses.wordOne}
+							value={userResponses.word_one}
 						/>
 						<input
 							type="text"
-							id="wordTwo"
-							name="wordTwo"
+							id="word_two"
+							name="word_two"
 							onChange={handleChange}
-							value={userResponses.wordTwo}
+							value={userResponses.word_two}
 						/>
 						<input
 							type="text"
-							id="wordThree"
-							name="wordThree"
+							id="word_three"
+							name="word_three"
 							onChange={handleChange}
-							value={userResponses.wordThree}
+							value={userResponses.word_three}
 						/>
 					</fieldset>
 					<fieldset>
 						<legend>Movie title of last year</legend>
 						<input
 							type="text"
-							id="movieTitle"
-							name="movieTitle"
+							id="movie_title"
+							name="movie_title"
 							onChange={handleChange}
-							value={userResponses.movieTitle}
+							value={userResponses.movie_title}
 						/>
 					</fieldset>
 					<fieldset>

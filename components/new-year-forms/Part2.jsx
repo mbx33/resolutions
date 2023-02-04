@@ -70,9 +70,9 @@ const Part2 = ({ handleChange, newYearResponses, nextStep, prevForm }) => {
 						<label htmlFor="work_study">Work, Study, Profession</label>
 						<input
 							onChange={handleChange}
-							value={newYearResponses.workStudy}
+							value={newYearResponses.work_study}
 							type="text"
-							name="workStudy"
+							name="work_study"
 							id="work_study"
 						/>
 					</div>
@@ -82,9 +82,9 @@ const Part2 = ({ handleChange, newYearResponses, nextStep, prevForm }) => {
 						</label>
 						<input
 							onChange={handleChange}
-							value={newYearResponses.vacationHobby}
+							value={newYearResponses.vacation_hobby}
 							type="text"
-							name="vacationHobby"
+							name="vacation_hobby"
 							id="vacation_hobby"
 						/>
 					</div>
@@ -92,9 +92,9 @@ const Part2 = ({ handleChange, newYearResponses, nextStep, prevForm }) => {
 						<label htmlFor="health_sport">Health, Sport</label>
 						<input
 							onChange={handleChange}
-							value={newYearResponses.healthSport}
+							value={newYearResponses.health_sport}
 							type="text"
-							name="healthSport"
+							name="health_sport"
 							id="health_sport"
 						/>
 					</div>

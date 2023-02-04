@@ -47,13 +47,13 @@ const Part5 = ({ handleChange, newYearResponses, prevStep, nextForm }) => {
 						/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="sayYes">This year I will say yes when...</label>
+						<label htmlFor="say_yes">This year I will say yes when...</label>
 						<input
 							onChange={handleChange}
-							value={newYearResponses.sayYes}
+							value={newYearResponses.say_yes}
 							type="text"
-							name="sayYes"
-							id="sayYes"
+							name="say_yes"
+							id="say_yes"
 						/>
 					</div>
 					<div className="form-group">

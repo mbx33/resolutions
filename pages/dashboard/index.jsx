@@ -43,8 +43,11 @@ const DashboardPage = () => {
 						</div>
 					);
 				})}
+			<h2>New Year Goals</h2>
 			{/* {newYear &&
 				Object.keys(newYear).map((key) => {
+					if (key === 'id' || key === 'created_at') return null;
+
 					return (
 						<div key={key}>
 							<h3>{key}</h3>

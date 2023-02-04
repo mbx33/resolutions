@@ -15,9 +15,9 @@ const Part6 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 						</label>
 						<input
 							onChange={handleChange}
-							value={userResponses.biggestAch}
+							value={userResponses.biggest_ach}
 							type="text"
-							name="biggestAch"
+							name="biggest_ach"
 							id="biggest_ach"
 						/>
 					</div>

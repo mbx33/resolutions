@@ -26,9 +26,9 @@ const Part4 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 						</label>
 						<input
 							onChange={handleChange}
-							value={userResponses.influencedYou}
+							value={userResponses.influenced_you}
 							type="text"
-							name="influencedYou"
+							name="influenced_you"
 							id="influenced_you"
 						/>
 					</div>
@@ -38,9 +38,9 @@ const Part4 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 						</label>
 						<input
 							onChange={handleChange}
-							value={userResponses.youInfluenced}
+							value={userResponses.you_influenced}
 							type="text"
-							name="youInfluenced"
+							name="you_influenced"
 							id="you_influenced"
 						/>
 					</div>

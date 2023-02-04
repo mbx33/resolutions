@@ -15,12 +15,12 @@ const Part5 = ({ handleChange, userResponses, prevStep, nextForm }) => {
 				<div className="form-container">
 					<textarea
 						onChange={handleChange}
-						value={userResponses.bestMoments}
+						value={userResponses.best_moments}
 						rows="10"
 						cols="60"
 						type="text"
-						name="bestMoments"
-						id="list"
+						name="best_moments"
+						id="best_moments"
 					/>
 					<div className="button-group">
 						<Button back primary onClick={prevStep}>
