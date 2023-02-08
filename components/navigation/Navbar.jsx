@@ -29,10 +29,10 @@ const Navbar = () => {
 				<Link href="/">
 					<Image
 						className="logo"
-						src="https://res.cloudinary.com/high-desert-development/image/upload/v1675827174/Gold_Luxury_Initial_Circle_Logo-removebg-preview_v4qsth.png"
+						src="https://res.cloudinary.com/high-desert-development/image/upload/v1675828591/ResLogo-removebg-preview_tgnrhy.png"
 						alt="logo"
-						width={75}
-						height={75}
+						width={125}
+						height={125}
 					></Image>
 				</Link>
 			</div>
