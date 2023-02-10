@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
@@ -99,7 +100,7 @@ const Signup = ({ supabase, timeOut }) => {
 							<div className="form-group">
 								<label htmlFor="password">Password</label>
 								<input
-									type="password"
+									type={showPassword ? 'text' : 'password'}
 									id="password"
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
@@ -108,11 +109,20 @@ const Signup = ({ supabase, timeOut }) => {
 							<div className="form-group">
 								<label htmlFor="passwordConfirm">Confirm Password</label>
 								<input
-									type="password"
+									type={showPassword ? 'text' : 'password'}
 									id="passwordConfirm"
 									value={passwordConfirm}
 									onChange={(e) => setPasswordConfirm(e.target.value)}
 								/>
+								{showPassword ? (
+									<span onClick={togglePassword}>
+										<AiFillEyeInvisible />
+									</span>
+								) : (
+									<span onClick={togglePassword}>
+										<AiFillEye />
+									</span>
+								)}
 							</div>
 							<button className="account-btn" disabled={loading}>
 								{loading ? 'Loading...' : 'Submit'}

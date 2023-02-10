@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
@@ -12,8 +13,13 @@ const Login = ({ supabase, session, timeOut }) => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const [message, setMessage] = useState(null);
+	const [showPassword, setShowPassword] = useState(false);
 
 	// const router = useRouter();
+
+	const togglePassword = () => {
+		setShowPassword(!showPassword);
+	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -56,11 +62,20 @@ const Login = ({ supabase, session, timeOut }) => {
 							<div className="form-group">
 								<label htmlFor="password">Password</label>
 								<input
-									type="password"
+									type={showPassword ? 'text' : 'password'}
 									id="password"
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
 								/>
+								{showPassword ? (
+									<span onClick={togglePassword}>
+										<AiFillEyeInvisible />
+									</span>
+								) : (
+									<span onClick={togglePassword}>
+										<AiFillEye />
+									</span>
+								)}
 							</div>
 							<button className="account-btn" disabled={loading}>
 								{loading ? 'Loading...' : 'Login'}
