@@ -9,6 +9,7 @@ export const FormContainer = styled.div`
 	border-radius: 0 0 10px 10px;
 	padding: 20px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	min-height: calc(100vh - 165px);
 
 	.error {
 		font-size: 1.2rem;

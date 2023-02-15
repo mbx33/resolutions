@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { useResponse } from '../../contexts/ResponseContext';
 import Link from 'next/link';
 
+// Components
+import Part1 from '../../components/last-year-forms/Part1';
+
 // Styles
 import { Main } from '../../styles/styled_components/dashboard';
 import { ErrorContainer, Button } from '../../styles/styled_components/utils';
@@ -30,25 +33,9 @@ const DashboardPage = () => {
 	return (
 		<Main>
 			<h1>Last Year Review</h1>
-			<Button submit onClick={() => setIsEditing(!isEditing)}>
-				Edit Responses
-			</Button>
-			{/* // loop through the old year object and display the answers */}
-			{oldYear &&
-				Object.keys(oldYear).map((key) => {
-					if (key === 'id' || key === 'created_at') return null;
+			
 
-					return (
-						<Wrapper key={key}>
-							<h3>{key}</h3>
-							<p>{oldYear[key]}</p>
-						</Wrapper>
-					);
-				})}
-			<h2>New Year Goals</h2>
-			<Button submit onClick={() => setIsEditing(!isEditing)}>
-				Edit Responses
-			</Button>
+			<h1>New Year Goals</h1>
 			{newYear &&
 				Object.keys(newYear).map((key) => {
 					if (key === 'id' || key === 'created_at') return null;
@@ -57,6 +44,9 @@ const DashboardPage = () => {
 						<Wrapper key={key}>
 							<h3>{key}</h3>
 							<p>{newYear[key]}</p>
+							<Button submit onClick={() => setIsEditing(!isEditing)}>
+								Edit
+							</Button>
 						</Wrapper>
 					);
 				})}

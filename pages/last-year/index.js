@@ -11,7 +11,7 @@ import Step4 from '../../components/last-year/Step4';
 
 // Styles
 import { FormContainer } from '../../styles/styled_components/form';
-import { ErrorContainer } from '../../styles/styled_components/utils';
+import { ErrorContainer, Main } from '../../styles/styled_components/utils';
 
 // Will have a total of 9 steps eventually,
 

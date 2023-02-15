@@ -33,7 +33,7 @@ export default function Home() {
 			setMessage(
 				'You must accept the privacy policy & create an account to continue.'
 			);
-			timeOut(3000).then(() => setMessage(''));
+			timeOut(2000).then(() => setMessage(''));
 			return;
 		}
 
