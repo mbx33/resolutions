@@ -8,7 +8,7 @@ const Part5 = ({ handleChange, userResponses, prevStep, nextForm }) => {
 			<h1>Best Moments</h1>
 			<p>
 				Describe your best, unforgettable and pleasant moments of the past year.
-				Draw them on this page. What did you feel then? Who was with you? What
+				Describe them. What did you feel then? Who was with you? What
 				were you doing? What smells, sounds or tastes do you remember?
 			</p>
 			<Form>

@@ -22,7 +22,7 @@ const Part4 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 					</div>
 					<div className="form-group">
 						<label htmlFor="influenced_you">
-							What 3 people influenced you the most?
+							Which 3 people influenced you the most?
 						</label>
 						<input
 							onChange={handleChange}
@@ -34,7 +34,7 @@ const Part4 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 					</div>
 					<div className="form-group">
 						<label htmlFor="you_influenced">
-							What 3 people did you influence the most?
+							Which 3 people did you influence the most?
 						</label>
 						<input
 							onChange={handleChange}

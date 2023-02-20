@@ -33,6 +33,7 @@ const Navbar = () => {
 						alt="logo"
 						width={125}
 						height={125}
+						priority={true}
 					></Image>
 				</Link>
 			</div>
@@ -50,9 +51,6 @@ const Navbar = () => {
 							<Link href="/dashboard">
 								<li>Dashboard</li>
 							</Link>
-							{/* <li onClick={handleLogout} style={{ cursor: 'pointer' }}>
-								<button>Logout</button>
-							</li> */}
 						</>
 					) : (
 						<>
