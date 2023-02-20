@@ -33,6 +33,7 @@ const Navbar = () => {
 						alt="logo"
 						width={125}
 						height={125}
+						priority={true}
 					></Image>
 				</Link>
 			</div>
