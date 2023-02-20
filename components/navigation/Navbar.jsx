@@ -51,9 +51,6 @@ const Navbar = () => {
 							<Link href="/dashboard">
 								<li>Dashboard</li>
 							</Link>
-							{/* <li onClick={handleLogout} style={{ cursor: 'pointer' }}>
-								<button>Logout</button>
-							</li> */}
 						</>
 					) : (
 						<>

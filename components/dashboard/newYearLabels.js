@@ -37,7 +37,7 @@ export const nyLabels = {
 	visit: 'I will visit these 3 places',
 	relationships: `In these 3 ways, I will build and continue relationships with
 							those close to me.`,
-	gift: 'With these 3 things I will gift myself for success.',
+	gifts: 'With these 3 things I will gift myself for success.',
 
 	//part 5
 	procrastinate: 'This year I will not procrastinate on...',
