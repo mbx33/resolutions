@@ -7,7 +7,8 @@ export const NavContainer = styled.nav`
 	justify-content: space-between;
 	align-items: center;
 	padding: 1.2rem 1.5rem;
-	background-color: var(--color-800);
+	background-color: var(--color-dark);
+	color: var(--color-light);
 
 	.nav ul {
 		display: flex;
@@ -42,7 +43,7 @@ export const NavContainer = styled.nav`
 	.nav ul li {
 		position: relative;
 		text-decoration: none;
-		color: var(--color-dark);
+		color: var(--color-600);
 
 		&:hover {
 			color: var(--color-400);
@@ -76,7 +77,7 @@ export const NavContainer = styled.nav`
 
 	button {
 		color: var(--color-dark);
-		background-color: var(--color-400);
+		background-color: var(--color-600);
 		border: none;
 		padding: 0.5rem 0.5rem;
 		border-radius: 0.5rem;
@@ -85,8 +86,8 @@ export const NavContainer = styled.nav`
 		cursor: pointer;
 
 		&:hover {
-			background-color: var(--color-900);
-			color: var(--color-400);
+			background-color: var(--color-400);
+			/* color: var(--color-800); */
 		}
 	}
 `;

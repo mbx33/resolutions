@@ -7,7 +7,8 @@ export const titles = {
 };
 
 export const labels = {
-	list: 'List of your last year',
+	list: `If you see an important event,
+				meeting with freinds, or family, or important job, write it here.`,
 	family: 'Family & Personal Life',
 	friends: 'Friends, and Community',
 	material: 'Materialistic (house, other things)',

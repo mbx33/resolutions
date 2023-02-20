@@ -10,6 +10,6 @@ export const Main = styled.main`
 	align-items: center;
 	text-align: center;
 	justify-content: center;
-	background-color: var(--color-800);
-	color: var(--color-200);
+	background-color: var(--color-dark);
+	color: var(--color-light);
 `;

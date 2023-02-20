@@ -78,6 +78,10 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }
 				<h2>You summed up the last Year.</h2>
 				<p>You just finished the first part.</p>
 				<p>Take a deep breath Take a break</p>
+				<p>
+					*** Make sure to save your answers before continuing to the new year
+					***
+				</p>
 				<Button
 					next
 					onClick={() => {

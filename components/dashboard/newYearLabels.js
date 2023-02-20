@@ -36,7 +36,7 @@ export const nyLabels = {
 	indulge: 'These 3 things I will indulge in on a regular basis.',
 	visit: 'I will visit these 3 places',
 	relationships: `In these 3 ways, I will build and continue relationships with
-							those close to me.`,
+									those close to me.`,
 	gifts: 'With these 3 things I will gift myself for success.',
 
 	//part 5
@@ -49,8 +49,8 @@ export const nyLabels = {
 
 	//part 6
 	nyWord: `Choose a word that would symbolize or define your new
-								year. This word will be a source of second wind for you so
-								that you do not give up, or give up on your dreams`,
+						year. This word will be a source of second wind for you so
+						that you do not give up, or give up on your dreams`,
 	secret: `Let your imagination run wild, what is your secret wish
-								for the next year?`,
+						for the next year?`,
 };

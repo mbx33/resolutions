@@ -63,7 +63,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Main>
-				<FormContainer>
+				<div>
 					{showNext ? (
 						<Introduction user={user} />
 					) : (
@@ -73,7 +73,7 @@ export default function Home() {
 					<div className="message">
 						<p className={error ? 'error' : 'success'}>{message}</p>
 					</div>
-				</FormContainer>
+				</div>
 			</Main>
 		</>
 	);

@@ -5,6 +5,12 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 // * Styles for main container ////////////////
 export const Main = styled.main`
 	background-color: var(--color-dark);
+
+	.error {
+		font-size: 1.2rem;
+		color: red;
+		text-align: center;
+	}
 `;
 /////////////////////////////////////////////////////////////////////////
 
@@ -14,6 +20,19 @@ export const CenterContainer = styled.main`
 	display: grid;
 	place-items: center;
 	gap: 1.9rem;
+	color: var(--color-light);
+	max-width: 60%;
+	margin: 0 auto;
+
+	a {
+		color: var(--color-600);
+		font-size: 2.2rem;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: var(--color-400);
+	}
 `;
 /////////////////////////////////////////////////////////////////////////
 
@@ -74,7 +93,7 @@ export const Button = ({ children, ...props }) => {
 export const ButtonContainer = styled.button`
 	background-color: ${(props) =>
 		props.primary ? 'var(--color-600)' : 'var(--color-900)'};
-	color: ${(props) => (props.primary ? 'var(--color-light)' : 'var(--color-light)')};
+	color: ${(props) => (props.primary ? 'var(--color-dark)' : 'var(--color-light)')};
 	font-size: 1.3rem;
 	border: ${(props) => (props.primary ? '2px solid var(--color-dark)' : 'none')};
 	border-radius: 3px;
@@ -85,8 +104,8 @@ export const ButtonContainer = styled.button`
 
 	&:hover {
 		background-color: ${(props) =>
-			props.primary ? 'var(--color-900)' : 'var(--color-400)'};
-		color: ${(props) => (props.primary ? 'var(--color-light)' : 'var(--color-dark)')};
+			props.primary ? 'var(--color-400)' : 'var(--color-400)'};
+		color: ${(props) => (props.primary ? 'var(--color-dark)' : 'var(--color-dark)')};
 		transition: all 0.2s ease-in-out;
 	}
 
