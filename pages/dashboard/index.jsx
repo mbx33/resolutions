@@ -23,6 +23,9 @@ const DashboardPage = () => {
 
 	const username = user.user_metadata.username;
 
+	// TODO: Add a check to see if the user has already answered the questions
+	// TODO: Add a button to take them to start the questions
+
 	return (
 		<CenterContainer>
 			<h1>You can see your answers saved</h1>

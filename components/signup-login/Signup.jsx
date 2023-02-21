@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 // Styles
@@ -61,9 +62,6 @@ const Signup = ({ supabase, timeOut }) => {
 			setLoading(false);
 			setError(error.message);
 			timeOut(3000).then(() => setError(''));
-		} else {
-			resetForm();
-			setAlert('Check your email for the confirmation link');
 		}
 	};
 

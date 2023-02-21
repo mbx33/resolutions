@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
@@ -12,12 +13,14 @@ function timeOut(ms) {
 const SignupPage = () => {
 	const supabase = useSupabaseClient();
 	const session = useSession();
+	const router = useRouter();
 
-	return (
-		<div>
-			<Signup supabase={supabase} session={session} timeOut={timeOut} />
-		</div>
-	);
+	if (!user) {
+		return <Signup supabase={supabase} session={session} timeOut={timeOut} />;
+	} else {
+		router.push('/last-year');
+		return <div>Redirecting...</div>;
+	}
 };
 
 export default SignupPage;

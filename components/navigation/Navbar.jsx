@@ -42,10 +42,10 @@ const Navbar = () => {
 				<ul>
 					{session ? (
 						<>
-							<Link href="/dashboard/last-year">
+							<Link href="/last-year">
 								<li>Last</li>
 							</Link>
-							<Link href="/dashboard/new-year">
+							<Link href="/new-year">
 								<li>New</li>
 							</Link>
 							<Link href="/dashboard">

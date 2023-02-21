@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+
 import { useState } from 'react';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
@@ -14,8 +14,6 @@ const Login = ({ supabase, session, timeOut }) => {
 	const [error, setError] = useState(null);
 	const [message, setMessage] = useState(null);
 	const [showPassword, setShowPassword] = useState(false);
-
-	// const router = useRouter();
 
 	const togglePassword = () => {
 		setShowPassword(!showPassword);
