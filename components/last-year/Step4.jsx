@@ -5,7 +5,7 @@ import Part8 from '../last-year-forms/Part8';
 import Part9 from '../last-year-forms/Part9';
 
 const Step4 = ({ nextForm, prevForm, nextStep, prevStep, currentPart }) => {
-	const { userResponses, handleChange, uploadLastYear } = useResponse();
+	const { userResponses, handleChange, uploadLastYear, isSaved } = useResponse();
 
 	return (
 		<div>
@@ -32,6 +32,7 @@ const Step4 = ({ nextForm, prevForm, nextStep, prevStep, currentPart }) => {
 					userResponses={userResponses}
 					handleChange={handleChange}
 					saveLastYear={uploadLastYear}
+					isSaved={isSaved}
 				/>
 			)}
 		</div>

@@ -1,13 +1,14 @@
 import React from 'react';
 import Router from 'next/router';
-import { BsArrowUpSquare, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
 
 // Styles
 import { Form } from '../../styles/styled_components/form';
 import { Button } from '../../styles/styled_components/utils';
 
-const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }) => {
+const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear }) => {
 	const router = Router;
+
+	console.log(isSaved);
 
 	return (
 		<div>
@@ -68,7 +69,7 @@ const Part9 = ({ handleChange, userResponses, nextStep, prevForm, saveLastYear }
 							back
 						</Button>
 
-						<Button submit primary onClick={saveLastYear}>
+						<Button submit primary onClick={uploadLastYear}>
 							save
 						</Button>
 					</div>

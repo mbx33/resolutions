@@ -15,6 +15,8 @@ export function ResponseProvider({ children }) {
 	const supabase = useSupabaseClient();
 	const user = useUser();
 
+	const [isSaved, setIsSaved] = useState(false);
+
 	// State for last year responses
 	const [userResponses, setUserResponses] = useState({
 		// ly_branch_one
@@ -116,19 +118,29 @@ export function ResponseProvider({ children }) {
 		setNewYearResponses({ ...newYearResponses, [name]: value });
 	};
 
-	function uploadLastYear(e) {
+	async function uploadLastYear(e) {
 		e.preventDefault();
-		uploadBranchOne();
-		uploadBranchTwo();
-		uploadBranchThree();
-		uploadBranchFour();
+		try {
+			uploadBranchOne();
+			uploadBranchTwo();
+			uploadBranchThree();
+			uploadBranchFour();
+			setIsSaved(true);
+		} catch (error) {
+			console.log(error, 'error saving last year responses');
+		}
 	}
 
-	function uploadNewYear(e) {
+	async function uploadNewYear(e) {
 		e.preventDefault();
-		uploadNyBranchOne();
-		uploadNyBranchTwo();
-		uploadNyBranchThree();
+		try {
+			uploadNyBranchOne();
+			uploadNyBranchTwo();
+			uploadNyBranchThree();
+			setIsSaved(true);
+		} catch (error) {
+			console.log(error, 'error saving new year responses');
+		}
 	}
 
 	//upload user responses to database
@@ -335,6 +347,7 @@ export function ResponseProvider({ children }) {
 
 	const value = {
 		user,
+		isSaved,
 		userResponses,
 		newYearResponses,
 		handleNyChange,

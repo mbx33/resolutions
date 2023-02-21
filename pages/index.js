@@ -49,6 +49,9 @@ export default function Home() {
 	// 		<HomePage />
 	// 	)}
 
+	// TODO: Create a Homepage describing the app and getting the user to login
+	// TODO: Put the intro stuff in the dashboard page before any questions
+
 	if (session && user) {
 		// redirect to dashboard page
 		router.push('/dashboard');
