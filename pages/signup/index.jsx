@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import { useSession, useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 
 import Signup from '../../components/signup-login/Signup';
 
@@ -13,6 +13,8 @@ function timeOut(ms) {
 const SignupPage = () => {
 	const supabase = useSupabaseClient();
 	const session = useSession();
+	const user = useUser();
+
 	const router = useRouter();
 
 	if (!user) {
