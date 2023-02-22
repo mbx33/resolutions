@@ -14,6 +14,7 @@ export function ResponseProvider({ children }) {
 	}
 	const supabase = useSupabaseClient();
 	const user = useUser();
+	const session = useSession();
 
 	const [isSaved, setIsSaved] = useState(false);
 
@@ -287,7 +288,7 @@ export function ResponseProvider({ children }) {
 
 	//if user is logged in, fetch all responses from the database
 	const getAllResponses = useCallback(async () => {
-		async function fetchAllResponses() {
+		async function fetchAllResponses(user) {
 			const { data: response, error } = await supabase
 				.from('ly_branch_one')
 				.select('*')
@@ -335,14 +336,14 @@ export function ResponseProvider({ children }) {
 			console.log('Fetched all responses');
 		}
 		if (user) {
-			fetchAllResponses();
+		fetchAllResponses(user);
 		}
 	}, [user, supabase]);
 
+	//Need to figure out why responses are being
+
 	useEffect(() => {
-		if (user) {
-			getAllResponses();
-		}
+		getAllResponses();
 	}, [user, getAllResponses]);
 
 	const value = {

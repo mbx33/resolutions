@@ -3,6 +3,8 @@ import Router from 'next/router';
 import Head from 'next/head';
 import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
+//Quote: Be Curious not Judgmental
+
 // Components
 import IntroForm from '../components/introduction/IntroForm';
 import Introduction from '../components/introduction/Introduction';

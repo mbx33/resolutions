@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useResponse } from '../../contexts/ResponseContext';
+import axios from 'axios';
 
 // Components
 import Responses from '../../components/dashboard/Responses';
@@ -26,11 +27,22 @@ const LastYearPage = () => {
 			</ErrorContainer>
 		);
 
+	//update the response in the database
+	//update the response in the state
+	const handleEdit = async (oldText, newText, user) => {
+		const { data } = await axios.post('/api/edit', {
+			oldText,
+			newText,
+			user,
+		});
+		console.log(data);
+	};
+
 	return (
 		<Main>
 			<h1>Last Year Review</h1>
 
-			<Responses description={oldYear.list} label={labels.list} />
+			<Responses description={oldYear.list} label={labels.list} edit={handleEdit} />
 
 			<h1>This is what last year was about</h1>
 			<h3>{titles.part2}</h3>
