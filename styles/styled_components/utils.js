@@ -84,6 +84,7 @@ export const Button = ({ children, ...props }) => {
 						</span>
 					</>
 				)}
+				{props.cta && <>{children}</>}
 			</div>
 		</ButtonContainer>
 	);
@@ -93,19 +94,24 @@ export const Button = ({ children, ...props }) => {
 export const ButtonContainer = styled.button`
 	background-color: ${(props) =>
 		props.primary ? 'var(--color-600)' : 'var(--color-900)'};
-	color: ${(props) => (props.primary ? 'var(--color-dark)' : 'var(--color-light)')};
+	color: ${(props) => (props.primary ? 'var(--color-light)' : 'var(--color-dark)')};
 	font-size: 1.3rem;
 	border: ${(props) => (props.primary ? '2px solid var(--color-dark)' : 'none')};
-	border-radius: 3px;
+	border-radius: ${(props) => (props.cta ? '.5rem' : '3px')};
 	border: none;
-	padding: 0.2rem 1rem;
-	text-transform: uppercase;
-	margin-top: 1rem;
+	padding: ${(props) => (props.cta ? '0.5rem 2.5rem;' : '0.2rem 1rem')};
+	font-size: 1.2rem;
+	font-weight: 700;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
 
 	&:hover {
 		background-color: ${(props) =>
 			props.primary ? 'var(--color-400)' : 'var(--color-400)'};
-		color: ${(props) => (props.primary ? 'var(--color-dark)' : 'var(--color-dark)')};
+		color: ${(props) => (props.primary ? 'var(--color-light)' : 'var(--color-dark)')};
 		transition: all 0.2s ease-in-out;
 	}
 

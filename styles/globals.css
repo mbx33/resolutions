@@ -1,19 +1,20 @@
 :root {
-	--color-200: hsl(158, 64%, 82%);
-	--color-400: hsl(158, 64%, 52%);
-	--color-600: hsl(161, 94%, 30%);
-	--color-800: hsl(163, 88%, 20%);
-	--color-900: hsl(164, 86%, 16%);
+	--color-200: hsl(333, 28%, 65%);
+	--color-400: hsl(333, 28%, 52%);
+	--color-600: hsl(333, 28%, 39%);
+	--color-800: hsl(333, 28%, 23%);
+	--color-900: hsl(333, 28%, 16%);
 
-	--color-dark: hsl(0, 0%, 13%);
+	--color-dark: hsl(0, 5%, 4%);
 	--color-light: hsl(0, 0%, 100%);
-	--color-accent: hsl(161, 93%, 64%);
+	--color-accent: hsl(28, 30%, 45%);
 
 	/* grid-auto-flow: ; */
 }
 
 body {
 	background-color: var(--color-dark);
+	color: var(--color-light);
 	font-family: 'Monaco', sans-serif;
 }
 /*
@@ -28,7 +29,7 @@ body {
 /* focus styles */
 *:focus {
 	outline: none;
-	box-shadow: 0 0 0 0.3rem var(--color-600);
+	box-shadow: 0 0 0 0.2rem var(--color-accent);
 	border-radius: 0.3rem;
 }
 

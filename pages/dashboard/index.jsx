@@ -2,6 +2,7 @@ import { useResponse } from '../../contexts/ResponseContext';
 import Link from 'next/link';
 
 // Components
+import Layout from '../../components/Layout';
 
 // Styles
 import {
@@ -27,13 +28,15 @@ const DashboardPage = () => {
 	// TODO: Add a button to take them to start the questions
 
 	return (
-		<CenterContainer>
-			<h1>You can see your answers saved</h1>
-			<p>Your answers for Last Year 2022</p>
-			<Link href={`/dashboard/last-year/`}>Last Year</Link>
-			<p>Your answers for the New Year 2023</p>
-			<Link href={`/dashboard/new-year/`}>New Year</Link>
-		</CenterContainer>
+		<Layout title="Dashboard">
+			<CenterContainer>
+				<h1>You can see your answers saved</h1>
+				<p>Your answers for Last Year 2022</p>
+				<Link href={`/dashboard/last-year/`}>Last Year</Link>
+				<p>Your answers for the New Year 2023</p>
+				<Link href={`/dashboard/new-year/`}>New Year</Link>
+			</CenterContainer>
+		</Layout>
 	);
 };
 

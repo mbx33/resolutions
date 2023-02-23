@@ -5,6 +5,7 @@ import axios from 'axios';
 
 // Components
 import Responses from '../../components/dashboard/Responses';
+import Layout from '../../components/Layout';
 
 // Labels
 import { titles, labels } from '../../components/dashboard/lastYearLabels';
@@ -39,7 +40,7 @@ const LastYearPage = () => {
 	};
 
 	return (
-		<Main>
+		<Layout title="Last Year">
 			<h1>Last Year Review</h1>
 
 			<Responses description={oldYear.list} label={labels.list} edit={handleEdit} />
@@ -102,7 +103,7 @@ const LastYearPage = () => {
 			<Responses description={oldYear.movie_title} />
 
 			<Responses description={oldYear.goodbye} label={labels.goodbye} />
-		</Main>
+		</Layout>
 	);
 };
 

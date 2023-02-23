@@ -6,11 +6,9 @@ import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-r
 //Quote: Be Curious not Judgmental
 
 // Components
-import IntroForm from '../components/introduction/IntroForm';
-import Introduction from '../components/introduction/Introduction';
+import HomePage from '../components/home/HomePage';
 
 // Styles
-import { FormContainer } from '../styles/styled_components/form';
 import { Main } from '../styles/styled_components/utils';
 
 // function to delay the message
@@ -19,37 +17,9 @@ function timeOut(ms) {
 }
 
 export default function Home() {
-	const supabase = useSupabaseClient();
 	const user = useUser();
 	const session = useSession();
 	const router = Router;
-	const [message, setMessage] = useState('');
-	const [error, setError] = useState(false);
-	const [showNext, setShowNext] = useState(false);
-
-	const onSubmit = async (e) => {
-		e.preventDefault();
-
-		if (!e.target[0].checked) {
-			setError(true);
-			setMessage(
-				'You must accept the privacy policy & create an account to continue.'
-			);
-			timeOut(2000).then(() => setMessage(''));
-			return;
-		}
-
-		setError(false);
-		setShowNext(true);
-	};
-
-	// comment back in if you want to see the user object
-	// console.log(user);
-
-	// if (!session) {
-	// 	return (
-	// 		<HomePage />
-	// 	)}
 
 	// TODO: Create a Homepage describing the app and getting the user to login
 	// TODO: Put the intro stuff in the dashboard page before any questions
@@ -68,17 +38,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Main>
-				<div>
-					{showNext ? (
-						<Introduction user={user} />
-					) : (
-						<IntroForm onSubmit={onSubmit} />
-					)}
-
-					<div className="message">
-						<p className={error ? 'error' : 'success'}>{message}</p>
-					</div>
-				</div>
+				<HomePage />
 			</Main>
 		</>
 	);

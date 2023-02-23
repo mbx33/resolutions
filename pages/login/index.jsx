@@ -2,6 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useSession, useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 
+// components
+import Layout from '../../components/Layout';
 import Login from '../../components/signup-login/Login';
 
 function timeOut(ms) {
@@ -15,7 +17,11 @@ const LoginPage = () => {
 	const router = useRouter();
 
 	if (!user) {
-		return <Login supabase={supabase} session={session} timeOut={timeOut} />;
+		return (
+			<Layout title="Login">
+				<Login supabase={supabase} session={session} timeOut={timeOut} />
+			</Layout>
+		);
 	} else {
 		router.push('/dashboard');
 		return <div>Redirecting...</div>;

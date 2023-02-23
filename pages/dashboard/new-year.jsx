@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useResponse } from '../../contexts/ResponseContext';
 
 // Components
+import Layout from '../../components/Layout';
 import Responses from '../../components/dashboard/Responses';
 
 // Labels
@@ -28,7 +29,7 @@ const NewYearPage = () => {
 	const [oldYear, newYear] = responses;
 
 	return (
-		<Main>
+		<Layout title="New Year Answers">
 			<h1>The New Year Stuff</h1>
 			<h3>{nyTitles.part1}</h3>
 			<Responses description={newYear.dreams} />
@@ -77,7 +78,7 @@ const NewYearPage = () => {
 
 			<h3>{nyLabels.nyWord}</h3>
 			<Responses description={newYear.ny_word} />
-		</Main>
+		</Layout>
 	);
 };
 

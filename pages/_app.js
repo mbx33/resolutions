@@ -6,8 +6,6 @@ import { ResponseProvider } from '../contexts/ResponseContext';
 
 // import { AnimatePresence } from 'framer-motion';
 
-import Navbar from '../components/navigation/Navbar';
-
 export default function App({ Component, pageProps }) {
 	const [supabase] = useState(() => createBrowserSupabaseClient());
 
@@ -17,8 +15,6 @@ export default function App({ Component, pageProps }) {
 			initialSession={pageProps.initialSession}
 		>
 			<ResponseProvider>
-				<Navbar />
-
 				<Component {...pageProps} />
 			</ResponseProvider>
 		</SessionContextProvider>

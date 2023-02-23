@@ -116,11 +116,11 @@ export const Form = styled.form`
 		transition: background-color 0.2s ease-in-out;
 
 		&:hover {
-			background-color: var(--color-900);
+			background-color: var(--color-400);
 		}
 
 		&:active {
-			background-color: var(--color-900);
+			background-color: var(--color-400);
 		}
 	}
 `;

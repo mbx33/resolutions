@@ -1,16 +1,14 @@
 import styled from 'styled-components';
 
 export const NavContainer = styled.nav`
-	width: 100%;
 	z-index: 100;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.2rem 1.5rem;
-	background-color: var(--color-dark);
+	padding: 0.3rem 1.5rem;
 	color: var(--color-light);
 
-	.nav ul {
+	.btn-group {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -18,7 +16,7 @@ export const NavContainer = styled.nav`
 		list-style: none;
 	}
 
-	li {
+	a {
 		font-size: 1.8rem;
 	}
 
@@ -26,7 +24,7 @@ export const NavContainer = styled.nav`
 		text-decoration: none;
 	}
 
-	.nav ul li::before {
+	.nav a::before {
 		content: '';
 		display: block;
 		position: absolute;
@@ -34,19 +32,19 @@ export const NavContainer = styled.nav`
 		left: 0;
 		width: 100%;
 		height: 2px;
-		background-color: var(--color-400);
+		background-color: var(--color-light);
 		transform-origin: center;
 		transform: scaleX(0);
 		transition: transform 0.3s ease-in-out;
 	}
 
-	.nav ul li {
+	.nav a {
 		position: relative;
 		text-decoration: none;
-		color: var(--color-600);
+		color: var(--color-light);
 
 		&:hover {
-			color: var(--color-400);
+			color: var(--color-light);
 
 			&::before {
 				transform: scaleX(1);
@@ -55,7 +53,7 @@ export const NavContainer = styled.nav`
 		}
 
 		&:active {
-			color: var(--color-400);
+			color: var(--color-light);
 			transition: all 0.2s ease-in-out;
 			transform: scale(0.9);
 		}
@@ -68,26 +66,17 @@ export const NavContainer = styled.nav`
 
 	.logo a {
 		text-decoration: none;
-		color: var(--color-dark);
+		color: var(--color-600);
 	}
 
 	.logo a:hover {
 		color: var(--color-400);
 	}
 
-	button {
-		color: var(--color-dark);
-		background-color: var(--color-600);
-		border: none;
-		padding: 0.5rem 0.5rem;
-		border-radius: 0.5rem;
-		font-size: 1.2rem;
-		font-weight: 700;
-		cursor: pointer;
-
-		&:hover {
-			background-color: var(--color-400);
-			/* color: var(--color-800); */
-		}
+	.btn-group {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 3rem;
 	}
 `;
