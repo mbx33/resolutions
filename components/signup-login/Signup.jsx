@@ -8,7 +8,7 @@ import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { FormContainer, Form } from '../../styles/styled_components/form';
 import { Button } from '../../styles/styled_components/utils';
 
-const Signup = ({ supabase, timeOut }) => {
+const Signup = ({ supabase }) => {
 	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
@@ -17,6 +17,10 @@ const Signup = ({ supabase, timeOut }) => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');
 	const [showPassword, setShowPassword] = useState(false);
+
+	function timeout(ms) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	}
 
 	const togglePassword = () => {
 		setShowPassword(!showPassword);
@@ -38,13 +42,13 @@ const Signup = ({ supabase, timeOut }) => {
 		if (password !== passwordConfirm) {
 			setLoading(false);
 			setError('Passwords do not match');
-			timeOut(3000).then(() => setError(''));
+			timeout(3000).then(() => setError(''));
 			return;
 		}
 		if (!email || !username || !password || !passwordConfirm) {
 			setLoading(false);
 			setError('Please fill out all fields');
-			timeOut(3000).then(() => setError(''));
+			timeout(3000).then(() => setError(''));
 			return;
 		}
 		const { user, error } = await supabase.auth.signUp({
@@ -61,7 +65,7 @@ const Signup = ({ supabase, timeOut }) => {
 			console.log(error);
 			setLoading(false);
 			setError(error.message);
-			timeOut(3000).then(() => setError(''));
+			timeout(3000).then(() => setError(''));
 		}
 	};
 

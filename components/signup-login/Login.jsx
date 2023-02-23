@@ -7,13 +7,17 @@ import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
 
-const Login = ({ supabase, session, timeOut }) => {
+const Login = ({ supabase, session }) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const [message, setMessage] = useState(null);
 	const [showPassword, setShowPassword] = useState(false);
+
+	function timeout(ms) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	}
 
 	const togglePassword = () => {
 		setShowPassword(!showPassword);
@@ -30,7 +34,7 @@ const Login = ({ supabase, session, timeOut }) => {
 			console.log(error);
 			setLoading(false);
 			setError(error.message);
-			timeOut(3000).then(() => setError(''));
+			timeout(3000).then(() => setError(''));
 		}
 	};
 
@@ -83,8 +87,6 @@ const Login = ({ supabase, session, timeOut }) => {
 					<p style={{ margin: '1.3rem 0' }}>
 						No Account? <Link href="/signup">Signup</Link>
 					</p>
-
-					{error && <p>{error}</p>}
 				</FormContainer>
 			</main>
 		</>
