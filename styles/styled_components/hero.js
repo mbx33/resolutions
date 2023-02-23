@@ -22,6 +22,7 @@ export const ContentContainer = styled.div`
 	h1 {
 		font-size: 3rem;
 		margin-bottom: 1rem;
+		letter-spacing: 1px;
 	}
 
 	.headline {

@@ -24,6 +24,7 @@ const HomePage = () => {
 				<Navbar />
 			</NavbarWrapper>
 			<Hero />
+			<div className="line" />
 			<HowTo />
 			<Why />
 			<Footer />
