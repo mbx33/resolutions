@@ -85,6 +85,7 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear 
 				</p>
 				<Button
 					next
+					primary
 					onClick={() => {
 						router.push('/new-year');
 					}}

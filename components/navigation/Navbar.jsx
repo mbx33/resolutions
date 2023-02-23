@@ -26,15 +26,17 @@ const Navbar = () => {
 		username = user.user_metadata.username;
 	}
 
+	// ! Need to redo the logo design
+
 	return (
 		<NavContainer>
 			<div className="logo">
 				<Link href="/">
 					<Image
 						className="logo"
-						src="https://res.cloudinary.com/high-desert-development/image/upload/v1675828591/ResLogo-removebg-preview_tgnrhy.png"
+						src="https://res.cloudinary.com/high-desert-development/image/upload/v1677113695/gold-logo-removebg-preview_ktm3gv.png"
 						alt="logo"
-						width={125}
+						width={325}
 						height={125}
 						priority={true}
 					></Image>
@@ -56,16 +58,12 @@ const Navbar = () => {
 				) : (
 					<>
 						<div className="btn-group">
-							<StartButton />
+							<StartButton isPrimary={true} isSecondary={false} />
 							<Link href="/login">Login</Link>
 							<Link href="/about">About</Link>
 						</div>
 					</>
 				)}
-				{/* {user && (
-					<div className="btn-group">
-					</div>
-				)} */}
 			</div>
 		</NavContainer>
 	);

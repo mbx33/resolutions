@@ -1,10 +1,20 @@
 import React from 'react';
+import Router from 'next/router';
 
 import { Button } from '../../styles/styled_components/utils';
 
-const StartButton = () => {
+const StartButton = ({ isSecondary, isPrimary }) => {
+	const router = Router;
+
 	return (
-		<Button cta primary>
+		<Button
+			primary={isPrimary}
+			cta={true}
+			secondary={isSecondary}
+			onClick={() => {
+				router.push('/signup');
+			}}
+		>
 			Start Now
 		</Button>
 	);

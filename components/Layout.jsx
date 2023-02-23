@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 // components
 import Navbar from './navigation/Navbar';
+import Footer from './Footer';
 
 const Layout = ({ children, title }) => {
 	return (
@@ -15,7 +16,9 @@ const Layout = ({ children, title }) => {
 				<Navbar />
 			</header>
 			<main>{children}</main>
-			<footer>My Footer Content Here</footer>
+			<footer>
+				<Footer />
+			</footer>
 		</>
 	);
 };

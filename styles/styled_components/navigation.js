@@ -5,7 +5,7 @@ export const NavContainer = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.3rem 1.5rem;
+	padding: 0.3rem 2rem;
 	color: var(--color-light);
 
 	.btn-group {
@@ -62,6 +62,7 @@ export const NavContainer = styled.nav`
 	.logo {
 		font-size: 2.4rem;
 		font-weight: 700;
+		overflow-x: hidden;
 	}
 
 	.logo a {

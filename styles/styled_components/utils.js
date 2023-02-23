@@ -92,9 +92,22 @@ export const Button = ({ children, ...props }) => {
 
 // * Styles for the general button ////////////////
 export const ButtonContainer = styled.button`
+	/* background-color: ${(props) =>
+		props.primary ? 'var(--color-600)' : 'var(--color-900)'}; */
 	background-color: ${(props) =>
-		props.primary ? 'var(--color-600)' : 'var(--color-900)'};
-	color: ${(props) => (props.primary ? 'var(--color-light)' : 'var(--color-dark)')};
+		props.primary
+			? 'var(--color-600)'
+			: props.secondary
+			? 'var(--color-dark)'
+			: 'var(--color-900)'};
+
+	color: ${(props) =>
+		props.primary
+			? 'var(--color-light)'
+			: props.secondary
+			? 'var(--color-light)'
+			: 'var(--color-dark)'};
+
 	font-size: 1.3rem;
 	border: ${(props) => (props.primary ? '2px solid var(--color-dark)' : 'none')};
 	border-radius: ${(props) => (props.cta ? '.5rem' : '3px')};
@@ -110,8 +123,17 @@ export const ButtonContainer = styled.button`
 
 	&:hover {
 		background-color: ${(props) =>
-			props.primary ? 'var(--color-400)' : 'var(--color-400)'};
-		color: ${(props) => (props.primary ? 'var(--color-light)' : 'var(--color-dark)')};
+			props.primary
+				? 'var(--color-400)'
+				: props.secondary
+				? 'var(--color-900)'
+				: 'var(--color-dark)'};
+		color: ${(props) =>
+			props.primary
+				? 'var(--color-light)'
+				: props.secondary
+				? 'var(--color-light)'
+				: 'var(--color-dark)'};
 		transition: all 0.2s ease-in-out;
 	}
 

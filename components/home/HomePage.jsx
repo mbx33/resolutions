@@ -5,6 +5,9 @@ import Head from 'next/head';
 // import Layout from '../Layout';
 import Hero from './Hero';
 import Navbar from '../navigation/Navbar';
+import HowTo from './HowTo';
+import Why from './Why';
+import Footer from '../Footer';
 
 // styles
 import { NavbarWrapper } from '../../styles/styled_components/home';
@@ -21,6 +24,9 @@ const HomePage = () => {
 				<Navbar />
 			</NavbarWrapper>
 			<Hero />
+			<HowTo />
+			<Why />
+			<Footer />
 		</>
 	);
 };

@@ -11,18 +11,10 @@ import HomePage from '../components/home/HomePage';
 // Styles
 import { Main } from '../styles/styled_components/utils';
 
-// function to delay the message
-function timeOut(ms) {
-	return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 export default function Home() {
 	const user = useUser();
 	const session = useSession();
 	const router = Router;
-
-	// TODO: Create a Homepage describing the app and getting the user to login
-	// TODO: Put the intro stuff in the dashboard page before any questions
 
 	if (session && user) {
 		// redirect to dashboard page
