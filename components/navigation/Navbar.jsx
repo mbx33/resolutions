@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 import { useSession, useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 
+import { useResponse } from '../../contexts/ResponseContext';
+
 // components
 import StartButton from '../buttons/StartButton';
 
@@ -15,9 +17,11 @@ const Navbar = () => {
 	const supabase = useSupabaseClient();
 	const session = useSession();
 	const user = useUser();
+	const { resetResponses } = useResponse();
 
 	const handleLogout = () => {
 		supabase.auth.signOut();
+		resetResponses();
 	};
 
 	let username;

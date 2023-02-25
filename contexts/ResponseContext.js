@@ -336,7 +336,7 @@ export function ResponseProvider({ children }) {
 			console.log('Fetched all responses');
 		}
 		if (user) {
-		fetchAllResponses(user);
+			fetchAllResponses(user);
 		}
 	}, [user, supabase]);
 
@@ -345,6 +345,90 @@ export function ResponseProvider({ children }) {
 	useEffect(() => {
 		getAllResponses();
 	}, [user, getAllResponses]);
+
+	const resetResponses = () => {
+		setUserResponses({
+			// Reset values for ly_branch_one
+			list: '',
+			family: '',
+			material: '',
+			friends: '',
+			intellectual: '',
+			financial: '',
+			work_study: '',
+			vacation_hobby: '',
+			health_sport: '',
+			emotional: '',
+			achievements: '',
+			// Reset values for ly_branch_two
+			smartest: '',
+			biggest: '',
+			risk: '',
+			surprise: '',
+			others: '',
+			completed: '',
+			proud: '',
+			influenced_you: '',
+			you_influenced: '',
+			unable: '',
+			discovered: '',
+			grateful: '',
+			// Reset values for ly_branch_three
+			best_moments: '',
+			biggest_ach: '',
+			how: '',
+			who: '',
+			challenges: '',
+			overcame: '',
+			learned: '',
+			// Reset values for ly_branch_four
+			forgiveness: '',
+			release: '',
+			word_one: '',
+			word_two: '',
+			word_three: '',
+			movie_title: '',
+			goodbye: '',
+		});
+		setNewYearResponses({
+			// Reset values for ny_branch_one
+			dreams: '',
+			family: '',
+			material: '',
+			friends: '',
+			intellectual: '',
+			financial: '',
+			work_study: '',
+			vacation_hobby: '',
+			health_sport: '',
+			emotional: '',
+			achievements: '',
+			// Reset values for ny_branch_two
+			love: '',
+			let_go: '',
+			achieve: '',
+			support: '',
+			try: '',
+			say_no: '',
+			comfort: '',
+			morning: '',
+			indulge: '',
+			visit: '',
+			relationships: '',
+			gifts: '',
+			// Reset values for ny_branch_three
+			procrastinate: '',
+			energy: '',
+			bravest: '',
+			say_yes: '',
+			advise: '',
+			special: '',
+			ny_word: '',
+			secret_wish: '',
+			signature: '',
+			date: '',
+		});
+	};
 
 	const value = {
 		user,
@@ -356,6 +440,7 @@ export function ResponseProvider({ children }) {
 		uploadLastYear,
 		uploadNewYear,
 		getAllResponses,
+		resetResponses,
 	};
 
 	return <ResponseContext.Provider value={value}>{children}</ResponseContext.Provider>;
