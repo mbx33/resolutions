@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import Head from 'next/head';
 
 // components
@@ -8,11 +8,22 @@ import Navbar from '../navigation/Navbar';
 import HowTo from './HowTo';
 import Why from './Why';
 import Footer from '../Footer';
+import Modal from '../Modal';
 
 // styles
 import { NavbarWrapper } from '../../styles/styled_components/home';
 
 const HomePage = () => {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	const openModal = () => {
+		setIsModalOpen(true);
+	};
+
+	const closeModal = () => {
+		setIsModalOpen(false);
+	};
+
 	return (
 		<>
 			<Head>
@@ -21,12 +32,13 @@ const HomePage = () => {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
 			<NavbarWrapper>
-				<Navbar />
+				<Navbar openModal={openModal} />
 			</NavbarWrapper>
-			<Hero />
+			<Hero openModal={openModal} />
 			<div className="line" />
 			<HowTo />
-			<Why />
+			<Why openModal={openModal} />
+			<Modal isOpen={isModalOpen} onClose={closeModal} />
 			<Footer />
 		</>
 	);

@@ -13,7 +13,7 @@ import StartButton from '../buttons/StartButton';
 import { NavContainer } from '../../styles/styled_components/navigation';
 import { Button } from '../../styles/styled_components/utils';
 
-const Navbar = () => {
+const Navbar = ({ openModal }) => {
 	const supabase = useSupabaseClient();
 	const session = useSession();
 	const user = useUser();
@@ -62,7 +62,11 @@ const Navbar = () => {
 				) : (
 					<>
 						<div className="btn-group">
-							<StartButton isPrimary={true} isSecondary={false} />
+							<StartButton
+								openModal={openModal}
+								isPrimary={true}
+								isSecondary={false}
+							/>
 							<Link href="/login">Login</Link>
 							<Link href="/about">About</Link>
 						</div>

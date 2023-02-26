@@ -1,5 +1,6 @@
 import Router from 'next/router';
 import Head from 'next/head';
+import { useState } from 'react';
 import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
 //Quote: Be Curious not Judgmental

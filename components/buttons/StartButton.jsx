@@ -3,7 +3,7 @@ import Router from 'next/router';
 
 import { Button } from '../../styles/styled_components/utils';
 
-const StartButton = ({ isSecondary, isPrimary }) => {
+const StartButton = ({ isSecondary, isPrimary, openModal }) => {
 	const router = Router;
 
 	return (
@@ -11,9 +11,7 @@ const StartButton = ({ isSecondary, isPrimary }) => {
 			primary={isPrimary}
 			cta={true}
 			secondary={isSecondary}
-			onClick={() => {
-				router.push('/signup');
-			}}
+			onClick={openModal}
 		>
 			Start Now
 		</Button>
