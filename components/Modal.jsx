@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom';
-
 import { useEffect, useRef, useState } from 'react';
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
@@ -15,7 +14,7 @@ const Modal = ({ isOpen, onClose }) => {
 	const supabase = useSupabaseClient();
 	const session = useSession();
 
-	const [showSignup, setShowSignup] = useState(true);
+	const [showSignup, setShowSignup] = useState(false);
 
 	function timeOut(ms) {
 		return new Promise((resolve) => setTimeout(resolve, ms));
