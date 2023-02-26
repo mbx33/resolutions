@@ -36,7 +36,6 @@ const Modal = ({ isOpen, onClose }) => {
 
 	return ReactDOM.createPortal(
 		<ModalOverlay>
-			<button onClick={onClose}>Close</button>
 			<ModalContainer ref={modalRef}>
 				{showSignup ? (
 					<Signup
@@ -44,6 +43,7 @@ const Modal = ({ isOpen, onClose }) => {
 						supabase={supabase}
 						session={session}
 						timeOut={timeOut}
+						onClose={onClose}
 					/>
 				) : (
 					<Login
@@ -51,6 +51,7 @@ const Modal = ({ isOpen, onClose }) => {
 						supabase={supabase}
 						session={session}
 						timeOut={timeOut}
+						onClose={onClose}
 					/>
 				)}
 			</ModalContainer>

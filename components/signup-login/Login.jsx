@@ -8,7 +8,7 @@ import { Button } from '../../styles/styled_components/utils';
 // Styles
 import { FormContainer, Form } from '../../styles/styled_components/form';
 
-const Login = ({ supabase, session, setShowSignup }) => {
+const Login = ({ supabase, session, setShowSignup, onClose }) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -51,6 +51,7 @@ const Login = ({ supabase, session, setShowSignup }) => {
 					<h2>login to your account</h2>
 					{message && <p>{message}</p>}
 					{error && <p>{error}</p>}
+					<button onClick={onClose}>Close</button>
 					<Form onSubmit={handleSubmit}>
 						<div className="form-container">
 							<div className="form-group">

@@ -8,7 +8,7 @@ import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { FormContainer, Form } from '../../styles/styled_components/form';
 import { Button } from '../../styles/styled_components/utils';
 
-const Signup = ({ supabase, setShowSignup }) => {
+const Signup = ({ supabase, setShowSignup, onClose }) => {
 	const [email, setEmail] = useState('');
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
@@ -70,6 +70,7 @@ const Signup = ({ supabase, setShowSignup }) => {
 			<aside>
 				<FormContainer>
 					<h2>Create a free account</h2>
+					<button onClick={onClose}>Close</button>
 					<Form onSubmit={handleSubmit}>
 						<div className="form-container">
 							<div className="form-group">
