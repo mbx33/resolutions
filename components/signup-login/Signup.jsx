@@ -132,10 +132,10 @@ const Signup = ({ supabase }) => {
 							{alert && <p>{alert}</p>}
 							{error && <p>{error}</p>}
 						</div>
+						<p>
+							Already have an account? <Link href="/login">Login</Link>
+						</p>
 					</Form>
-					<p>
-						Already have an account? <Link href="/login">Login</Link>
-					</p>
 				</FormContainer>
 			</main>
 		</>

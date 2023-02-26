@@ -83,10 +83,10 @@ const Login = ({ supabase, session }) => {
 								{loading ? 'Loading...' : 'Login'}
 							</button>
 						</div>
+						<p style={{ margin: '1.3rem 0' }}>
+							No Account? <Link href="/signup">Signup</Link>
+						</p>
 					</Form>
-					<p style={{ margin: '1.3rem 0' }}>
-						No Account? <Link href="/signup">Signup</Link>
-					</p>
 				</FormContainer>
 			</main>
 		</>

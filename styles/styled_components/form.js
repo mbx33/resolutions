@@ -5,7 +5,7 @@ export const FormContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--color-dark);
+	/* background-color: var(--color-dark); */
 	border-radius: 0 0 10px 10px;
 	padding: 20px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -122,5 +122,10 @@ export const Form = styled.form`
 		&:active {
 			background-color: var(--color-400);
 		}
+	}
+
+	p > a {
+		color: var(--color-900);
+		margin-left: 0.6rem;
 	}
 `;

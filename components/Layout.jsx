@@ -4,6 +4,9 @@ import Head from 'next/head';
 import Navbar from './navigation/Navbar';
 import Footer from './Footer';
 
+// styles
+import { MainContainer } from '../styles/styled_components/utils';
+
 const Layout = ({ children, title }) => {
 	return (
 		<>
@@ -12,13 +15,15 @@ const Layout = ({ children, title }) => {
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
-			<header>
-				<Navbar />
-			</header>
-			<main>{children}</main>
-			<footer>
-				<Footer />
-			</footer>
+			<MainContainer>
+				<header className="header">
+					<Navbar />
+				</header>
+				<main>{children}</main>
+				<footer>
+					<Footer />
+				</footer>
+			</MainContainer>
 		</>
 	);
 };

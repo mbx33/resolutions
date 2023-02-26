@@ -14,6 +14,19 @@ export const Main = styled.main`
 `;
 /////////////////////////////////////////////////////////////////////////
 
+export const MainContainer = styled.main`
+	/* background-image: url('https://res.cloudinary.com/high-desert-development/image/upload/v1677281717/starry_ev16p6.jpg'); */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	/* height: 100vh; */
+
+	/* .header {
+		background-color: rgb(0, 0, 0, 0.5);
+	} */
+`;
+
 // * Styles for a container that centers all of it's text and children
 export const CenterContainer = styled.main`
 	font-size: 1.2rem;
@@ -23,6 +36,7 @@ export const CenterContainer = styled.main`
 	color: var(--color-light);
 	max-width: 60%;
 	margin: 0 auto;
+	height: 100vh;
 
 	a {
 		color: var(--color-600);
