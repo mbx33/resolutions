@@ -13,7 +13,7 @@ const Part2 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 				moments stood out the most and meant something to you?
 			</p>
 			<Form>
-				<div className="form-container">
+				<div className=" grid">
 					<div className="form-group">
 						<label htmlFor="family">Family & Personal Life</label>
 						<input
@@ -25,9 +25,7 @@ const Part2 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 						/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="material">
-							Materialistic (house, other things)
-						</label>
+						<label htmlFor="material">Materialistic (house, things)</label>
 						<input
 							onChange={handleChange}
 							value={userResponses.material}
@@ -118,14 +116,14 @@ const Part2 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 							id="achievements"
 						/>
 					</div>
-					<div className="button-group">
-						<Button back primary onClick={prevForm}>
-							Back
-						</Button>
-						<Button next primary onClick={nextStep}>
-							Continue
-						</Button>
-					</div>
+				</div>
+				<div className="button-group grid-buttons">
+					<Button back primary onClick={prevForm}>
+						Back
+					</Button>
+					<Button next primary onClick={nextStep}>
+						Continue
+					</Button>
 				</div>
 			</Form>
 		</main>

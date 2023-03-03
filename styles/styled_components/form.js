@@ -6,11 +6,11 @@ export const FormContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	/*Add background color for a background against the form*/
-	/* background-color: var(--color-600); */
+	background-color: var(--color-600);
 	border-radius: 0.6rem;
 	padding: 1rem 2rem;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-	max-width: 50%;
+	box-shadow: 0.3rem 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.8);
+	max-width: 75%;
 	margin: 0 auto;
 
 	.error {
@@ -38,8 +38,16 @@ export const Form = styled.form`
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	border-radius: 10px;
-	background-color: var(--color-200);
+	background-color: var(--color-600);
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		width: 100%;
+		gap: 3rem;
+		padding: 1.3rem 1rem;
+	}
 
 	fieldset {
 		display: flex;
@@ -54,7 +62,7 @@ export const Form = styled.form`
 		legend {
 			font-size: 1.5rem;
 			font-weight: bold;
-			color: var(--color-900);
+			/* color: var(--color-900); */
 		}
 
 		input {
@@ -67,7 +75,6 @@ export const Form = styled.form`
 
 	label {
 		font-size: 1.2rem;
-		color: #000;
 	}
 
 	textarea {
@@ -92,11 +99,15 @@ export const Form = styled.form`
 		align-items: center;
 	}
 
+	.grid-buttons {
+		padding: 1.3rem 2rem;
+	}
+
 	.form-container {
 		display: grid;
+		grid-template-columns: 1fr;
 		width: 100%;
 		gap: 1.5rem;
-		grid-template-columns: 1fr;
 		padding: 1.3rem 2rem;
 	}
 

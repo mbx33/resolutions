@@ -12,7 +12,9 @@ import Step4 from '../../components/last-year/Step4';
 
 // Styles
 import { FormContainer } from '../../styles/styled_components/form';
-import { ErrorContainer, Main } from '../../styles/styled_components/utils';
+import { ErrorContainer } from '../../styles/styled_components/utils';
+
+import { Main } from '../../styles/styled_components/main-forms';
 
 // Will have a total of 9 steps eventually,
 
@@ -68,43 +70,45 @@ const LastYearForms = () => {
 	return (
 		<>
 			<Layout title="Last Year">
-				<FormContainer>
-					{step === 1 && (
-						<Step1
-							nextForm={nextForm}
-							prevForm={prevForm}
-							nextStep={changeNextStep}
-							currentPart={currentPart}
-						/>
-					)}
-					{step === 2 && (
-						<Step2
-							nextStep={changeNextStep}
-							prevStep={changePrevStep}
-							nextForm={nextForm}
-							prevForm={prevForm}
-							currentPart={currentPart}
-						/>
-					)}
-					{step === 3 && (
-						<Step3
-							nextStep={changeNextStep}
-							prevStep={changePrevStep}
-							nextForm={nextForm}
-							prevForm={prevForm}
-							currentPart={currentPart}
-						/>
-					)}
-					{step === 4 && (
-						<Step4
-							nextStep={changeNextStep}
-							prevStep={changePrevStep}
-							nextForm={nextForm}
-							prevForm={prevForm}
-							currentPart={currentPart}
-						/>
-					)}
-				</FormContainer>
+				<Main>
+					<FormContainer>
+						{step === 1 && (
+							<Step1
+								nextForm={nextForm}
+								prevForm={prevForm}
+								nextStep={changeNextStep}
+								currentPart={currentPart}
+							/>
+						)}
+						{step === 2 && (
+							<Step2
+								nextStep={changeNextStep}
+								prevStep={changePrevStep}
+								nextForm={nextForm}
+								prevForm={prevForm}
+								currentPart={currentPart}
+							/>
+						)}
+						{step === 3 && (
+							<Step3
+								nextStep={changeNextStep}
+								prevStep={changePrevStep}
+								nextForm={nextForm}
+								prevForm={prevForm}
+								currentPart={currentPart}
+							/>
+						)}
+						{step === 4 && (
+							<Step4
+								nextStep={changeNextStep}
+								prevStep={changePrevStep}
+								nextForm={nextForm}
+								prevForm={prevForm}
+								currentPart={currentPart}
+							/>
+						)}
+					</FormContainer>
+				</Main>
 			</Layout>
 		</>
 	);

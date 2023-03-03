@@ -10,6 +10,7 @@ import {
 	Button,
 	CenterContainer,
 } from '../../styles/styled_components/utils';
+import { Main } from '../../styles/styled_components/main-forms';
 
 const DashboardPage = () => {
 	const { user } = useResponse();
@@ -29,13 +30,15 @@ const DashboardPage = () => {
 
 	return (
 		<Layout title="Dashboard">
-			<CenterContainer>
-				<h1>You can see your answers saved</h1>
-				<p>Your answers for Last Year 2022</p>
-				<Link href={`/dashboard/last-year/`}>Last Year</Link>
-				<p>Your answers for the New Year 2023</p>
-				<Link href={`/dashboard/new-year/`}>New Year</Link>
-			</CenterContainer>
+			<Main>
+				<CenterContainer>
+					<h1>You can see your answers saved</h1>
+					<p>Your answers for Last Year 2022</p>
+					<Link href={`/dashboard/last-year/`}>Last Year</Link>
+					<p>Your answers for the New Year 2023</p>
+					<Link href={`/dashboard/new-year/`}>New Year</Link>
+				</CenterContainer>
+			</Main>
 		</Layout>
 	);
 };

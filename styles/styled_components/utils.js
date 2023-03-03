@@ -21,10 +21,6 @@ export const MainContainer = styled.main`
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	/* height: 100vh; */
-
-	/* .header {
-		background-color: rgb(0, 0, 0, 0.5);
-	} */
 `;
 
 // * Styles for a container that centers all of it's text and children
@@ -39,13 +35,13 @@ export const CenterContainer = styled.main`
 	height: 100vh;
 
 	a {
-		color: var(--color-600);
+		color: var(--color-light);
 		font-size: 2.2rem;
 		text-decoration: none;
 	}
 
 	a:hover {
-		color: var(--color-400);
+		color: var(--color-900);
 	}
 `;
 /////////////////////////////////////////////////////////////////////////

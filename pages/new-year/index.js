@@ -13,6 +13,7 @@ import NyStep3 from '../../components/new-year/NyStep3';
 // Styles
 import { FormContainer } from '../../styles/styled_components/form';
 import { ErrorContainer } from '../../styles/styled_components/utils';
+import { Main } from '../../styles/styled_components/main-forms';
 
 // Will have a total of 9 steps eventually,
 
@@ -69,33 +70,35 @@ const NewYearForms = () => {
 	return (
 		<>
 			<Layout title="New Year">
-				<FormContainer>
-					{step === 1 && (
-						<NyStep1
-							currentPart={currentPart}
-							nextStep={changeNextStep}
-							nextForm={nextForm}
-							prevForm={prevForm}
-						/>
-					)}
-					{step === 2 && (
-						<NyStep2
-							currentPart={currentPart}
-							nextStep={changeNextStep}
-							prevStep={changePrevStep}
-							nextForm={nextForm}
-							prevForm={prevForm}
-						/>
-					)}
-					{step === 3 && (
-						<NyStep3
-							currentPart={currentPart}
-							prevStep={changePrevStep}
-							prevForm={prevForm}
-							nextForm={nextForm}
-						/>
-					)}
-				</FormContainer>
+				<Main>
+					<FormContainer>
+						{step === 1 && (
+							<NyStep1
+								currentPart={currentPart}
+								nextStep={changeNextStep}
+								nextForm={nextForm}
+								prevForm={prevForm}
+							/>
+						)}
+						{step === 2 && (
+							<NyStep2
+								currentPart={currentPart}
+								nextStep={changeNextStep}
+								prevStep={changePrevStep}
+								nextForm={nextForm}
+								prevForm={prevForm}
+							/>
+						)}
+						{step === 3 && (
+							<NyStep3
+								currentPart={currentPart}
+								prevStep={changePrevStep}
+								prevForm={prevForm}
+								nextForm={nextForm}
+							/>
+						)}
+					</FormContainer>
+				</Main>
 			</Layout>
 		</>
 	);

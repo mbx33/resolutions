@@ -13,7 +13,7 @@ const Part2 = ({ handleChange, newYearResponses, nextStep, prevForm }) => {
 				Year? What events will be the most significant? Describe them briefly
 			</p>
 			<Form>
-				<div className="form-container">
+				<div className="grid">
 					<div className="form-group">
 						<label htmlFor="family">Family & Personal Life</label>
 						<input
@@ -118,14 +118,14 @@ const Part2 = ({ handleChange, newYearResponses, nextStep, prevForm }) => {
 							id="achievements"
 						/>
 					</div>
-					<div className="button-group">
-						<Button back primary onClick={prevForm}>
-							Back
-						</Button>
-						<Button next primary onClick={nextStep}>
-							Continue
-						</Button>
-					</div>
+				</div>
+				<div className="button-group grid-buttons">
+					<Button back primary onClick={prevForm}>
+						Back
+					</Button>
+					<Button next primary onClick={nextStep}>
+						Continue
+					</Button>
 				</div>
 			</Form>
 		</main>
