@@ -3,7 +3,7 @@ import Router from 'next/router';
 
 import { Button } from '../../styles/styled_components/utils';
 
-const StartButton = ({ isSecondary, isPrimary, openModal }) => {
+const StartButton = ({ isSecondary, isPrimary, openSignup }) => {
 	const router = Router;
 
 	return (
@@ -11,7 +11,7 @@ const StartButton = ({ isSecondary, isPrimary, openModal }) => {
 			primary={isPrimary}
 			cta={true}
 			secondary={isSecondary}
-			onClick={openModal}
+			onClick={openSignup}
 		>
 			Start Now
 		</Button>

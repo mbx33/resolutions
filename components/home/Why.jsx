@@ -4,7 +4,7 @@ import StartButton from '../buttons/StartButton';
 //styles
 import { WhyContainer } from '../../styles/styled_components/home';
 
-const Why = ({ openModal }) => {
+const Why = ({ openSignup }) => {
 	return (
 		<WhyContainer>
 			<h1>Why is this good for me?</h1>
@@ -25,7 +25,11 @@ const Why = ({ openModal }) => {
 				</li>
 			</ul>
 			<div className="cta-btn">
-				<StartButton openModal={openModal} isPrimary={false} isSecondary={true} />
+				<StartButton
+					openSignup={openSignup}
+					isPrimary={false}
+					isSecondary={true}
+				/>
 			</div>
 		</WhyContainer>
 	);

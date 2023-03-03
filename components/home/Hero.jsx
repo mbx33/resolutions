@@ -4,7 +4,7 @@ import React from 'react';
 import { HeroContainer, ContentContainer } from '../../styles/styled_components/hero';
 import StartButton from '../buttons/StartButton';
 
-const Hero = ({ openModal }) => {
+const Hero = ({ openSignup }) => {
 	return (
 		<HeroContainer>
 			<ContentContainer>
@@ -17,7 +17,7 @@ const Hero = ({ openModal }) => {
 				</p>
 				<div className="cta-btn">
 					<StartButton
-						openModal={openModal}
+						openSignup={openSignup}
 						isPrimary={true}
 						isSecondary={false}
 					/>

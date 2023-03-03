@@ -9,12 +9,10 @@ import Signup from './signup-login/Signup';
 // styles
 import { ModalOverlay, ModalContainer } from '../styles/styled_components/modal';
 
-const Modal = ({ isOpen, onClose }) => {
+const Modal = ({ isOpen, onClose, showSignup, setShowSignup }) => {
 	const modalRef = useRef(null);
 	const supabase = useSupabaseClient();
 	const session = useSession();
-
-	const [showSignup, setShowSignup] = useState(false);
 
 	function timeOut(ms) {
 		return new Promise((resolve) => setTimeout(resolve, ms));

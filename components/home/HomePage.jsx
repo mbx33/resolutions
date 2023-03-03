@@ -15,6 +15,17 @@ import { NavbarWrapper } from '../../styles/styled_components/home';
 
 const HomePage = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [showSignup, setShowSignup] = useState(true);
+
+	function openModalLogin() {
+		setShowSignup(false);
+		openModal();
+	}
+
+	function openModalSignup() {
+		setShowSignup(true);
+		openModal();
+	}
 
 	const openModal = () => {
 		setIsModalOpen(true);
@@ -32,13 +43,18 @@ const HomePage = () => {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
 			<NavbarWrapper>
-				<Navbar openModal={openModal} />
+				<Navbar openLogin={openModalLogin} openSignup={openModalSignup} />
 			</NavbarWrapper>
-			<Hero openModal={openModal} />
+			<Hero openSignup={openModalSignup} />
 			<div className="line" />
 			<HowTo />
-			<Why openModal={openModal} />
-			<Modal isOpen={isModalOpen} onClose={closeModal} />
+			<Why openSignup={openModalSignup} />
+			<Modal
+				isOpen={isModalOpen}
+				onClose={closeModal}
+				setShowSignup={setShowSignup}
+				showSignup={showSignup}
+			/>
 			<Footer />
 		</>
 	);
