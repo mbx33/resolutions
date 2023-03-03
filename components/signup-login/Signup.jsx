@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 
 // Styles
-import { FormContainer, Form } from '../../styles/styled_components/form';
+import { FormContainer, Form } from '../../styles/styled_components/signup';
 import { Button } from '../../styles/styled_components/utils';
 
 const Signup = ({ supabase, setShowSignup, onClose }) => {

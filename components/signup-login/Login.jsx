@@ -6,7 +6,7 @@ import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { Button } from '../../styles/styled_components/utils';
 
 // Styles
-import { FormContainer, Form } from '../../styles/styled_components/form';
+import { FormContainer, Form } from '../../styles/styled_components/signup';
 
 const Login = ({ supabase, session, setShowSignup, onClose }) => {
 	const [email, setEmail] = useState('');

@@ -61,7 +61,7 @@ const NewYearForms = () => {
 		return (
 			<ErrorContainer>
 				<h1>Not logged in</h1>
-				<Link href="/login">Go to Login</Link>
+				<Link href="/">Homepage</Link>
 			</ErrorContainer>
 		);
 	}

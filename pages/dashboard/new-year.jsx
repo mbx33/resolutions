@@ -21,7 +21,7 @@ const NewYearPage = () => {
 		return (
 			<ErrorContainer>
 				<h3>Not logged in</h3>
-				<Link href="/login">Go to Login </Link>
+				<Link href="/">Homepage </Link>
 			</ErrorContainer>
 		);
 
