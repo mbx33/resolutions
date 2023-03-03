@@ -74,6 +74,14 @@ export const Button = ({ children, ...props }) => {
 						{children}
 					</>
 				)}
+				{props.continue && (
+					<>
+						{children}
+						<span>
+							<BsArrowRightShort />
+						</span>
+					</>
+				)}
 				{props.next && (
 					<>
 						{children}
@@ -106,13 +114,13 @@ export const Button = ({ children, ...props }) => {
 
 // * Styles for the general button ////////////////
 export const ButtonContainer = styled.button`
-	/* background-color: ${(props) =>
-		props.primary ? 'var(--color-600)' : 'var(--color-900)'}; */
 	background-color: ${(props) =>
 		props.primary
 			? 'var(--color-600)'
 			: props.secondary
 			? 'var(--color-dark)'
+			: props.accent
+			? 'var(--color-400)'
 			: 'var(--color-900)'};
 
 	color: ${(props) =>
@@ -141,6 +149,8 @@ export const ButtonContainer = styled.button`
 				? 'var(--color-400)'
 				: props.secondary
 				? 'var(--color-900)'
+				: props.accent
+				? 'var(--color-200)'
 				: 'var(--color-dark)'};
 		color: ${(props) =>
 			props.primary

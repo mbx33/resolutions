@@ -13,9 +13,8 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-	background-color: var(--color-600);
 	padding: 1rem;
 	border-radius: 0.5rem;
-	max-width: 100%;
+	min-width: 45%;
 	position: relative;
 `;

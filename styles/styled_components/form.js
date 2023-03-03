@@ -5,11 +5,13 @@ export const FormContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	/* background-color: var(--color-dark); */
-	border-radius: 0 0 10px 10px;
-	padding: 20px;
+	/*Add background color for a background against the form*/
+	/* background-color: var(--color-600); */
+	border-radius: 0.6rem;
+	padding: 1rem 2rem;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-	min-height: calc(100vh - 165px);
+	max-width: 50%;
+	margin: 0 auto;
 
 	.error {
 		font-size: 1.2rem;
@@ -19,6 +21,11 @@ export const FormContainer = styled.div`
 		font-size: 1.2rem;
 		color: hsl(100, 100%, 0%);
 	}
+
+	.summary {
+		text-align: center;
+		line-height: 2.3rem;
+	}
 `;
 
 export const Form = styled.form`
@@ -27,9 +34,9 @@ export const Form = styled.form`
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
+	width: 100%;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	padding: 1rem 2rem;
 	border-radius: 10px;
 	background-color: var(--color-200);
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -105,7 +112,7 @@ export const Form = styled.form`
 
 	.account-btn {
 		border-radius: 5px;
-		padding: 0.5rem;
+		padding: 0.5rem 2rem;
 		font-size: 1.1rem;
 		color: var(--color-light);
 		background-color: var(--color-600);
@@ -127,5 +134,12 @@ export const Form = styled.form`
 	p > a {
 		color: var(--color-900);
 		margin-left: 0.6rem;
+	}
+
+	.span {
+		font-size: 1.2rem;
+		text-decoration: underline;
+		margin-left: 0.6rem;
+		cursor: pointer;
 	}
 `;

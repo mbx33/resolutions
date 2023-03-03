@@ -118,14 +118,19 @@ const Signup = ({ supabase, setShowSignup, onClose }) => {
 									</span>
 								)}
 							</div>
-							<button className="account-btn" disabled={loading}>
-								{loading ? 'Loading...' : 'Submit'}
-							</button>
+
 							{alert && <p>{alert}</p>}
 							{error && <p>{error}</p>}
 						</div>
-						<p>Already have an account?</p>
-						<span onClick={() => setShowSignup(false)}>Login</span>
+						<button className="account-btn" disabled={loading}>
+							{loading ? 'Loading...' : 'Submit'}
+						</button>
+						<p className="link">
+							Already have an account?
+							<span className="span" onClick={() => setShowSignup(false)}>
+								Login
+							</span>
+						</p>
 					</Form>
 				</FormContainer>
 			</aside>

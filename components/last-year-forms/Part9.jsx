@@ -84,8 +84,8 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear 
 					***
 				</p>
 				<Button
-					next
-					primary
+					continue
+					accent
 					onClick={() => {
 						router.push('/new-year');
 					}}

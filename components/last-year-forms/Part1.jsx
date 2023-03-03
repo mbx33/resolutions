@@ -13,7 +13,7 @@ const Part1 = ({ handleChange, nextForm, userResponses }) => {
 				meeting with freinds, or family, or important job, write it here.
 			</p>
 			<Form>
-				<div className="form-contianer">
+				<div className="form-container">
 					<div className="form-group">
 						<label htmlFor="list">Enter your answers here</label>
 						<textarea
