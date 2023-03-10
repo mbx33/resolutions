@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
 
@@ -13,7 +13,11 @@ import NyStep3 from '../../components/new-year/NyStep3';
 // Styles
 import { FormContainer } from '../../styles/styled_components/form';
 import { ErrorContainer } from '../../styles/styled_components/utils';
-import { Main } from '../../styles/styled_components/main-forms';
+import {
+	Main,
+	ImageContainer,
+	BorderContainer,
+} from '../../styles/styled_components/main-forms';
 
 // Will have a total of 9 steps eventually,
 
@@ -71,6 +75,15 @@ const NewYearForms = () => {
 		<>
 			<Layout title="New Year">
 				<Main>
+					<ImageContainer />
+					<BorderContainer>
+						<Image
+							src="/wavesNegative.svg"
+							alt="My SVG"
+							width={1500}
+							height={70}
+						/>
+					</BorderContainer>
 					<FormContainer>
 						{step === 1 && (
 							<NyStep1

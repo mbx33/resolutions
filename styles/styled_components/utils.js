@@ -129,7 +129,7 @@ export const ButtonContainer = styled.button`
 	font-size: 1.3rem;
 	border: ${(props) => (props.primary ? '2px solid var(--color-dark)' : 'none')};
 	border-radius: ${(props) => (props.cta ? '.5rem' : '3px')};
-	border: none;
+	border: ${(props) => (props.primary ? '2px solid var(--color-200)' : 'none')};
 	padding: ${(props) => (props.cta ? '0.5rem 2.5rem;' : '0.2rem 1rem')};
 	font-size: 1.2rem;
 	font-weight: 700;

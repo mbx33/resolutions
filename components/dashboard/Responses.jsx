@@ -1,17 +1,32 @@
-import React from 'react';
+import { useState } from 'react';
 import { Wrapper } from '../../styles/styled_components/textDisplay';
 import { useResponse } from '../../contexts/ResponseContext';
+import { Button } from '../../styles/styled_components/utils';
 
-const Responses = ({ description, label, edit }) => {
+import EditResponse from '../edit-last-year/EditResponse';
+
+const Responses = ({ description, label, branch, column }) => {
+	const [edit, setEdit] = useState(false);
 	const { user } = useResponse();
 	return (
 		<Wrapper>
-			{label && <h5>{label}</h5>}
-			<p>{description}</p>
-			{edit && (
-				<button onClick={() => edit(description, 'Updated text', user)}>
-					Edit
-				</button>
+			{edit ? (
+				<>
+					<EditResponse
+						branch={branch}
+						description={description}
+						column={column}
+						values={{ edit, setEdit }}
+					/>
+				</>
+			) : (
+				<>
+					{label && <h5>{label}</h5>}
+					<p>{description}</p>
+					<Button primary submit onClick={() => setEdit(!edit)}>
+						Edit
+					</Button>
+				</>
 			)}
 		</Wrapper>
 	);
