@@ -75,15 +75,6 @@ const NewYearForms = () => {
 		<>
 			<Layout title="New Year">
 				<Main>
-					<ImageContainer />
-					<BorderContainer>
-						<Image
-							src="/wavesNegative.svg"
-							alt="My SVG"
-							width={1500}
-							height={70}
-						/>
-					</BorderContainer>
 					<FormContainer>
 						{step === 1 && (
 							<NyStep1

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const FormContainer = styled.div`
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -13,7 +12,7 @@ export const FormContainer = styled.div`
 	box-shadow: 0.3rem 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.8);
 	max-width: 75%;
 	margin: 0 auto;
-	z-index: 100;
+	opacity: 0.95;
 
 	.error {
 		font-size: 1.2rem;

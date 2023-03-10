@@ -82,18 +82,6 @@ const LastYearForms = () => {
 		<>
 			<Layout title="Last Year">
 				<Main>
-					<ImageContainer />
-					<BorderContainer>
-						<Image
-							src="/wavesNegative.svg"
-							alt="My SVG"
-							width={1500}
-							height={70}
-						/>
-					</BorderContainer>
-					<WaterMark className={`${lavish.className}`}>
-						<p>Aries</p>
-					</WaterMark>
 					<FormContainer>
 						{step === 1 && (
 							<Step1
