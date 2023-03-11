@@ -11,7 +11,7 @@ import StartButton from '../buttons/StartButton';
 
 // Styles
 import { NavContainer } from '../../styles/styled_components/navigation';
-import { Button } from '../../styles/styled_components/utils';
+import { Button, OpenLink } from '../../styles/styled_components/utils';
 
 const Navbar = ({ openSignup, openLogin }) => {
 	const supabase = useSupabaseClient();
@@ -67,9 +67,9 @@ const Navbar = ({ openSignup, openLogin }) => {
 								isPrimary={true}
 								isSecondary={false}
 							/>
-							<Button onClick={openLogin} primary create>
-								Login
-							</Button>
+							<div onClick={openLogin}>
+								<Link href="">Login</Link>
+							</div>
 							<Link href="/about">About</Link>
 						</div>
 					</>

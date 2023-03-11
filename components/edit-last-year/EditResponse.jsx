@@ -38,17 +38,19 @@ const EditResponse = ({ description, branch, values, column }) => {
 				cols="60"
 				rows="5"
 			></textarea>
-			<Button primary submit onClick={(e) => updateResponse(e)}>
-				Save
-			</Button>
-			<Button
-				style={{ marginLeft: '2rem' }}
-				primary
-				submit
-				onClick={() => setEdit(!edit)}
-			>
-				Cancel
-			</Button>
+			<div className="btn-group">
+				<Button primary submit onClick={(e) => updateResponse(e)}>
+					Save
+				</Button>
+				<Button
+					style={{ marginLeft: '2rem' }}
+					primary
+					submit
+					onClick={() => setEdit(!edit)}
+				>
+					Cancel
+				</Button>
+			</div>
 		</>
 	);
 };
