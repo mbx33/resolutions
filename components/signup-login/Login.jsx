@@ -50,7 +50,9 @@ const Login = ({ supabase, session, setShowSignup, onClose }) => {
 				<h2>login to your account</h2>
 				{message && <p>{message}</p>}
 				{error && <p>{error}</p>}
-				<button onClick={onClose}>Close</button>
+				<Button close onClick={onClose}>
+					Close
+				</Button>
 				<Form onSubmit={handleSubmit}>
 					<div className="form-container">
 						<div className="form-group">

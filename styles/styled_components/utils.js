@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { BsArrowUpSquare, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
-import { AiOutlineUserAdd } from 'react-icons/ai';
+import { AiOutlineUserAdd, AiFillCloseCircle } from 'react-icons/ai';
 
 // * Styles for main container ////////////////
 export const Main = styled.main`
@@ -103,6 +103,11 @@ export const Button = ({ children, ...props }) => {
 					</>
 				)}
 				{props.cta && <>{children}</>}
+				{props.close && (
+					<>
+						<AiFillCloseCircle style={{ fontSize: '2rem' }} />
+					</>
+				)}
 			</div>
 		</ButtonContainer>
 	);
@@ -117,6 +122,8 @@ export const ButtonContainer = styled.button`
 			? 'var(--color-dark)'
 			: props.accent
 			? 'var(--color-400)'
+			: props.close
+			? 'var(--color-600)'
 			: 'var(--color-900)'};
 
 	color: ${(props) =>
@@ -124,12 +131,15 @@ export const ButtonContainer = styled.button`
 			? 'var(--color-light)'
 			: props.secondary
 			? 'var(--color-light)'
+			: props.close
+			? 'var(--color-light)'
 			: 'var(--color-dark)'};
 
 	font-size: 1.3rem;
-	border: ${(props) => (props.primary ? '2px solid var(--color-dark)' : 'none')};
+	font-weight: 700;
+	border: none;
 	border-radius: ${(props) => (props.cta ? '.5rem' : '3px')};
-	border: ${(props) => (props.primary ? '2px solid var(--color-200)' : 'none')};
+
 	padding: ${(props) => (props.cta ? '0.5rem 2.5rem;' : '0.2rem 1rem')};
 	font-size: 1.2rem;
 	font-weight: 700;
@@ -142,19 +152,24 @@ export const ButtonContainer = styled.button`
 	&:hover {
 		background-color: ${(props) =>
 			props.primary
-				? 'var(--color-400)'
+				? 'var(--color-accent)'
 				: props.secondary
-				? 'var(--color-900)'
+				? 'var(--color-200)'
 				: props.accent
 				? 'var(--color-200)'
+				: props.close
+				? 'var(--color-600)'
 				: 'var(--color-dark)'};
 		color: ${(props) =>
 			props.primary
 				? 'var(--color-light)'
 				: props.secondary
-				? 'var(--color-light)'
+				? 'var(--color-dark)'
+				: props.close
+				? 'var(--color-900)'
 				: 'var(--color-dark)'};
 		transition: all 0.2s ease-in-out;
+		opacity: 0.9;
 	}
 
 	&:active {
