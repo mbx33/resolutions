@@ -8,7 +8,7 @@ export const Main = styled.main`
 `;
 
 export const MainDashboard = styled.main`
-	padding: 10rem 0;
+	padding: 8rem 0;
 	background-image: url(/dashboard.png);
 	background-repeat: no-repeat;
 	background-size: cover;

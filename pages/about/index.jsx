@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 
 const AboutPage = () => {
 	return (
-		<Layout title="About Page">
+		<Layout darkNav={false} title="About Page">
 			<h1>About Page</h1>
 		</Layout>
 	);

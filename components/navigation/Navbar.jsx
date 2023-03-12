@@ -13,7 +13,7 @@ import StartButton from '../buttons/StartButton';
 import { NavContainer } from '../../styles/styled_components/navigation';
 import { Button, OpenLink } from '../../styles/styled_components/utils';
 
-const Navbar = ({ openSignup, openLogin }) => {
+const Navbar = ({ openSignup, openLogin, dark }) => {
 	const supabase = useSupabaseClient();
 	const session = useSession();
 	const user = useUser();
@@ -33,7 +33,7 @@ const Navbar = ({ openSignup, openLogin }) => {
 	// ! Need to redo the logo design
 
 	return (
-		<NavContainer>
+		<NavContainer dark={dark}>
 			<div className="logo">
 				<Link href="/">
 					<Image

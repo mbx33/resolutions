@@ -20,24 +20,22 @@ export const MainContainer = styled.main`
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	/* height: 100vh; */
 `;
 
 // * Styles for a container that centers all of it's text and children
 export const CenterContainer = styled.main`
 	font-size: 1.2rem;
 	display: grid;
+	grid-template-columns: 1fr 1fr;
 	place-items: center;
-	gap: 1.9rem;
 	color: var(--color-light);
 	max-width: 60%;
 	margin: 0 auto;
-	height: 100vh;
+	padding: 6rem 0;
 
 	a {
-		color: var(--color-light);
+		color: var(--color-dark);
 		font-size: 2.2rem;
-		text-decoration: none;
 	}
 
 	a:hover {
@@ -174,15 +172,33 @@ export const ButtonContainer = styled.button`
 
 	&:active {
 		background-color: ${(props) =>
-			props.primary ? 'var(--color-400)' : 'var(--color-900)'};
-		color: ${(props) => (props.primary ? 'var(--color-dark)' : 'var(--color-light)')};
+			props.primary
+				? 'var(--color-400)'
+				: props.close
+				? 'var(--color-900)'
+				: 'var(--color-900)'};
+		color: ${(props) =>
+			props.primary
+				? 'var(--color-dark)'
+				: props.close
+				? 'var(--color-light)'
+				: 'var(--color-light)'};
 	}
 
 	&:focus {
 		outline: none;
 		background-color: ${(props) =>
-			props.primary ? 'var(--color-400)' : 'var(--color-900)'};
-		color: ${(props) => (props.primary ? 'var(--color-dark)' : 'var(--color-light)')};
+			props.primary
+				? 'var(--color-400)'
+				: props.close
+				? 'var(--color-600)'
+				: 'var(--color-900)'};
+		color: ${(props) =>
+			props.primary
+				? 'var(--color-dark)'
+				: props.close
+				? 'var(--color-dark)'
+				: 'var(--color-light)'};
 	}
 
 	.group {

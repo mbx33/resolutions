@@ -26,6 +26,12 @@ export const FormContainer = styled.div`
 		text-align: center;
 		line-height: 2.3rem;
 	}
+
+	.title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 `;
 
 export const Form = styled.form`

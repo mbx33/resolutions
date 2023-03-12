@@ -80,7 +80,7 @@ const LastYearForms = () => {
 
 	return (
 		<>
-			<Layout title="Last Year">
+			<Layout darkNav={false} title="Last Year">
 				<Main>
 					<FormContainer>
 						{step === 1 && (

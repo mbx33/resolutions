@@ -3,14 +3,21 @@
 import { supabase } from '../../utils/supabaseClient';
 
 export default async function handler(req, res) {
-	const { column, branch, response, user } = req.body;
+	const { table, column, response, user } = req.body;
 
-	const { data, error } = await supabase
-		.from(`${branch}`)
-		.update({ [column]: response })
-		.eq('id', user.id);
+	console.log({
+		table,
+		column,
+		response,
+		user,
+	});
 
-	if (error) console.log(error);
-
-	if (data) res.status(200).json({ data });
+	try {
+		const { data, error } = await supabase.from(table).select('*').eq('id', user.id);
+		console.log(data);
+		res.status(200).json({ message: 'success' });
+	} catch (error) {
+		console.log(error);
+		res.status(500).json({ message: 'error' });
+	}
 }

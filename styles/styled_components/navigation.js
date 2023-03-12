@@ -9,7 +9,6 @@ export const NavContainer = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.3rem 2rem;
 	color: var(--color-light);
 
 	.btn-group {
@@ -18,6 +17,14 @@ export const NavContainer = styled.nav`
 		align-items: center;
 		gap: 1rem;
 		list-style: none;
+	}
+
+	.nav {
+		/* background-color: rgba(0, 0, 0, 0.65); */
+		background-color: ${(props) =>
+			props.dark ? 'rgba(0, 0, 0, 0.65)' : 'transparent'};
+		padding: 1rem 2rem;
+		border-radius: 1rem 0 0 1rem;
 	}
 
 	a {
@@ -64,6 +71,7 @@ export const NavContainer = styled.nav`
 	}
 
 	.logo {
+		padding-top: 0.3rem;
 		font-size: 2.4rem;
 		font-weight: 700;
 		overflow-x: hidden;

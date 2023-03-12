@@ -69,10 +69,12 @@ const Signup = ({ supabase, setShowSignup, onClose }) => {
 			</Head>
 			<aside>
 				<FormContainer>
-					<h2>Create a free account</h2>
-					<Button close onClick={onClose}>
-						Close
-					</Button>
+					<div className="title">
+						<h2>Create a free account</h2>
+						<Button close onClick={onClose}>
+							Close
+						</Button>
+					</div>
 					<Form onSubmit={handleSubmit}>
 						<div className="form-container">
 							<div className="form-group">

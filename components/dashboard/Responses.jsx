@@ -10,31 +10,41 @@ import {
 
 import EditResponse from '../edit-last-year/EditResponse';
 
-const Responses = ({ description, label, branch, column }) => {
+const Responses = ({ description, label, table, column }) => {
 	const [edit, setEdit] = useState(false);
 	const { user } = useResponse();
 	return (
 		<Wrapper>
-			{edit ? (
-				<EditWrapper>
-					<EditResponse
-						branch={branch}
-						description={description}
-						column={column}
-						values={{ edit, setEdit }}
-					/>
-				</EditWrapper>
-			) : (
-				<ResponseWrapper>
-					{label && <h5>{label}</h5>}
-					<p>{description}</p>
-					<Button primary submit onClick={() => setEdit(!edit)}>
-						Edit
-					</Button>
-				</ResponseWrapper>
-			)}
+			<ResponseWrapper>
+				{label && <h5>{label}</h5>}
+				<p>{description}</p>
+			</ResponseWrapper>
 		</Wrapper>
 	);
 };
 
 export default Responses;
+
+//Add this when edit is working
+{
+	/* <Wrapper>
+	{edit ? (
+		<EditWrapper>
+			<EditResponse
+				table={table}
+				description={description}
+				column={column}
+				values={{ edit, setEdit }}
+			/>
+		</EditWrapper>
+	) : (
+		<ResponseWrapper>
+			{label && <h5>{label}</h5>}
+			<p>{description}</p>
+			<Button primary submit onClick={() => setEdit(!edit)}>
+				Edit
+			</Button>
+		</ResponseWrapper>
+	)}
+</Wrapper>; */
+}

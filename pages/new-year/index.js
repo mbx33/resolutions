@@ -73,7 +73,7 @@ const NewYearForms = () => {
 
 	return (
 		<>
-			<Layout title="New Year">
+			<Layout darkNav={false} title="New Year">
 				<Main>
 					<FormContainer>
 						{step === 1 && (

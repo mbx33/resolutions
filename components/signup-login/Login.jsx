@@ -47,12 +47,14 @@ const Login = ({ supabase, session, setShowSignup, onClose }) => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<FormContainer>
-				<h2>login to your account</h2>
+				<div className="title">
+					<h2>login to your account</h2>
+					<Button close onClick={onClose}>
+						Close
+					</Button>
+				</div>
 				{message && <p>{message}</p>}
 				{error && <p>{error}</p>}
-				<Button close onClick={onClose}>
-					Close
-				</Button>
 				<Form onSubmit={handleSubmit}>
 					<div className="form-container">
 						<div className="form-group">

@@ -34,12 +34,12 @@ const LastYearPage = () => {
 		);
 
 	return (
-		<Layout title="Last Year">
+		<Layout darkNav={true} title="Last Year">
 			<MainAnswerContainer>
 				<h1>Last Year Review</h1>
 
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.list}
 					label={labels.list}
 					column={oldYearKeys[0]}

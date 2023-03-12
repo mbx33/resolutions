@@ -9,7 +9,7 @@ import Modal from './Modal';
 // styles
 import { MainContainer } from '../styles/styled_components/utils';
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title, darkNav }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [showSignup, setShowSignup] = useState(true);
 
@@ -40,7 +40,16 @@ const Layout = ({ children, title }) => {
 			</Head>
 			<MainContainer>
 				<header className="header">
-					<Navbar openLogin={openModalLogin} openSignup={openModalSignup} />
+					{darkNav && (
+						<Navbar
+							dark
+							openLogin={openModalLogin}
+							openSignup={openModalSignup}
+						/>
+					)}
+					{!darkNav && (
+						<Navbar openLogin={openModalLogin} openSignup={openModalSignup} />
+					)}
 				</header>
 				<main>{children}</main>
 				<Modal
