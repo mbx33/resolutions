@@ -92,4 +92,79 @@ export const NavContainer = styled.nav`
 		align-items: center;
 		gap: 3rem;
 	}
+
+	.mobile-view {
+		visibility: hidden;
+
+		.hamburger-nav {
+			font-size: 3.5rem;
+			color: var(--color-accent);
+			cursor: pointer;
+
+			&:hover {
+				color: var(--color-400);
+				transition: all 0.2s ease-in-out;
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.mobile-nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--color-900);
+		z-index: 100;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+		opacity: 0;
+		transform: translateX(-100%);
+		transition: all 0.3s ease-in-out;
+
+		.mobile {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			list-style: none;
+		}
+
+		.close {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			font-size: 3rem;
+			color: var(--color-light);
+			cursor: pointer;
+
+			&:hover {
+				color: var(--color-400);
+				transition: all 0.2s ease-in-out;
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.active {
+		visibility: visible;
+		opacity: 0.94;
+		transform: translateX(0);
+		transition: all 0.3s ease-in-out;
+	}
+
+	@media (max-width: 800px) {
+		.desktop-view {
+			display: none;
+		}
+	}
+
+	@media (max-width: 800px) {
+		.mobile-view {
+			visibility: visible;
+		}
+	}
 `;
