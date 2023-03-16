@@ -32,6 +32,11 @@ const Navbar = ({ openSignup, openLogin, dark }) => {
 		setIsOpen(!isOpen);
 	}
 
+	//create a function that toggles the menu to closed when a user clicks a link
+	function closeMenu() {
+		setIsOpen(false);
+	}
+
 	let username;
 
 	if (user) {
@@ -58,13 +63,43 @@ const Navbar = ({ openSignup, openLogin, dark }) => {
 			<div className="nav">
 				{session ? (
 					<>
-						<div className="btn-group">
-							<Link href="/last-year">Last</Link>
-							<Link href="/new-year">New</Link>
-							<Link href="/dashboard">Dashboard</Link>
-							<Button primary back onClick={handleLogout}>
-								Logout
-							</Button>
+						<div className="desktop-view">
+							<div className="btn-group">
+								<Link onClick={closeMenu} href="/last-year">
+									Last
+								</Link>
+								<Link onClick={closeMenu} href="/new-year">
+									New
+								</Link>
+								<Link onClick={closeMenu} href="/dashboard">
+									Dashboard
+								</Link>
+								<Button primary back onClick={handleLogout}>
+									Logout
+								</Button>
+							</div>
+						</div>
+						<div className="mobile-view">
+							{!isOpen && (
+								<div className="hamburger-nav">
+									<GiHamburgerMenu onClick={toggleNav} />
+								</div>
+							)}
+							{isOpen && (
+								<div className="mobile-nav active">
+									<div className="hamburger-nav close">
+										<AiOutlineClose onClick={toggleNav} />
+									</div>
+									<div className="btn-group mobile">
+										<Link href="/last-year">Last</Link>
+										<Link href="/new-year">New</Link>
+										<Link href="/dashboard">Dashboard</Link>
+										<Button primary back onClick={handleLogout}>
+											Logout
+										</Button>
+									</div>
+								</div>
+							)}
 						</div>
 					</>
 				) : (
