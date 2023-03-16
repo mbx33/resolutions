@@ -47,4 +47,35 @@ export const ContentContainer = styled.div`
 		display: flex;
 		align-items: center;
 	}
+
+	@media (max-width: 840px) {
+		margin-left: 0;
+		padding-top: 12rem;
+		text-align: center;
+
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		.headline {
+			font-size: 3rem;
+		}
+
+		.sub-headline {
+			font-size: 2rem;
+		}
+
+		p {
+			width: 100%;
+		}
+
+		.cta-btn {
+			justify-content: center;
+		}
+	}
+
+	@media (max-width: 600px) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
 `;
