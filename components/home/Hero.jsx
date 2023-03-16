@@ -9,12 +9,14 @@ const Hero = ({ openSignup }) => {
 		<HeroContainer>
 			<ContentContainer>
 				<h1>
-					<span className="headline">Resolutions</span> are a Great Title to get
+					<span className="headline">Resolutions</span> Begin Here
 				</h1>
-				<p>
-					This will be the subtitle with some relevant benefits for the app.
-					This is more stuff and just writitn random things and other stuff.
-				</p>
+				<h2>
+					<span className="sub-headline">Plan</span>{' '}
+					<span className="sub-headline">Track</span>{' '}
+					<span className="sub-headline">Achieve</span>
+				</h2>
+				<p>Maintain your goals with our easy to use platform.</p>
 				<div className="cta-btn">
 					<StartButton
 						openSignup={openSignup}

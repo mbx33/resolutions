@@ -15,7 +15,6 @@ export const ContentContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	/* width: 60%; */
 	margin-left: 10rem;
 	padding-top: 15rem;
 
@@ -27,7 +26,13 @@ export const ContentContainer = styled.div`
 
 	.headline {
 		font-size: 4rem;
-		color: var(--color-600);
+		color: var(--color-200);
+	}
+
+	.sub-headline {
+		font-size: 2.5rem;
+		margin-right: 1rem;
+		text-shadow: 1px 1px 1px var(--color-accent);
 	}
 
 	p {
