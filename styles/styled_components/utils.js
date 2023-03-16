@@ -27,6 +27,7 @@ export const CenterContainer = styled.main`
 	font-size: 1.2rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
 	place-items: center;
 	color: var(--color-light);
 	max-width: 60%;
@@ -40,6 +41,12 @@ export const CenterContainer = styled.main`
 
 	a:hover {
 		color: var(--color-900);
+	}
+
+	@media (max-width: 768px) {
+		padding: 3rem 0;
+		grid-template-columns: 1fr;
+		max-width: 90%;
 	}
 `;
 /////////////////////////////////////////////////////////////////////////

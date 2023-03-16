@@ -24,7 +24,6 @@ const DashboardPage = () => {
 	const username = user.user_metadata.username;
 
 	// TODO: Add a check to see if the user has already answered the questions
-	// TODO: Add a button to take them to start the questions
 
 	return (
 		<Layout darkNav={false} title="Dashboard">
@@ -33,11 +32,11 @@ const DashboardPage = () => {
 					<Preparing user={user} />
 					<CenterContainer>
 						<div className="last-year">
-							<p>Your answers for Last Year 2022</p>
+							<p>Last Year 2022</p>
 							<Link href={`/dashboard/last-year/`}>Last Year</Link>
 						</div>
 						<div className="new-year">
-							<p>Your answers for the New Year 2023</p>
+							<p>New Year 2023</p>
 							<Link href={`/dashboard/new-year/`}>New Year</Link>
 						</div>
 					</CenterContainer>

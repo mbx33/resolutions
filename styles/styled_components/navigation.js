@@ -11,20 +11,19 @@ export const NavContainer = styled.nav`
 	align-items: center;
 	color: var(--color-light);
 
-	.btn-group {
+	/* .btn-group {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		gap: 1rem;
 		list-style: none;
-	}
+	} */
 
 	.nav {
-		/* background-color: rgba(0, 0, 0, 0.65); */
-		background-color: ${(props) =>
-			props.dark ? 'rgba(0, 0, 0, 0.65)' : 'transparent'};
-		padding: 1rem 2rem;
-		border-radius: 1rem 0 0 1rem;
+		/* background-color: ${(props) =>
+			props.dark ? 'rgba(0, 0, 0, 0.75)' : 'transparent'}; */
+		padding: 1rem 1rem;
+		border-radius: 1rem 0 0 5rem;
 	}
 
 	a {
