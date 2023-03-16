@@ -64,6 +64,10 @@ body::-webkit-scrollbar {
 	display: none;
 }
 
+ul {
+	padding: 0;
+}
+
 /*
   6. Improve media defaults
 */
