@@ -32,6 +32,10 @@ export const FormContainer = styled.div`
 		justify-content: space-between;
 		align-items: center;
 	}
+
+	@media (max-width: 600px) {
+		min-width: 100%;
+	}
 `;
 
 export const Form = styled.form`

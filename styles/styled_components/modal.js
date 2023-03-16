@@ -17,4 +17,26 @@ export const ModalContainer = styled.div`
 	border-radius: 0.5rem;
 	min-width: 45%;
 	position: relative;
+
+	@media (max-width: 1050px) {
+		min-width: 60%;
+	}
+
+	@media (max-width: 900px) {
+		min-width: 75%;
+	}
+
+	@media (max-width: 685px) {
+		min-width: 90%;
+	}
+
+	@media (max-width: 530px) {
+		min-width: 100%;
+	}
+
+	/*
+
+	@media (max-width: 400px) {
+		min-width: 100%;
+	} */
 `;
