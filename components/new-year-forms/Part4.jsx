@@ -6,9 +6,8 @@ import { Button } from '../../styles/styled_components/utils';
 const Part4 = ({ handleChange, newYearResponses, prevForm, nextStep }) => {
 	return (
 		<main>
-			<h1>The Magic three of the coming year</h1>
-
 			<Form>
+				<h1 className="form-title">The Magic three of the coming year</h1>
 				<div className="form-container">
 					<div className="form-group">
 						<label htmlFor="comfort">

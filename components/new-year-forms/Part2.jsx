@@ -7,12 +7,12 @@ import { Button } from '../../styles/styled_components/utils';
 const Part2 = ({ handleChange, newYearResponses, nextStep, prevForm }) => {
 	return (
 		<main>
-			<h1>This is what my next year will be</h1>
-			<p>
-				What will be the most important for you in the listed areas in the new
-				Year? What events will be the most significant? Describe them briefly
-			</p>
 			<Form>
+				<h1 className="form-title">This is what next year will be</h1>
+				<p>
+					What will be the most important for you in the listed areas in the new
+					Year? What events will be the most significant? Describe them briefly
+				</p>
 				<div className="grid">
 					<div className="form-group">
 						<label htmlFor="family">Family & Personal Life</label>

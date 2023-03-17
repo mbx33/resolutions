@@ -6,9 +6,8 @@ import { Button } from '../../styles/styled_components/utils';
 const Part6 = ({ handleChange, newYearResponses, prevForm, nextForm }) => {
 	return (
 		<main>
-			<h1>Six wishes for the New Year</h1>
-
 			<Form>
+				<h1 className="form-title">Six wishes for the New Year</h1>
 				<div className="form-container">
 					<div className="form-group">
 						<fieldset className="future">

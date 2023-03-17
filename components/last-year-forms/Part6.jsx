@@ -5,9 +5,8 @@ import { Button } from '../../styles/styled_components/utils';
 const Part6 = ({ handleChange, userResponses, nextStep, prevForm }) => {
 	return (
 		<div>
-			<h1>Three Biggest Acheivements</h1>
-
 			<Form>
+				<h1 className="form-title">Three Biggest Acheivements</h1>
 				<div className="form-container">
 					<div className="form-group">
 						<label htmlFor="biggest_ach">

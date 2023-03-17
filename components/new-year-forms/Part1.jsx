@@ -6,13 +6,13 @@ import { Button } from '../../styles/styled_components/utils';
 const Part1 = ({ handleChange, newYearResponses, nextForm }) => {
 	return (
 		<div>
-			<h1>Dream Big!</h1>
-			<p>
-				How does the coming year look? What would be your ideal development? Why
-				is this year going to be great? Write and let go of expectations and do
-				not be afraid to dream
-			</p>
 			<Form>
+				<h1 className="form-title">Dream Big!</h1>
+				<p>
+					How does the coming year look? What would be your ideal development?
+					Why is this year going to be great? Write and let go of expectations
+					and do not be afraid to dream
+				</p>
 				<div className="form-container">
 					<div className="form-group">
 						<label htmlFor="dreams">Enter your answers here</label>

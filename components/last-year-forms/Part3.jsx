@@ -6,9 +6,8 @@ import { Button } from '../../styles/styled_components/utils';
 const Part3 = ({ handleChange, userResponses, prevStep, nextForm }) => {
 	return (
 		<main>
-			<h1>Six important moments from last year</h1>
-
 			<Form>
+				<h1 className="form-title">Six important moments from last year</h1>
 				<div className="form-container">
 					<div className="form-group">
 						<label htmlFor="smartest">Smartest decision I made</label>

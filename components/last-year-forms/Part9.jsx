@@ -14,7 +14,7 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear 
 		<div>
 			<Form>
 				<div className="form-container">
-					<fieldset>
+					<fieldset className="fieldsets">
 						<legend>Last Year in 3 words:</legend>
 						<input
 							type="text"
@@ -22,6 +22,7 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear 
 							name="word_one"
 							onChange={handleChange}
 							value={userResponses.word_one}
+							className="fieldset-input"
 						/>
 						<input
 							type="text"
@@ -29,6 +30,7 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear 
 							name="word_two"
 							onChange={handleChange}
 							value={userResponses.word_two}
+							className="fieldset-input"
 						/>
 						<input
 							type="text"
@@ -36,9 +38,10 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear 
 							name="word_three"
 							onChange={handleChange}
 							value={userResponses.word_three}
+							className="fieldset-input"
 						/>
 					</fieldset>
-					<fieldset>
+					<fieldset className="fieldsets">
 						<legend>Movie title of last year</legend>
 						<input
 							type="text"
@@ -46,9 +49,10 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear 
 							name="movie_title"
 							onChange={handleChange}
 							value={userResponses.movie_title}
+							className="fieldset-input"
 						/>
 					</fieldset>
-					<fieldset>
+					<fieldset className="fieldsets">
 						<legend>Goodbye Last Year!</legend>
 						<p>
 							If you would like to write anything, or forgive someone, write
@@ -62,6 +66,7 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear 
 							cols="60"
 							onChange={handleChange}
 							value={userResponses.goodbye}
+							className="fieldset-textarea"
 						/>
 					</fieldset>
 					<div className="button-group">

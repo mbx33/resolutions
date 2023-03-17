@@ -10,7 +10,7 @@ export const FormContainer = styled.div`
 	border-radius: 0.6rem;
 	padding: 1rem 2rem;
 	box-shadow: 0.3rem 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.8);
-	max-width: 75%;
+	width: 75%;
 	margin: 0 auto;
 	opacity: 0.95;
 
@@ -27,6 +27,16 @@ export const FormContainer = styled.div`
 		text-align: center;
 		line-height: 2.3rem;
 	}
+
+	@media (max-width: 768px) {
+		width: 100%;
+		padding: 1rem 1rem;
+	}
+
+	@media (max-width: 540px) {
+		width: 100%;
+		padding: 1rem 1rem;
+	}
 `;
 
 export const Form = styled.form`
@@ -35,7 +45,6 @@ export const Form = styled.form`
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-	width: 100%;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	border-radius: 10px;
@@ -48,6 +57,11 @@ export const Form = styled.form`
 		width: 100%;
 		gap: 3rem;
 		padding: 1.3rem 1rem;
+
+		@media (max-width: 820px) {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
 	}
 
 	fieldset {
@@ -71,6 +85,28 @@ export const Form = styled.form`
 			border: 1px solid var(--color-800);
 			padding: 0.2rem 0.5rem;
 			width: 100%;
+		}
+
+		@media (max-width: 750px) {
+			padding: 1rem 0.5rem;
+
+			legend {
+				font-size: 1.2rem;
+			}
+
+			input {
+				border-radius: 5px;
+				border: 1px solid var(--color-800);
+				padding: 0.2rem 0.5rem;
+				width: 100%;
+			}
+
+			textarea {
+				border-radius: 5px;
+				border: 1px solid var(--color-800);
+				padding: 0.2rem 0.5rem;
+				width: 100%;
+			}
 		}
 	}
 
@@ -110,6 +146,14 @@ export const Form = styled.form`
 		width: 100%;
 		gap: 1.5rem;
 		padding: 1.3rem 2rem;
+
+		@media (max-width: 768px) {
+			padding: 1.3rem 1rem;
+
+			.grid {
+				grid-template-columns: 1fr;
+			}
+		}
 	}
 
 	.form-group {
@@ -153,5 +197,12 @@ export const Form = styled.form`
 		text-decoration: underline;
 		margin-left: 0.6rem;
 		cursor: pointer;
+	}
+
+	@media (max-width: 768px) {
+		.form-title {
+			font-size: 1.5rem;
+			text-align: center;
+		}
 	}
 `;
