@@ -5,7 +5,7 @@ import Router from 'next/router';
 import { Form } from '../../styles/styled_components/form';
 import { Button } from '../../styles/styled_components/utils';
 
-const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear }) => {
+const Part9 = ({ handleChange, userResponses, isSaved, prevForm, saveLastYear }) => {
 	const router = Router;
 
 	console.log(isSaved);
@@ -74,7 +74,7 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, uploadLastYear 
 							back
 						</Button>
 
-						<Button submit primary onClick={uploadLastYear}>
+						<Button submit primary onClick={saveLastYear}>
 							save
 						</Button>
 					</div>
