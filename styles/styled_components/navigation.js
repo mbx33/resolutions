@@ -90,6 +90,7 @@ export const NavContainer = styled.nav`
 		justify-content: space-between;
 		align-items: center;
 		gap: 3rem;
+		list-style: none;
 	}
 
 	.mobile-view {
