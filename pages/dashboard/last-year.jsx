@@ -45,7 +45,7 @@ const LastYearPage = () => {
 					column={oldYearKeys[0]}
 				/>
 
-				<h1>This is what last year was about</h1>
+				<h2>This is what last year was about</h2>
 				<h3>{titles.part2}</h3>
 				<Responses
 					branch={branches[0]}
