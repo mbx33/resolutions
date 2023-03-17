@@ -120,10 +120,6 @@ export const NavContainer = styled.nav`
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		visibility: hidden;
-		opacity: 0;
-		transform: translateX(-100%);
-		transition: all 0.3s ease-in-out;
 
 		.mobile {
 			display: flex;
@@ -134,7 +130,7 @@ export const NavContainer = styled.nav`
 
 		.close {
 			position: absolute;
-			top: 1rem;
+			top: 2.5rem;
 			right: 1rem;
 			font-size: 3rem;
 			color: var(--color-light);
@@ -146,13 +142,6 @@ export const NavContainer = styled.nav`
 				transform: scale(1.1);
 			}
 		}
-	}
-
-	.active {
-		visibility: visible;
-		opacity: 0.94;
-		transform: translateX(0);
-		transition: all 0.3s ease-in-out;
 	}
 
 	@media (max-width: 800px) {
