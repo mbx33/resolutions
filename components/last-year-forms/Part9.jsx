@@ -94,6 +94,7 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, saveLastYear })
 					onClick={() => {
 						router.push('/new-year');
 					}}
+					disabled={!isSaved}
 				>
 					Continue to Next Year
 				</Button>

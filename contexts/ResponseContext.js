@@ -15,6 +15,8 @@ export function ResponseProvider({ children }) {
 	const supabase = useSupabaseClient();
 	const user = useUser();
 	const session = useSession();
+	const [isLastSaved, setIsLastSaved] = useState(false);
+	const [isNewSaved, setIsNewSaved] = useState(false);
 
 	// State for last year responses
 	const [userResponses, setUserResponses] = useState({
@@ -125,6 +127,7 @@ export function ResponseProvider({ children }) {
 			uploadBranchTwo();
 			uploadBranchThree();
 			uploadBranchFour();
+			setIsLastSaved(true);
 		} catch (error) {
 			console.log(error, 'error saving last year responses');
 		}
@@ -137,6 +140,7 @@ export function ResponseProvider({ children }) {
 			uploadNyBranchOne();
 			uploadNyBranchTwo();
 			uploadNyBranchThree();
+			setIsNewSaved(true);
 		} catch (error) {
 			console.log(error, 'error saving new year responses');
 		}
@@ -455,6 +459,8 @@ export function ResponseProvider({ children }) {
 		user,
 		userResponses,
 		newYearResponses,
+		isLastSaved,
+		isNewSaved,
 		handleNyChange,
 		handleChange,
 		uploadLastYear,
