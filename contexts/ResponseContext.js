@@ -17,6 +17,7 @@ export function ResponseProvider({ children }) {
 	const session = useSession();
 	const [isLastSaved, setIsLastSaved] = useState(false);
 	const [isNewSaved, setIsNewSaved] = useState(false);
+	const [message, setMessage] = useState('');
 
 	// State for last year responses
 	const [userResponses, setUserResponses] = useState({
@@ -134,13 +135,16 @@ export function ResponseProvider({ children }) {
 	}
 
 	async function uploadNewYear(e) {
-		e.stopPropagation();
 		e.preventDefault();
+
+		const username = user.user_metadata.username;
+
 		try {
 			uploadNyBranchOne();
 			uploadNyBranchTwo();
 			uploadNyBranchThree();
 			setIsNewSaved(true);
+			setMessage(`${username} Your responses have been saved!`);
 		} catch (error) {
 			console.log(error, 'error saving new year responses');
 		}
@@ -457,6 +461,7 @@ export function ResponseProvider({ children }) {
 
 	const value = {
 		user,
+		message,
 		userResponses,
 		newYearResponses,
 		isLastSaved,

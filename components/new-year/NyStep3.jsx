@@ -7,7 +7,7 @@ import Part6 from '../new-year-forms/Part6';
 import Part7 from '../new-year-forms/Part7';
 
 const NyStep3 = ({ currentPart, prevStep, prevForm, nextForm }) => {
-	const { newYearResponses, handleNyChange, uploadNewYear } = useResponse();
+	const { newYearResponses, handleNyChange, uploadNewYear, message } = useResponse();
 
 	return (
 		<div>
@@ -33,6 +33,7 @@ const NyStep3 = ({ currentPart, prevStep, prevForm, nextForm }) => {
 					newYearResponses={newYearResponses}
 					handleChange={handleNyChange}
 					uploadNewYear={uploadNewYear}
+					message={message}
 				/>
 			)}
 		</div>

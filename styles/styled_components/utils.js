@@ -164,6 +164,8 @@ export const ButtonContainer = styled.button`
 				? 'var(--color-200)'
 				: props.close
 				? 'var(--color-600)'
+				: props.notAllowed
+				? 'none'
 				: 'var(--color-dark)'};
 		color: ${(props) =>
 			props.primary

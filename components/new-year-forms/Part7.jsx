@@ -1,7 +1,12 @@
+import React, { useState } from 'react';
+import Router from 'next/router';
+
 import { Form } from '../../styles/styled_components/form';
 import { Button } from '../../styles/styled_components/utils';
 
-const Part7 = ({ handleChange, newYearResponses, prevForm, uploadNewYear }) => {
+const Part7 = ({ handleChange, newYearResponses, prevForm, uploadNewYear, message }) => {
+	const router = Router;
+
 	return (
 		<main>
 			<h1>I believe that nothing is impossible this year!</h1>
@@ -40,6 +45,7 @@ const Part7 = ({ handleChange, newYearResponses, prevForm, uploadNewYear }) => {
 							Save
 						</Button>
 					</div>
+					{message && <p>{message}</p>}
 				</div>
 			</Form>
 		</main>

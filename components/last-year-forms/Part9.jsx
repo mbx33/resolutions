@@ -5,10 +5,13 @@ import Router from 'next/router';
 import { Form } from '../../styles/styled_components/form';
 import { Button } from '../../styles/styled_components/utils';
 
-const Part9 = ({ handleChange, userResponses, isSaved, prevForm, saveLastYear }) => {
-	const router = Router;
+const disableBtn = {
+	pointerEvents: 'disabled',
+	opacity: '0.5',
+};
 
-	console.log(isSaved);
+const Part9 = ({ handleChange, userResponses, prevForm, isSaved, saveLastYear }) => {
+	const router = Router;
 
 	return (
 		<div>
@@ -88,16 +91,29 @@ const Part9 = ({ handleChange, userResponses, isSaved, prevForm, saveLastYear })
 					*** Make sure to save your answers before continuing to the new year
 					***
 				</p>
-				<Button
-					continue
-					accent
-					onClick={() => {
-						router.push('/new-year');
-					}}
-					disabled={!isSaved}
-				>
-					Continue to Next Year
-				</Button>
+				{isSaved ? (
+					<Button
+						continue
+						accent
+						onClick={() => {
+							router.push('/new-year');
+						}}
+					>
+						Continue to Next Year
+					</Button>
+				) : (
+					<Button
+						style={disableBtn}
+						notAllowed
+						continue
+						onClick={() => {
+							router.push('/new-year');
+						}}
+						disabled
+					>
+						Save to Continue
+					</Button>
+				)}
 			</div>
 		</div>
 	);
