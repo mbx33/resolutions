@@ -16,7 +16,17 @@ export const Wrapper = styled.div`
 	}
 
 	@media (max-width: 480px) {
-		min-width: 100%;
+		width: 100%;
+
+		h5 {
+			font-size: 1.5rem;
+		}
+
+		p {
+			font-size: 1.4rem;
+			padding-top: 0.5rem;
+			text-align: left;
+		}
 	}
 `;
 
