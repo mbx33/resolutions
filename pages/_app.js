@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { ResponseProvider } from '../contexts/ResponseContext';
+import { Analytics } from '@vercel/analytics/react';
 
 // import { AnimatePresence } from 'framer-motion';
 
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }) {
 		>
 			<ResponseProvider>
 				<Component {...pageProps} />
+				<Analytics />
 			</ResponseProvider>
 		</SessionContextProvider>
 	);
