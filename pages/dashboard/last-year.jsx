@@ -12,15 +12,7 @@ import { titles, labels } from '../../components/dashboard/lastYearLabels';
 import { ErrorContainer } from '../../styles/styled_components/utils';
 import { MainAnswerContainer } from '../../styles/styled_components/main-answers';
 
-const branches = [
-	'ly_branch_one',
-	'ly_branch_two',
-	'ly_branch_three',
-	'ly_branch_four',
-	'ny_branch_one',
-	'ny_branch_two',
-	'ny_branch_three',
-];
+const branches = ['ly_branch_one', 'ly_branch_two', 'ly_branch_three', 'ly_branch_four'];
 
 const LastYearPage = () => {
 	const { user, userResponses, newYearResponses } = useResponse();
