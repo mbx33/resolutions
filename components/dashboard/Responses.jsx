@@ -8,17 +8,34 @@ import {
 	EditWrapper,
 } from '../../styles/styled_components/textDisplay';
 
-import EditResponse from '../edit-last-year/EditResponse';
+import EditResponse from '../edit/EditResponse';
 
 const Responses = ({ description, label, table, column }) => {
 	const [edit, setEdit] = useState(false);
-	const { user } = useResponse();
+	const { user, updateResponse, message } = useResponse();
 	return (
 		<Wrapper>
-			<ResponseWrapper>
-				{label && <h5>{label}</h5>}
-				<p>{description}</p>
-			</ResponseWrapper>
+			{message && <p>{message}</p>}
+			{edit ? (
+				<EditWrapper>
+					<EditResponse
+						table={table}
+						description={description}
+						column={column}
+						values={{ edit, setEdit }}
+						updateResponse={updateResponse}
+						toggleEdit={setEdit}
+					/>
+				</EditWrapper>
+			) : (
+				<ResponseWrapper>
+					{label && <h5>{label}</h5>}
+					<p>{description}</p>
+					<Button primary submit onClick={() => setEdit(!edit)}>
+						Edit
+					</Button>
+				</ResponseWrapper>
+			)}
 		</Wrapper>
 	);
 };
@@ -26,25 +43,12 @@ const Responses = ({ description, label, table, column }) => {
 export default Responses;
 
 //Add this when edit is working
+
 {
 	/* <Wrapper>
-	{edit ? (
-		<EditWrapper>
-			<EditResponse
-				table={table}
-				description={description}
-				column={column}
-				values={{ edit, setEdit }}
-			/>
-		</EditWrapper>
-	) : (
-		<ResponseWrapper>
-			{label && <h5>{label}</h5>}
-			<p>{description}</p>
-			<Button primary submit onClick={() => setEdit(!edit)}>
-				Edit
-			</Button>
-		</ResponseWrapper>
-	)}
-</Wrapper>; */
+			<ResponseWrapper>
+				{label && <h5>{label}</h5>}
+				<p>{description}</p>
+			</ResponseWrapper>
+		</Wrapper> */
 }

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useResponse } from '../../contexts/ResponseContext';
 
@@ -10,10 +9,18 @@ import Layout from '../../components/Layout';
 import { titles, labels } from '../../components/dashboard/lastYearLabels';
 
 // Styles
-import { Button, ErrorContainer } from '../../styles/styled_components/utils';
+import { ErrorContainer } from '../../styles/styled_components/utils';
 import { MainAnswerContainer } from '../../styles/styled_components/main-answers';
 
-const branches = ['ly_branch_one', 'ly_branch_two', 'ly_branch_three', 'ly_branch_four'];
+const branches = [
+	'ly_branch_one',
+	'ly_branch_two',
+	'ly_branch_three',
+	'ly_branch_four',
+	'ny_branch_one',
+	'ny_branch_two',
+	'ny_branch_three',
+];
 
 const LastYearPage = () => {
 	const { user, userResponses, newYearResponses } = useResponse();
@@ -23,7 +30,6 @@ const LastYearPage = () => {
 
 	//access the key for each item in oldyear object
 	const oldYearKeys = Object.keys(oldYear);
-	// console.log(oldYearKeys);
 
 	if (!user)
 		return (
@@ -37,195 +43,232 @@ const LastYearPage = () => {
 		<Layout darkNav={true} title="Last Year">
 			<MainAnswerContainer>
 				<h1>Last Year Review</h1>
-
 				<Responses
 					table={branches[0]}
 					description={oldYear.list}
 					label={labels.list}
 					column={oldYearKeys[0]}
 				/>
-
 				<h2>This is what last year was about</h2>
 				<h3>{titles.part2}</h3>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.family}
 					label={labels.family}
 					column={oldYearKeys[1]}
 				/>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.material}
 					label={labels.material}
+					column={oldYearKeys[2]}
 				/>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.friends}
 					label={labels.friends}
+					column={oldYearKeys[3]}
 				/>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.intellectual}
 					label={labels.intellectual}
+					column={oldYearKeys[4]}
 				/>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.financial}
 					label={labels.financial}
+					column={oldYearKeys[5]}
 				/>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.work_study}
 					label={labels.work}
+					column={oldYearKeys[6]}
 				/>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.vacation_hobby}
 					label={labels.hobby}
+					column={oldYearKeys[7]}
 				/>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.health_sport}
 					label={labels.health}
+					column={oldYearKeys[8]}
 				/>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.emotional}
 					label={labels.emotional}
+					column={oldYearKeys[9]}
 				/>
 				<Responses
-					branch={branches[0]}
+					table={branches[0]}
 					description={oldYear.achievements}
 					label={labels.ach}
+					column={oldYearKeys[10]}
 				/>
-
 				<h3>{titles.part3}</h3>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.smartest}
 					label={labels.smartest}
+					column={oldYearKeys[11]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.biggest}
 					label={labels.biggest}
+					column={oldYearKeys[12]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.risk}
 					label={labels.risk}
+					column={oldYearKeys[13]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.surprise}
 					label={labels.surprise}
+					column={oldYearKeys[14]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.others}
 					label={labels.others}
+					column={oldYearKeys[15]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.completed}
 					label={labels.completed}
+					column={oldYearKeys[16]}
 				/>
-
 				<h3>{titles.part4}</h3>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.proud}
 					label={labels.proud}
+					column={oldYearKeys[17]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.influenced_you}
 					label={labels.influenced}
+					column={oldYearKeys[18]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.you_influenced}
 					label={labels.youInfluenced}
+					column={oldYearKeys[19]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.unable}
 					label={labels.unable}
+					column={oldYearKeys[20]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.discovered}
 					label={labels.discovered}
+					column={oldYearKeys[21]}
 				/>
 				<Responses
-					branch={branches[1]}
+					table={branches[1]}
 					description={oldYear.grateful}
 					label={labels.grateful}
+					column={oldYearKeys[22]}
 				/>
-
 				<h3>Best Moments</h3>
 				<Responses
-					branch={branches[2]}
+					table={branches[2]}
 					description={oldYear.best_moments}
 					label={labels.bestMoments}
+					column={oldYearKeys[23]}
 				/>
-
 				<h3>Three Biggest Acheivements</h3>
 				<Responses
-					branch={branches[2]}
+					table={branches[2]}
 					description={oldYear.biggest_ach}
 					label={labels.biggestAch}
+					column={oldYearKeys[24]}
 				/>
 				<Responses
-					branch={branches[2]}
+					table={branches[2]}
 					description={oldYear.how}
 					label={labels.how}
+					column={oldYearKeys[25]}
 				/>
 				<Responses
-					branch={branches[2]}
+					table={branches[2]}
 					description={oldYear.who}
 					label={labels.who}
+					column={oldYearKeys[26]}
 				/>
 				<Responses
-					branch={branches[2]}
+					table={branches[2]}
 					description={oldYear.challenges}
 					label={labels.challenges}
+					column={oldYearKeys[27]}
 				/>
 				<Responses
-					branch={branches[2]}
+					table={branches[2]}
 					description={oldYear.overcame}
 					label={labels.overcame}
+					column={oldYearKeys[28]}
 				/>
 				<Responses
-					branch={branches[2]}
+					table={branches[2]}
 					description={oldYear.learned}
 					label={labels.learned}
+					column={oldYearKeys[29]}
 				/>
-
 				<h3>Forgiveness</h3>
 				<Responses
-					branch={branches[3]}
+					table={branches[3]}
 					description={oldYear.forgiveness}
 					label={labels.forgiveness}
+					column={oldYearKeys[30]}
 				/>
-
 				<h3>Release, Letting go</h3>
 				<Responses
-					branch={branches[3]}
+					table={branches[3]}
 					description={oldYear.release}
 					label={labels.release}
+					column={oldYearKeys[31]}
 				/>
-
 				<h3>{titles.part5}</h3>
-				<Responses branch={branches[3]} description={oldYear.word_one} />
-				<Responses branch={branches[3]} description={oldYear.word_two} />
-				<Responses branch={branches[3]} description={oldYear.word_three} />
-
-				<h3>Movie Title of last year</h3>
-				<Responses branch={branches[3]} description={oldYear.movie_title} />
-
+				column={oldYearKeys[31]}
 				<Responses
-					branch={branches[3]}
+					column={oldYearKeys[32]}
+					table={branches[3]}
+					description={oldYear.word_one}
+				/>
+				<Responses
+					column={oldYearKeys[33]}
+					table={branches[3]}
+					description={oldYear.word_two}
+				/>
+				<Responses
+					column={oldYearKeys[34]}
+					table={branches[3]}
+					description={oldYear.word_three}
+				/>
+				<h3>Movie Title of last year</h3>
+				<Responses
+					column={oldYearKeys[35]}
+					table={branches[3]}
+					description={oldYear.movie_title}
+				/>
+				<Responses
+					column={oldYearKeys[36]}
+					table={branches[3]}
 					description={oldYear.goodbye}
 					label={labels.goodbye}
 				/>
