@@ -136,8 +136,6 @@ export function ResponseProvider({ children }) {
 	async function uploadNewYear(e) {
 		e.preventDefault();
 
-		const username = user.user_metadata.username;
-
 		try {
 			uploadNyBranchOne();
 			uploadNyBranchTwo();
