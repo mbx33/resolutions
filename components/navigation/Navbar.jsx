@@ -14,7 +14,7 @@ import StartButton from '../buttons/StartButton';
 
 // Styles
 import { NavContainer } from '../../styles/styled_components/navigation';
-import { Button, OpenLink } from '../../styles/styled_components/utils';
+import { Button } from '../../styles/styled_components/utils';
 
 const Navbar = ({ openSignup, openLogin, dark }) => {
 	const supabase = useSupabaseClient();

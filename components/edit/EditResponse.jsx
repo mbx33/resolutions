@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
-import axios from 'axios';
-import { useResponse } from '../../contexts/ResponseContext';
+import { useUser } from '@supabase/auth-helpers-react';
 
 import { Button } from '../../styles/styled_components/utils';
-import { Form, Wrapper, FormContainer } from '../../styles/styled_components/form';
+import { Form, FormContainer } from '../../styles/styled_components/form';
 
 function timer(ms) {
 	return new Promise((res) => setTimeout(res, ms));

@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
+import { useUser, useSession } from '@supabase/auth-helpers-react';
 import { Lavishly_Yours } from '@next/font/google';
 
 const lavish = Lavishly_Yours({
@@ -20,12 +19,7 @@ import Step4 from '../../components/last-year/Step4';
 import { FormContainer } from '../../styles/styled_components/form';
 import { ErrorContainer } from '../../styles/styled_components/utils';
 
-import {
-	Main,
-	ImageContainer,
-	BorderContainer,
-	WaterMark,
-} from '../../styles/styled_components/main-forms';
+import { Main } from '../../styles/styled_components/main-forms';
 
 // Will have a total of 9 steps eventually,
 

@@ -41,14 +41,3 @@ const Responses = ({ description, label, table, column }) => {
 };
 
 export default Responses;
-
-//Add this when edit is working
-
-{
-	/* <Wrapper>
-			<ResponseWrapper>
-				{label && <h5>{label}</h5>}
-				<p>{description}</p>
-			</ResponseWrapper>
-		</Wrapper> */
-}

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
-import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react';
+import { useUser, useSession } from '@supabase/auth-helpers-react';
 
 // Components
 import Layout from '../../components/Layout';
@@ -13,11 +12,7 @@ import NyStep3 from '../../components/new-year/NyStep3';
 // Styles
 import { FormContainer } from '../../styles/styled_components/form';
 import { ErrorContainer } from '../../styles/styled_components/utils';
-import {
-	Main,
-	ImageContainer,
-	BorderContainer,
-} from '../../styles/styled_components/main-forms';
+import { Main } from '../../styles/styled_components/main-forms';
 
 // Will have a total of 9 steps eventually,
 

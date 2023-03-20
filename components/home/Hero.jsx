@@ -1,5 +1,3 @@
-import React from 'react';
-
 // styles
 import { HeroContainer, ContentContainer } from '../../styles/styled_components/hero';
 import StartButton from '../buttons/StartButton';

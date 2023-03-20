@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 // styles
 import { FooterContainer } from '../styles/styled_components/footer';
 

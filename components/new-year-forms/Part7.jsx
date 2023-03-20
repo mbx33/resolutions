@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Router from 'next/router';
 
 import { Form } from '../../styles/styled_components/form';
