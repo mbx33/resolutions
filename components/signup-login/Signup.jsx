@@ -16,10 +16,16 @@ const Signup = ({ supabase, setShowSignup, onClose }) => {
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState('');
 	const [showPassword, setShowPassword] = useState(false);
+	const [isDisabled, setIsDisabled] = useState(false);
 
 	function timeout(ms) {
 		return new Promise((resolve) => setTimeout(resolve, ms));
 	}
+
+	const disabledStyles = {
+		opacity: '0.5',
+		cursor: 'not-allowed',
+	};
 
 	const togglePassword = () => {
 		setShowPassword(!showPassword);
@@ -57,6 +63,14 @@ const Signup = ({ supabase, setShowSignup, onClose }) => {
 			setError(error.message);
 			timeout(3000).then(() => setError(''));
 		}
+
+		setLoading(false);
+		setAlert('Check your email for the confirmation link');
+		setIsDisabled(true);
+		setEmail('');
+		setUsername('');
+		setPassword('');
+		setPasswordConfirm('');
 	};
 
 	return (
@@ -125,7 +139,11 @@ const Signup = ({ supabase, setShowSignup, onClose }) => {
 							{alert && <p>{alert}</p>}
 							{error && <p>{error}</p>}
 						</div>
-						<button className="account-btn" disabled={loading}>
+						<button
+							style={isDisabled ? disabledStyles : null}
+							className="account-btn"
+							disabled={isDisabled}
+						>
 							{loading ? 'Loading...' : 'Submit'}
 						</button>
 						<p className="link">
