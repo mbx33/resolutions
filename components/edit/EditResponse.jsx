@@ -12,7 +12,7 @@ const EditResponse = ({ description, table, values, column, updateResponse }) =>
 	const user = useUser();
 	const { edit, setEdit } = values;
 	const [response, setResponse] = useState(description);
-	const [message, setMessage] = useState(null);
+	const [isLoading, setIsLoading] = useState(false);
 
 	const handleChanges = (e) => {
 		setResponse(e.target.value);
@@ -26,8 +26,9 @@ const EditResponse = ({ description, table, values, column, updateResponse }) =>
 			value,
 		});
 		updateResponse(table, column, value);
-		setMessage('Response updated');
-		await timer(2000);
+		setIsLoading(true);
+		await timer(2500);
+		setIsLoading(false);
 		setEdit(!edit);
 	}
 
@@ -42,20 +43,23 @@ const EditResponse = ({ description, table, values, column, updateResponse }) =>
 					cols="60"
 					rows="5"
 				></textarea>
-				<div className="btn-group">
-					<Button primary submit>
-						Save
-					</Button>
-					{message && <p>{message}</p>}
-					<Button
-						style={{ marginLeft: '2rem' }}
-						primary
-						submit
-						onClick={() => setEdit(!edit)}
-					>
-						Cancel
-					</Button>
-				</div>
+				{!isLoading ? (
+					<div className="btn-group">
+						<Button primary submit>
+							Save
+						</Button>
+						<Button
+							style={{ marginLeft: '2rem' }}
+							primary
+							submit
+							onClick={() => setEdit(!edit)}
+						>
+							Cancel
+						</Button>
+					</div>
+				) : (
+					<p>Updating...</p>
+				)}
 			</Form>
 		</FormContainer>
 	);
