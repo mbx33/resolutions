@@ -39,7 +39,6 @@ export const ResponseWrapper = styled.div`
 	box-shadow: 0 0.2rem 1.2rem rgba(27, 31, 35, 0.15);
 	margin: 1rem 0;
 	padding: 1rem 2rem;
-	/* min-width: 30rem; */
 `;
 
 export const EditWrapper = styled.div`
@@ -51,5 +50,9 @@ export const EditWrapper = styled.div`
 	box-shadow: 0 0.2rem 1.2rem rgba(27, 31, 35, 0.15);
 	margin: 1rem 0;
 	padding: 1rem;
-	min-width: 30rem;
+
+	@media (max-width: 420px) {
+		min-width: 90%;
+		padding: 0;
+	}
 `;

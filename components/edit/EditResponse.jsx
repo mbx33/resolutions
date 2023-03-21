@@ -35,31 +35,30 @@ const EditResponse = ({ description, table, values, column, updateResponse }) =>
 	return (
 		<FormContainer>
 			<Form onSubmit={(e) => handleSubmit(e, table, column, response)}>
-				<textarea
-					onChange={handleChanges}
-					name={description}
-					id={description}
-					value={response}
-					cols="60"
-					rows="5"
-				></textarea>
-				{!isLoading ? (
-					<div className="btn-group">
-						<Button primary submit>
-							Save
-						</Button>
-						<Button
-							style={{ marginLeft: '2rem' }}
-							primary
-							submit
-							onClick={() => setEdit(!edit)}
-						>
-							Cancel
-						</Button>
+				<div className="form-container">
+					<div className="form-group">
+						<textarea
+							onChange={handleChanges}
+							name={description}
+							id={description}
+							value={response}
+							cols="60"
+							rows="5"
+						></textarea>
+						{!isLoading ? (
+							<div className="edit-btn-group">
+								<Button primary submit>
+									Save
+								</Button>
+								<Button primary submit onClick={() => setEdit(!edit)}>
+									Cancel
+								</Button>
+							</div>
+						) : (
+							<p>Updating...</p>
+						)}
 					</div>
-				) : (
-					<p>Updating...</p>
-				)}
+				</div>
 			</Form>
 		</FormContainer>
 	);

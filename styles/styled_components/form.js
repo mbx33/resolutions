@@ -106,6 +106,7 @@ export const Form = styled.form`
 				border: 1px solid var(--color-800);
 				padding: 0.2rem 0.5rem;
 				width: 100%;
+				font-size: 1rem;
 			}
 		}
 	}
@@ -134,6 +135,20 @@ export const Form = styled.form`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+	}
+
+	.edit-btn-group {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	@media (max-width: 420px) {
+		.edit-btn-group {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
 	}
 
 	.grid-buttons {
