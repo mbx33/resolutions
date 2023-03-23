@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useSession, useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 
 import { useResponse } from '../../contexts/ResponseContext';
+import { useRouter } from 'next/router';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -20,13 +21,15 @@ const Navbar = ({ openSignup, openLogin, dark }) => {
 	const supabase = useSupabaseClient();
 	const session = useSession();
 	const user = useUser();
+	const router = useRouter();
 	const { resetResponses } = useResponse();
 	const [isOpen, setIsOpen] = useState(false);
 	const [isActive, setIsActive] = useState(false);
 
-	const handleLogout = () => {
-		supabase.auth.signOut();
+	const handleLogout = async () => {
+		await supabase.auth.signOut();
 		resetResponses();
+		router.push('/');
 	};
 
 	function toggleNav() {
