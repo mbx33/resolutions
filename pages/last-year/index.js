@@ -1,25 +1,19 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import { useUser, useSession } from '@supabase/auth-helpers-react';
-import { Lavishly_Yours } from '@next/font/google';
-
-const lavish = Lavishly_Yours({
-	subsets: ['latin'],
-	weight: '400',
-});
+import { useState } from "react";
+import Link from "next/link";
+import { useUser, useSession } from "@supabase/auth-helpers-react";
 
 // Components
-import Layout from '../../components/Layout';
-import Step1 from '../../components/last-year/Step1';
-import Step2 from '../../components/last-year/Step2';
-import Step3 from '../../components/last-year/Step3';
-import Step4 from '../../components/last-year/Step4';
+import Layout from "../../components/Layout";
+import Step1 from "../../components/last-year/Step1";
+import Step2 from "../../components/last-year/Step2";
+import Step3 from "../../components/last-year/Step3";
+import Step4 from "../../components/last-year/Step4";
 
 // Styles
-import { FormContainer } from '../../styles/styled_components/form';
-import { ErrorContainer } from '../../styles/styled_components/utils';
+import { FormContainer } from "../../styles/styled_components/form";
+import { ErrorContainer } from "../../styles/styled_components/utils";
 
-import { Main } from '../../styles/styled_components/main-forms';
+import { Main } from "../../styles/styled_components/main-forms";
 
 // Will have a total of 9 steps eventually,
 

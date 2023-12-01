@@ -1,21 +1,21 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
-import { useSession, useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
+import { useSession, useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 
-import { useResponse } from '../../contexts/ResponseContext';
-import { useRouter } from 'next/router';
+import { useResponse } from "../../contexts/ResponseContext";
+import { useRouter } from "next/router";
 
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { AiOutlineClose } from 'react-icons/ai';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 
 // components
-import StartButton from '../buttons/StartButton';
+import StartButton from "../buttons/StartButton";
 
 // Styles
-import { NavContainer } from '../../styles/styled_components/navigation';
-import { Button } from '../../styles/styled_components/utils';
+import { NavContainer } from "../../styles/styled_components/navigation";
+import { Button } from "../../styles/styled_components/utils";
 
 const Navbar = ({ openSignup, openLogin, dark }) => {
 	const supabase = useSupabaseClient();
@@ -29,7 +29,7 @@ const Navbar = ({ openSignup, openLogin, dark }) => {
 	const handleLogout = async () => {
 		await supabase.auth.signOut();
 		resetResponses();
-		router.push('/');
+		router.push("/");
 	};
 
 	function toggleNav() {
@@ -38,21 +38,21 @@ const Navbar = ({ openSignup, openLogin, dark }) => {
 	}
 
 	const navStyles = {
-		transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
-		transition: 'transform .3s ease-in-out',
+		transform: isOpen ? "translateX(0)" : "translateX(100%)",
+		transition: "transform .3s ease-in-out",
 		opacity: 0.95,
 	};
 
 	const hamburgerStyles = {
 		opacity: isOpen ? 0 : 1,
-		transform: isOpen ? 'rotate(90deg)' : 'rotate(0)',
-		transition: 'transform 0.3s ease-in-out',
+		transform: isOpen ? "rotate(90deg)" : "rotate(0)",
+		transition: "transform 0.3s ease-in-out",
 	};
 
 	const closeStyles = {
 		opacity: isOpen ? 1 : 0,
-		transform: isOpen ? 'rotate(0)' : 'rotate(90deg)',
-		transition: 'transform 0.3s ease-in-out',
+		transform: isOpen ? "rotate(0)" : "rotate(90deg)",
+		transition: "transform 0.3s ease-in-out",
 	};
 
 	//create a function that toggles the menu to closed when a user clicks a link
@@ -66,7 +66,7 @@ const Navbar = ({ openSignup, openLogin, dark }) => {
 		username = user.user_metadata.username;
 	}
 
-	// ! Need to redo the logo design
+	// ! Need to redo the logo design 02-2023
 
 	return (
 		<NavContainer dark={dark}>
@@ -74,15 +74,15 @@ const Navbar = ({ openSignup, openLogin, dark }) => {
 				<Link href="/">
 					<Image
 						className="logo"
-						src="https://res.cloudinary.com/high-desert-development/image/upload/v1677113695/gold-logo-removebg-preview_ktm3gv.png"
+						src="/assets/logo.webp"
 						alt="logo"
-						width={325}
-						height={125}
+						width={175}
+						height={175}
 						priority={true}
 					></Image>
 				</Link>
 			</div>
-			{user && <p style={{ fontSize: '1rem' }}>Welcome {username}</p>}
+			{user && <p style={{ fontSize: "1rem" }}>Welcome {username}</p>}
 			<div className="nav">
 				{session ? (
 					<>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const NavContainer = styled.nav`
 	position: absolute;
@@ -21,7 +21,7 @@ export const NavContainer = styled.nav`
 
 	.nav {
 		/* background-color: ${(props) =>
-			props.dark ? 'rgba(0, 0, 0, 0.75)' : 'transparent'}; */
+			props.dark ? "rgba(0, 0, 0, 0.75)" : "transparent"}; */
 		padding: 1rem 1rem;
 		border-radius: 1rem 0 0 5rem;
 	}
@@ -35,7 +35,7 @@ export const NavContainer = styled.nav`
 	}
 
 	.nav a::before {
-		content: '';
+		content: "";
 		display: block;
 		position: absolute;
 		bottom: 0;
@@ -70,14 +70,11 @@ export const NavContainer = styled.nav`
 	}
 
 	.logo {
-		padding-top: 0.3rem;
-		font-size: 2.4rem;
-		font-weight: 700;
-		overflow-x: hidden;
+		max-height: 14rem;
 	}
 
 	.logo a {
-		text-decoration: none;
+		/* text-decoration: none; */
 		color: var(--color-600);
 	}
 

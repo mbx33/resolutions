@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import Head from 'next/head';
+import { useState } from "react";
+import Head from "next/head";
 
 // components
-import Navbar from './navigation/Navbar';
-import Footer from './Footer';
-import Modal from './Modal';
+import Navbar from "./navigation/Navbar";
+import Footer from "./Footer";
+import Modal from "./Modal";
 
 // styles
-import { MainContainer } from '../styles/styled_components/utils';
+import { MainContainer } from "../styles/styled_components/utils";
 
 const Layout = ({ children, title, darkNav }) => {
 	const [isModalOpen, setIsModalOpen] = useState(false);
